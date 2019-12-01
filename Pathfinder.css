@@ -1,5 +1,38 @@
+@font-face {
+    font-family: 'Medieval Initial One'; /* Гарнитура шрифта */
+    src: url(fonts/17158.ttf); /* Путь к файлу со шрифтом */
+}
+@font-face {
+    font-family: 'mr_ArdaghG'; /* Гарнитура шрифта */
+    src: url(fonts/15399.otf); /* Путь к файлу со шрифтом */
+} 
+@font-face {
+    font-family: 'XXII Arabian OneNightStand Cyr'; /* Гарнитура шрифта */
+    src: url(fonts/15364.ttf); /* Путь к файлу со шрифтом */
+}
+@font-face {
+    font-family: '1000yearsofKhabarovsk'; /* Гарнитура шрифта */
+    src: url(fonts/16475.otf); /* Путь к файлу со шрифтом */
+} 
+@font-face {
+    font-family: 'ArabiaCyrillic-Regular'; /* Гарнитура шрифта */
+    src: url(fonts/15522.ttf); /* Путь к файлу со шрифтом */
+}
+@font-face {
+    font-family: 'Kanonnik UCS'; /* Гарнитура шрифта */
+    src: url(fonts/10410.ttf); /* Путь к файлу со шрифтом */
+}
+@font-face {
+    font-family: 'ljk_Remains'; /* Гарнитура шрифта */
+    src: url(fonts/16880.otf); /* Путь к файлу со шрифтом */
+}
+@font-face {
+    font-family: 'Mason Chronicles';
+    src: url(fonts/Mason_Chronicles.ttf);
+}
+
 * {
-    font-family: 'Mason Chronicles', sans-serif;
+    font-family: 'Mason Chronicles', serif;
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -484,31 +517,3 @@ color: #3f3c38;
 }
 
 
-@font-face {
-    font-family: 'Medieval Initial One'; /* Гарнитура шрифта */
-    src: url(fonts/17158.ttf); /* Путь к файлу со шрифтом */
-}
-@font-face {
-    font-family: 'mr_ArdaghG'; /* Гарнитура шрифта */
-    src: url(fonts/15399.otf); /* Путь к файлу со шрифтом */
-} 
-@font-face {
-    font-family: 'XXII Arabian OneNightStand Cyr'; /* Гарнитура шрифта */
-    src: url(fonts/15364.ttf); /* Путь к файлу со шрифтом */
-}
-@font-face {
-    font-family: '1000yearsofKhabarovsk'; /* Гарнитура шрифта */
-    src: url(fonts/16475.otf); /* Путь к файлу со шрифтом */
-} 
-@font-face {
-    font-family: 'ArabiaCyrillic-Regular'; /* Гарнитура шрифта */
-    src: url(fonts/15522.ttf); /* Путь к файлу со шрифтом */
-}
-@font-face {
-    font-family: 'Kanonnik UCS'; /* Гарнитура шрифта */
-    src: url(fonts/10410.ttf); /* Путь к файлу со шрифтом */
-}
-@font-face {
-    font-family: 'ljk_Remains'; /* Гарнитура шрифта */
-    src: url(fonts/16880.otf); /* Путь к файлу со шрифтом */
-}
