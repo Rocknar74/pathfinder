@@ -68,6 +68,7 @@ h1 {
     color: #eade93;
     font-size: 87px;
     text-shadow: #4d362e 0 10px 10px;
+    text-align: center;
 }
 h2 {
     background:#978c76;
@@ -94,9 +95,6 @@ header {
 .race_block, .class_block, .select_stats_block {
     height: 100%;
 
-}
-.table_header {
-    text-align: center;
 }
 .race_table {
     /* border: 1px dotted black; */
@@ -234,11 +232,11 @@ header {
 
 .container_class {
     display: none;
-    transition-duration: 0.25s;
+    transition: 0.25s;
 }
 .container_class-active {
     display: block;
-    transition-duration: 0.5s;
+    transition: 0.5s;
 }
 
 .container-out {
