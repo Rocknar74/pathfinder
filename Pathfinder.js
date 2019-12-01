@@ -34,9 +34,6 @@ function clean_items(a) {
             if (CLASS[i].classList.contains(CLASS_ACTIVE)) {
                 CLASS[i].classList.remove(CLASS_ACTIVE);
             }
-            // if (CONTAINER_CLASS[i].classList.contains(CONTAINER_CLASS_ACTIVE)) {
-            //     CONTAINER_CLASS[i].classList.remove(CONTAINER_CLASS_ACTIVE);
-            // }
         }
     }
     if (a == "container_class") {
@@ -100,59 +97,9 @@ FOCUS.forEach(focus => {
     });
 });
 
-
-
-// CLASS.forEach(classes => {
-//     classes.addEventListener('click', () => {
-        
-//         if (!classes.classList.contains(CLASS_ACTIVE)) {
-//             clean_items("class");
-//             classes.classList.add(CLASS_ACTIVE);
-//             for (let i = 0; i < CLASS.length; i++) {
-//                 if (CLASS[i].classList.contains(CLASS_ACTIVE)) {
-//                     switch(i) {
-//                         case (0):
-//                             allData.class = "warrior"
-//                             break;
-//                         case (1):
-//                             allData.class = "wizard"
-//                             break;
-//                         case (2):
-//                             allData.class = "rogue"
-//                             break;
-//                         case (3):
-//                             allData.class = "priest"
-//                             break;
-//                     }
-//                 }
-//             }
-//             NEXT_BUTTON.disabled = false;
-//             console.log(NEXT_BUTTON.disabled);
-//             console.log(allData.class);
-//         } else {
-//             clean_items("class");
-//             allData.class = undefined;
-//             NEXT_BUTTON.disabled = true;
-//             console.log(NEXT_BUTTON.disabled);   
-//         }
-//         // const CONTAINER = classes.parentElement.nextElementSibling;
-//         CONTAINER_CLASS.forEach(container => {
-//             if (!container.classList.contains(CONTAINER_CLASS_ACTIVE)) {
-//                 clean_items("container_class");
-//                 container.classList.add(CONTAINER_CLASS_ACTIVE);
-//             } else {
-//                 clean_items("container_class"); 
-//             }
-            
-//         });
-//     });
-// });
-
 CLASS.forEach(classes => {
     classes.addEventListener('click', () => {
         const CONTAINER = classes.parentElement.nextElementSibling;
-        
-
         if (!classes.classList.contains(CLASS_ACTIVE)) {
             clean_items("class");
             clean_items("container_class");
@@ -177,19 +124,15 @@ CLASS.forEach(classes => {
                 }
             }
             NEXT_BUTTON.disabled = false;
-            // CLASS_BLOCK.setAttribute("id", "class_block_visible");
             console.log(NEXT_BUTTON.disabled);
             console.log(allData.class);
         } else {
             clean_items("class");
             clean_items("container_class");
             allData.class = undefined;
-            // CLASS_BLOCK.setAttribute("id", "class_block");
             NEXT_BUTTON.disabled = true;
             console.log(NEXT_BUTTON.disabled);   
         }
-
-        
     });
 });
 
@@ -279,27 +222,6 @@ function random_stats() {
                 sumStats -= 5;
                 break;
         }
-        // if (stats[i] < 10) {
-        //     if (stats[i] < 8) {
-        //         if (stats[i] < 6) {
-        //             if (stats[i] < 4) {
-        //                 if (stats[i] < 2) {
-        //                     sumStats += -5; continue;
-        //                 } else {sumStats += -4; continue;}
-        //             } else {sumStats += -3; continue;}
-        //         } else {sumStats += -2; continue;}
-        //     } else {sumStats += -1; continue;}
-        // } else if (stats[i] > 11) {
-        //     if (stats[i] > 13) {
-        //         if (stats[i] > 15) {
-        //             if (stats[i] > 17) {
-        //                 if (stats[i] > 19) {
-        //                     sumStats += 5; continue;
-        //                 } else {sumStats += 4; continue;}
-        //             } else {sumStats += 3; continue;}
-        //         } else {sumStats += 2; continue;}
-        //     } else {sumStats += 1; continue;}
-        // }
     }
     if (sumStats > 3 && p > 13) {
         reroll = false;
