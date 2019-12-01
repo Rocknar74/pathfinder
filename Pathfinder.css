@@ -1,0 +1,514 @@
+* {
+    font-family: 'Mason Chronicles', sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+.plant {
+    height: 500px;
+}
+.coin {
+    height: 1000px;
+}
+.coin img{
+    width: 150px;
+}
+html {
+    color: lavender;
+    scroll-behavior: smooth;
+}
+body {
+    background: #8b816d; /*#55504a */
+}
+strong {
+    color: #3f3c38; 
+}
+caption {
+    background: #978c76;
+    font-size: 67px;
+    color: #3f3c38;
+    font-weight: bold;
+    width: auto;
+}
+
+h1 { 
+    color: #eade93;
+    font-size: 87px;
+    text-shadow: #4d362e 0 10px 10px;
+}
+h2 {
+    background:#978c76;
+    font-size: 67px;
+    color: #3f3c38;
+}
+h3 {
+    font-size: 37px;
+    color: #869962;
+    background: #5e616042; /*#5e616042*/
+}
+header {
+    background:#686052;
+}
+.logo {
+    background:#686052;
+    text-align: center;
+}
+
+.all_content {
+    max-width: 1800px;
+    margin: 0 auto;
+}
+.race_block, .class_block, .select_stats_block {
+    height: 100%;
+
+}
+.table_header {
+    text-align: center;
+}
+.race_table {
+    /* border: 1px dotted black; */
+    border-spacing: 5px;
+    /* background: rgb(0, 0, 0); */
+    width: 1800px;
+    margin-bottom: 50px;
+    font: 24px 'Mason Chronicles', sans-serif;
+}
+
+.photo {
+    position: absolute;
+    height: 500px;
+}
+.focus {
+    position: relative;
+    height: 500px;
+    opacity: 0;
+    transition-duration: 0.25s;
+    cursor: pointer;
+}
+.focus:hover, .focus_active {
+    opacity: 1;
+}
+
+.decoration {
+    float: left;
+    padding-right: 9px;
+    width: 115px;
+}
+.dwarf_row, .elf_row, .human_row {
+    text-align: justify;
+    height: min-content;
+}
+
+.dwarf_history {
+    width: 25%;
+}
+.dwarf_stats {
+    width: 39%;
+}
+.dwarf_photo_f {
+    width: 13.5%;
+}
+.dwarf_photo_m {
+    width: 20%;
+}
+
+.elf_history {
+    width: 23.5%;
+}
+.elf_stats {
+    width: 38.5%;
+}
+.elf_photo_f {
+    width: 20%;
+}
+.elf_photo_m {
+    width: 15%;
+}
+
+.human_history {
+    width: 41.5%;
+}
+.human_stats {
+    width: 19.5%;
+}
+.human_photo_f {
+    width: 17%;
+}
+.human_photo_m {
+    width: 19%;
+}
+
+.flowers {
+    width: 3%; 
+}
+.flowers img {
+    width: 113%;   
+}
+
+.dwarf_stats ul,.elf_stats ul,.human_stats ul {
+    list-style-type: none;  
+}
+
+.class_block {
+    display: none;
+}
+.class_block_visible {
+    display: block;
+}
+.class_table {
+    display: flex;
+    flex-direction: column;
+    font: 28px 'Mason Chronicles', sans-serif;
+    text-align: center;
+    width: 80%;
+    margin: 0 auto; 
+}
+.name_class_background {
+    height: 160px;
+    line-height: 160px;
+    margin: -20px;
+}
+.name_class {
+    padding: 0 0 0 35px;
+    white-space: nowrap;
+    overflow: hidden;
+    background: unset;
+    text-align: left;
+    /* background: linear-gradient(#8b816d, #0d325000); */
+    color: #a09a8f;
+    text-shadow: #000000 0px 15px 10px;
+    font-size: 87px;
+    -webkit-text-stroke: 0px #c0b77a;
+    transition: 0.4s;
+    width: 100%;
+}
+.name_class:hover {
+    color: #8b816d;
+    cursor: pointer;
+    -webkit-text-stroke: 1px #eade93;
+    transition: 0.4s;
+}
+.name_class_active {
+    color: #634c1496;
+    text-shadow: #eade93a9 0 3px 5px, #eade93a9 0px -3px 5px, #eade93a9 33px -5px 10px, #eade93a9 -3px 0px 5px;
+    cursor: pointer;
+    -webkit-text-stroke: 1px #eade93;
+    /* transition: 0.20s; */
+}
+.name_class_active:hover {
+    text-shadow: #eade93a9 0 3px 5px, #eade93a9 0px -3px 5px, #eade93a9 30px -3px 10px, #eade93a9 -3px 0px 5px;
+}
+
+.container_class {
+    display: none;
+    transition-duration: 0.25s;
+}
+.container_class-active {
+    display: block;
+    transition-duration: 0.5s;
+}
+
+.container-out {
+    display: flex;
+    justify-content: center;
+}
+.container-special {
+    /* border: 1px solid lavender; */
+    flex: 3;
+    margin-right: 10px;
+}
+.container-armor {
+    /* border: 1px solid lavender; */
+    flex: 1;
+}
+
+.warrior, .wizard, .rogue, .priest {
+    padding: 20px;
+}
+
+
+.warrior {
+    background: linear-gradient(330deg, #cf111131, #cf111131, #240606 85%), url(images/warrior.jpg)top no-repeat fixed;
+    flex: 3;
+    background-size: 100%;
+    /* box-shadow: #3f3c38, 0 50px 20px 0; */
+}
+
+.warrior h2 {
+    font-family: 'ljk_Remains', sans-serif;
+    font-size: 110px;
+}
+
+.wizard {
+    background: linear-gradient(330deg, #16598f5e, #16598f5e,#031422 85%), url(images/wizard.jpg) top no-repeat fixed;
+    background-size: 100%;
+    flex: 1;
+}
+.wizard h2 {
+    font-family: 'XXII Arabian OneNightStand Cyr', sans-serif;
+}
+
+.rogue {
+    background: linear-gradient(330deg, #493653c4, #493653c4, #1a0c22 85%),  url(images/rogue.jpg) top no-repeat fixed;
+    background-size: 100%;
+    flex: 1;
+}
+.rogue h2 {
+    font-family: 'ArabiaCyrillic-Regular', sans-serif;
+}
+
+.priest {
+    background: linear-gradient(330deg, #79899663, #79899663, #525557 85%), url(images/priest.jpg) top no-repeat fixed;
+    background-size: 100%;
+    flex: 1;
+}
+.priest h2{
+    font-family: 'Kanonnik UCS', sans-serif;
+}
+
+.class_table_stats {
+    border-spacing:  10px;
+    border: 1px solid;
+    width: max-content;
+    margin: auto;
+    text-align: left;
+}
+
+.select_stats_block {
+    display: none;
+}
+
+footer {
+    background:#686052;
+    text-align: center;
+}
+.footer_div {
+    background:#686052;
+}
+
+.next_button:enabled, .previous_button:enabled {
+    outline: none;
+    cursor: pointer;
+    background: #8b816d;
+    border-width: 10px;
+    border-style: solid;
+    border-color: #686052;
+    /* border: none; */
+    border-radius: 2px;
+    height: 125px;
+    /* animation-name: pulse;
+    animation-duration: 3.05s;
+    animation-iteration-count: infinite;
+    animation-delay: 1s; */
+    transition-duration: 0.25s; 
+}
+.next_button:disabled, .previous_button:disabled {
+    outline: none;
+    cursor: not-allowed;
+    background: #8b816d;;
+    border-width: 10px;
+    border-style: solid;
+    border-color: #686052;
+    /* border: none; */
+    border-radius: 2px;
+    height: 125px;
+    opacity: 0.2;
+    /* animation-name: pulse;
+    animation-duration: 3.05s;
+    animation-iteration-count: infinite;
+    animation-delay: 1s;*/ 
+    transition-duration: 0.25s;  
+}
+
+.next_button:active, .previous_button:active {
+    animation: stop;
+}
+
+/* @keyframes button {
+    from {
+        border-style: outset;
+        box-shadow: 6px 7px 4px 5px #220c0c;
+    }
+    49% {
+        border-style: outset;
+        box-shadow: 0px 0px 0px 0px #220c0c;
+    }
+    50% {
+        border-style: inset;
+        box-shadow: inset 0px 0px 0px 0px #220c0c;
+    }
+    to {
+        border-style: inset;
+        box-shadow: inset 7px 6px 4px 5px #220c0c;
+    }
+}
+@keyframes h1anim {
+    from {
+        padding-top: 0;
+    }
+    to {
+        padding-top: 8px;
+    }
+} */
+
+/* .dwarf_history, .dwarf_stats, .dwarf_photo_f, .dwarf_photo_m, .elf_history, .elf_stats, .elf_photo_f, .elf_photo_m, .human_history, .human_stats, .human_photo_f,  .human_photo_m, .flowers {
+    vertical-align: middle;
+} */
+
+
+
+
+
+
+
+
+
+
+
+
+
+.paint {
+color: #4d362e;
+color: #eade93;
+color: #55504a; 
+color: #5c4034;
+color: #e6e6fa;
+color: lavender;
+color: #8b816d; /*задний фон*/
+color: #978c76; /*h2*/
+color: #686052;
+color: #de343c;
+color: #3f3c38;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.start {
+    display: block;
+    font: 150px 'mr_ArdaghG';
+    color: #bf373e;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color:#eade93;
+    background: #55504a;
+    width: min-content;
+    border: 10px #eade93; /*#d0996d*/
+    border-style: solid;
+    border-radius: 6px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0px 20px 0px 20px;
+    text-transform: uppercase;
+    transition: box-shadow 0.2s, color 0.2s;
+	cursor: pointer;
+	-webkit-animation-name: pulse;
+    animation-name: pulse;
+    animation-duration: 3.05s;
+    animation-iteration-count: infinite;
+    animation-delay: 1s;
+}
+.start:link {                  
+	color: none;         
+}
+.start:visited {
+	color: none;
+}
+.start:active {                  
+	color: none;         
+}
+.start:focus {                  
+	color: none;         
+}
+.start:hover {
+    text-decoration: none;
+	box-shadow: inset 0 0 120px 60px #8b816d;
+}
+
+
+@keyframes pulse {
+    from {
+        -webkit-transform: scale3d(1, 1, 1);
+        transform: scale3d(1, 1, 1);
+        background: #8b816d;
+        box-shadow: inset 0px 0px 0px 0px #972424;
+    }
+    5% {
+        -webkit-transform: scale3d(1.04, 1.04, 1.04);
+        transform: scale3d(1.04, 1.04, 1.04);
+        /* background: #4d4842; */
+        box-shadow: inset 0px 0px 40px 1px #972424;
+    }
+    10% {
+        -webkit-transform: scale3d(1, 1, 1);
+        transform: scale3d(1, 1, 1);
+        background: #8b816d;
+        box-shadow: inset 0px 0px 0px 0px #972424;
+    }
+    15% {
+        -webkit-transform: scale3d(1.04, 1.04, 1.04);
+        transform: scale3d(1.04, 1.04, 1.04);
+        /* background: #4d4842; */
+        box-shadow: inset 0px 0px 40px 1px #972424;
+    }
+    20% {
+        -webkit-transform: scale3d(1, 1, 1);
+        transform: scale3d(1, 1, 1);
+        box-shadow: inset 0px 0px 0px 0px #972424;
+         
+    }
+    50% {
+        background: #8b816d;
+        
+    }
+    to {
+        -webkit-transform: scale3d(1, 1, 1);
+        transform: scale3d(1, 1, 1);
+        box-shadow: inset 0px 0px 0px 0px #972424;
+    }
+}
+
+
+@font-face {
+    font-family: 'Medieval Initial One'; /* Гарнитура шрифта */
+    src: url(fonts/17158.ttf); /* Путь к файлу со шрифтом */
+}
+@font-face {
+    font-family: 'mr_ArdaghG'; /* Гарнитура шрифта */
+    src: url(fonts/15399.otf); /* Путь к файлу со шрифтом */
+} 
+@font-face {
+    font-family: 'XXII Arabian OneNightStand Cyr'; /* Гарнитура шрифта */
+    src: url(fonts/15364.ttf); /* Путь к файлу со шрифтом */
+}
+@font-face {
+    font-family: '1000yearsofKhabarovsk'; /* Гарнитура шрифта */
+    src: url(fonts/16475.otf); /* Путь к файлу со шрифтом */
+} 
+@font-face {
+    font-family: 'ArabiaCyrillic-Regular'; /* Гарнитура шрифта */
+    src: url(fonts/15522.ttf); /* Путь к файлу со шрифтом */
+}
+@font-face {
+    font-family: 'Kanonnik UCS'; /* Гарнитура шрифта */
+    src: url(fonts/10410.ttf); /* Путь к файлу со шрифтом */
+}
+@font-face {
+    font-family: 'ljk_Remains'; /* Гарнитура шрифта */
+    src: url(fonts/16880.otf); /* Путь к файлу со шрифтом */
+}

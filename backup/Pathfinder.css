@@ -1,0 +1,373 @@
+* {
+    font-family: 'Mason Chronicles', sans-serif;
+    color: lavender;
+}
+html {
+    /* overflow-x: hidden; */
+}
+body {
+    background: #8b816d; /*#55504a*/
+    padding: 0;
+    margin: 0;
+}
+main {
+    flex: 1;
+}
+header {
+    background:#686052;
+    margin: 0;
+    padding: 0;
+}
+div.logo {
+    background:#686052;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    width: 1903px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+main {
+    background:;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+section.race_table {
+    max-width: 1903px;
+    padding: 2%;
+    margin: 0 auto;
+}
+div.container {
+    height: 100%;
+    overflow: hidden;
+    padding: 0;
+}
+div.race_table_header {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+div.main_table {
+    display: table;
+    border-spacing: 5px;
+    /* background: rgb(0, 0, 0); */
+    width: 1903px;
+    margin-bottom: 40px;
+    font: 24px 'Mason Chronicles', sans-serif;
+    color: lavender;
+    text-align: center;
+}
+.photo {
+    position: absolute;
+    height: 500px;
+}
+.focus {
+    position: relative;
+    height: 500px;
+    opacity: 0;
+    transition-duration: 0.25s;
+    cursor: pointer;
+}
+.focus:hover, .focus_active {
+    opacity: 1;
+}
+
+.decoration {
+    float: left;
+    padding-right: 9px;
+    width: 115px;
+    padding-top: 21px;
+}
+.dwarf_row, .elf_row, .human_row {
+    display: table-row;
+    background: #8b816d;
+    padding-left: 20px;
+    text-align: justify;
+}
+.dwarf_row {
+    height: min-content;
+    margin: 0;
+}
+.elf_row {
+    height: min-content;
+    margin: 0;
+}
+.human_row {
+    height: min-content;
+    margin: 0;
+}
+
+.dwarf_history, .dwarf_stats, .dwarf_photo_f, .dwarf_photo_m, .elf_history, .elf_stats, .elf_photo_f, .elf_photo_m, .human_history, .human_stats, .human_photo_f,  .human_photo_m, .flowers {
+    display: table-cell;
+    vertical-align: middle;
+}
+.dwarf_history {
+    width: 26%;
+}
+.dwarf_stats {
+    width: 34%;
+}
+.dwarf_photo_f {
+    width: 17%;
+}
+.dwarf_photo_m {
+    width: 20%;
+}
+
+.elf_history {
+    width: 23.5%;
+}
+.elf_stats {
+    width: 34.5%;
+}
+.elf_photo_f {
+    width: 19.5%;
+}
+.elf_photo_m {
+    width: 19.5%;
+}
+
+.human_history {
+    width: 40%;
+}
+.human_stats {
+    width: 23%;
+}
+.human_photo_f {
+    width: 17%;
+}
+.human_photo_m {
+    width: 20%;
+}
+
+.flowers {
+    width: 3%; 
+}
+.flowers img {
+    width: 100%;   
+}
+.dwarf_stats ul,.elf_stats ul,.human_stats ul {
+    list-style-type: none;
+    padding: 0px;
+    margin: 0;   
+}
+.dwarf_stats ul, .human_stats ul {
+    list-style-type: none;
+    padding: 0px;
+    margin: 0; 
+    padding-right: 70px;  
+}
+strong {
+    color: #3f3c38; 
+}
+h1 { 
+    background:#8b816d;
+    font-size: 87px;
+    margin: 0 0 0 0;
+    padding: 0;
+    position: relative;
+    width: max-content;
+    margin-left: auto;
+    margin-right: auto; 
+}
+h2 {
+    background:#978c76;
+    display: table-caption;
+    font-size: 67px;
+    margin: 0;
+    margin: 60px 0 0px 0;
+    color: #3f3c38;
+}
+footer.race_table_footer {
+    margin: 0;
+    padding: 0;  
+}
+button.select_race {
+    display: block;
+    outline: none;
+    width: min-content;
+    margin-left: auto;
+    margin-right: auto;
+    cursor: pointer;
+    background: #8b816d;
+    border-width: 1px;
+    border-style: outset;
+    border-color: #797373;
+    /* border: none; */
+    border-radius: 2px;
+    /* animation-name: pulse;
+    animation-duration: 3.05s;
+    animation-iteration-count: infinite;
+    animation-delay: 1s; 
+    transition-duration: 1s;*/  
+}
+.select_race:active {
+    color: none; /*#972424*/
+}
+.select_race:active {
+    animation: stop;
+}
+.select_race h1:active {
+    padding-top: 3px;
+}
+/* @keyframes button {
+    from {
+        border-style: outset;
+        box-shadow: 6px 7px 4px 5px #220c0c;
+    }
+    49% {
+        border-style: outset;
+        box-shadow: 0px 0px 0px 0px #220c0c;
+    }
+    50% {
+        border-style: inset;
+        box-shadow: inset 0px 0px 0px 0px #220c0c;
+    }
+    to {
+        border-style: inset;
+        box-shadow: inset 7px 6px 4px 5px #220c0c;
+    }
+}
+@keyframes h1anim {
+    from {
+        padding-top: 0;
+    }
+    to {
+        padding-top: 8px;
+    }
+} */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.start {
+    display: block;
+    font: 150px 'mr_ArdaghG';
+    color: #bf373e;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color:#eade93;
+    background: #55504a;
+    width: min-content;
+    border: 10px #eade93; /*#d0996d*/
+    border-style: solid;
+    border-radius: 6px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0px 20px 0px 20px;
+    text-transform: uppercase;
+    transition: box-shadow 0.2s, color 0.2s;
+	cursor: pointer;
+	-webkit-animation-name: pulse;
+    animation-name: pulse;
+    animation-duration: 3.05s;
+    animation-iteration-count: infinite;
+    animation-delay: 1s;
+}
+.start:link {                  
+	color: none;         
+}
+.start:visited {
+	color: none;
+}
+.start:active {                  
+	color: none;         
+}
+.start:focus {                  
+	color: none;         
+}
+.start:hover {
+    text-decoration: none;
+	box-shadow: inset 0 0 120px 60px #8b816d;
+}
+
+
+@keyframes pulse {
+    from {
+        -webkit-transform: scale3d(1, 1, 1);
+        transform: scale3d(1, 1, 1);
+        background: #8b816d;
+        box-shadow: inset 0px 0px 0px 0px #972424;
+    }
+    5% {
+        -webkit-transform: scale3d(1.04, 1.04, 1.04);
+        transform: scale3d(1.04, 1.04, 1.04);
+        /* background: #4d4842; */
+        box-shadow: inset 0px 0px 40px 1px #972424;
+    }
+    10% {
+        -webkit-transform: scale3d(1, 1, 1);
+        transform: scale3d(1, 1, 1);
+        background: #8b816d;
+        box-shadow: inset 0px 0px 0px 0px #972424;
+    }
+    15% {
+        -webkit-transform: scale3d(1.04, 1.04, 1.04);
+        transform: scale3d(1.04, 1.04, 1.04);
+        /* background: #4d4842; */
+        box-shadow: inset 0px 0px 40px 1px #972424;
+    }
+    20% {
+        -webkit-transform: scale3d(1, 1, 1);
+        transform: scale3d(1, 1, 1);
+        box-shadow: inset 0px 0px 0px 0px #972424;
+         
+    }
+    50% {
+        background: #8b816d;
+        
+    }
+    to {
+        -webkit-transform: scale3d(1, 1, 1);
+        transform: scale3d(1, 1, 1);
+        box-shadow: inset 0px 0px 0px 0px #972424;
+    }
+}
+
+
+@font-face {
+    font-family: 'Medieval Initial One'; /* Гарнитура шрифта */
+    src: url(fonts/17158.ttf); /* Путь к файлу со шрифтом */
+}
+
+@font-face {
+    font-family: 'mr_ArdaghG'; /* Гарнитура шрифта */
+    src: url(fonts/15399.otf); /* Путь к файлу со шрифтом */
+} 
+  
+
+
