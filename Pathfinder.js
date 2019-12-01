@@ -7,7 +7,7 @@ const FOCUS_ACTIVE = 'focus_active';
 const CLASS = document.querySelectorAll('.name_class');
 const CLASS_ACTIVE = 'name_class_active';
 
-const CONTAINER_CLASS = document.querySelectorAll(".container-class")
+const CONTAINER_CLASS = document.querySelectorAll(".container_class")
 const CONTAINER_CLASS_ACTIVE = 'container_class-active';
 
 const NEXT_BUTTON = document.querySelector(".next_button");
@@ -19,6 +19,7 @@ console.log(FOCUS);
 console.log(CLASS);
 console.log(CLASS_ACTIVE);
 console.log(FOCUS_ACTIVE);
+console.log(CONTAINER_CLASS);
 
 function clean_items(a) {
     if (a == "focus") {
@@ -33,6 +34,9 @@ function clean_items(a) {
             if (CLASS[i].classList.contains(CLASS_ACTIVE)) {
                 CLASS[i].classList.remove(CLASS_ACTIVE);
             }
+            // if (CONTAINER_CLASS[i].classList.contains(CONTAINER_CLASS_ACTIVE)) {
+            //     CONTAINER_CLASS[i].classList.remove(CONTAINER_CLASS_ACTIVE);
+            // }
         }
     }
     if (a == "container_class") {
@@ -44,11 +48,11 @@ function clean_items(a) {
     }
 }
 
-FOCUS.forEach(item => {
-    item.addEventListener('click', () => {
-        if (!item.classList.contains(FOCUS_ACTIVE)) {
+FOCUS.forEach(focus => {
+    focus.addEventListener('click', () => {
+        if (!focus.classList.contains(FOCUS_ACTIVE)) {
             clean_items("focus");
-            item.classList.add(FOCUS_ACTIVE);
+            focus.classList.add(FOCUS_ACTIVE);
             for (let i = 0; i < FOCUS.length; i++) {
                 if (FOCUS[i].classList.contains(FOCUS_ACTIVE)) {
                     switch(i) {
@@ -98,14 +102,62 @@ FOCUS.forEach(item => {
 
 
 
-CLASS.forEach(item => {
-    item.addEventListener('click', () => {
-        const CONTAINER = item.parentElement.nextElementSibling;
-        clean_items("container_class");
+// CLASS.forEach(classes => {
+//     classes.addEventListener('click', () => {
+        
+//         if (!classes.classList.contains(CLASS_ACTIVE)) {
+//             clean_items("class");
+//             classes.classList.add(CLASS_ACTIVE);
+//             for (let i = 0; i < CLASS.length; i++) {
+//                 if (CLASS[i].classList.contains(CLASS_ACTIVE)) {
+//                     switch(i) {
+//                         case (0):
+//                             allData.class = "warrior"
+//                             break;
+//                         case (1):
+//                             allData.class = "wizard"
+//                             break;
+//                         case (2):
+//                             allData.class = "rogue"
+//                             break;
+//                         case (3):
+//                             allData.class = "priest"
+//                             break;
+//                     }
+//                 }
+//             }
+//             NEXT_BUTTON.disabled = false;
+//             console.log(NEXT_BUTTON.disabled);
+//             console.log(allData.class);
+//         } else {
+//             clean_items("class");
+//             allData.class = undefined;
+//             NEXT_BUTTON.disabled = true;
+//             console.log(NEXT_BUTTON.disabled);   
+//         }
+//         // const CONTAINER = classes.parentElement.nextElementSibling;
+//         CONTAINER_CLASS.forEach(container => {
+//             if (!container.classList.contains(CONTAINER_CLASS_ACTIVE)) {
+//                 clean_items("container_class");
+//                 container.classList.add(CONTAINER_CLASS_ACTIVE);
+//             } else {
+//                 clean_items("container_class"); 
+//             }
+            
+//         });
+//     });
+// });
 
-        if (!item.classList.contains(CLASS_ACTIVE)) {
+CLASS.forEach(classes => {
+    classes.addEventListener('click', () => {
+        const CONTAINER = classes.parentElement.nextElementSibling;
+        
+
+        if (!classes.classList.contains(CLASS_ACTIVE)) {
             clean_items("class");
-            item.classList.add(CLASS_ACTIVE);
+            clean_items("container_class");
+            CONTAINER.classList.toggle('container_class-active');
+            classes.classList.add(CLASS_ACTIVE);
             for (let i = 0; i < CLASS.length; i++) {
                 if (CLASS[i].classList.contains(CLASS_ACTIVE)) {
                     switch(i) {
@@ -130,24 +182,16 @@ CLASS.forEach(item => {
             console.log(allData.class);
         } else {
             clean_items("class");
+            clean_items("container_class");
             allData.class = undefined;
             // CLASS_BLOCK.setAttribute("id", "class_block");
             NEXT_BUTTON.disabled = true;
             console.log(NEXT_BUTTON.disabled);   
         }
 
-        CONTAINER.classList.toggle('container_class-active');
+        
     });
 });
-
-// if (race != undefined) {
-//     CLASS_BLOCK.setAttribute("class", "class_block_visible");
-// }
-// NEXT_BUTTON.forEach(item =>{
-//     item.addEventListener('click', () => {
-//         class_block.setAttribute("display", "block");
-//     })
-// })
 
 function onDragStart(event) {
     event
