@@ -8,7 +8,7 @@ const CLASS = document.querySelectorAll('.name_class');
 const CLASS_ACTIVE = 'name_class_active';
 
 const CONTAINER_CLASS = document.querySelectorAll(".container-class")
-const CONTAINER_CLASS_ACTIVE = 'container_class-active'
+const CONTAINER_CLASS_ACTIVE = 'container_class-active';
 
 const NEXT_BUTTON = document.querySelector(".next_button");
 const CLASS_BLOCK = document.querySelector(".class_block");
@@ -26,13 +26,21 @@ function clean_items(a) {
             if (FOCUS[i].classList.contains(FOCUS_ACTIVE)) {
                 FOCUS[i].classList.remove(FOCUS_ACTIVE);
             }
+        }
     }
-    } else if (a == "class") {
+    if (a == "class") {
         for (let i = 0; i < CLASS.length; i++) {
             if (CLASS[i].classList.contains(CLASS_ACTIVE)) {
                 CLASS[i].classList.remove(CLASS_ACTIVE);
             }
+        }
     }
+    if (a == "container_class") {
+        for (let i = 0; i < CONTAINER_CLASS.length; i++) {
+            if (CONTAINER_CLASS[i].classList.contains(CONTAINER_CLASS_ACTIVE)) {
+                CONTAINER_CLASS[i].classList.remove(CONTAINER_CLASS_ACTIVE);
+            }
+        }
     }
 }
 
@@ -92,6 +100,9 @@ FOCUS.forEach(item => {
 
 CLASS.forEach(item => {
     item.addEventListener('click', () => {
+        const CONTAINER = item.parentElement.nextElementSibling;
+        clean_items("container_class");
+
         if (!item.classList.contains(CLASS_ACTIVE)) {
             clean_items("class");
             item.classList.add(CLASS_ACTIVE);
@@ -124,8 +135,11 @@ CLASS.forEach(item => {
             NEXT_BUTTON.disabled = true;
             console.log(NEXT_BUTTON.disabled);   
         }
+
+        CONTAINER.classList.toggle('container_class-active');
     });
 });
+
 // if (race != undefined) {
 //     CLASS_BLOCK.setAttribute("class", "class_block_visible");
 // }
