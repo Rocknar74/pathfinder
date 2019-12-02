@@ -54,70 +54,96 @@ html {
 body {
     background: #8b816d; /*#55504a */
 }
+header {
+    background:#686052;
+}
+.all_content {
+    margin: 0 auto;
+    height: 100%;
+    width: 90%;
+    max-width: 1800px;
+}
 strong {
     color: #3f3c38; 
 }
-caption {
-    background: #978c76;
-    font-size: 67px;
-    color: #3f3c38;
-    font-weight: bold;
-    width: auto;
+.block_header {
+    color: #eade93;
+    font-size: 87px;
+    text-shadow: #4d362e 0 10px 10px;
+    text-align: center;
+    padding: 0 0 20px 0;
 }
-
-h1 { 
+.block_footer {
     color: #eade93;
     font-size: 87px;
     text-shadow: #4d362e 0 10px 10px;
     text-align: center;
 }
-h2 {
+.name_race {
     background:#978c76;
     font-size: 67px;
     color: #3f3c38;
+    text-align: center;
+    margin: 0 0 10px 0;
+    font-weight: bold;
 }
-h3 {
+.h3_in_class {
     font-size: 37px;
     color: #869962;
     background: #5e616042; /*#5e616042*/
-}
-header {
-    background:#686052;
 }
 .logo {
     background:#686052;
     text-align: center;
 }
-
-.all_content {
-    max-width: 1800px;
-    margin: 0 auto;
-}
 .race_block, .class_block, .select_stats_block {
-    height: 100%;
+    
 
+}
+.race_block {
+    display: flex;
+    flex-direction: column;
 }
 .race_table {
-    /* border: 1px dotted black; */
-    border-spacing: 5px;
-    /* background: rgb(0, 0, 0); */
-    width: 1800px;
+    flex: 1;
     margin-bottom: 50px;
     font: 24px 'Mason Chronicles', sans-serif;
 }
-
 .photo {
-    position: absolute;
     height: 500px;
 }
+.photo_DF {
+    background: url(images/Dwarf_F.png) bottom left no-repeat;
+    background-size: auto 100%;
+}
+.photo_DM {
+    background: url(images/Dwarf_M.png) bottom left no-repeat;
+    background-size: auto 100%;
+}
+.photo_EF {
+    background: url(images/elf_f.png) bottom left no-repeat;
+    background-size: auto 100%;
+}
+.photo_EM {
+    background: url(images/elf_m.png) bottom left no-repeat;
+    background-size: auto 100%;
+}
+.photo_HF {
+    background: url(images/human_f.png) bottom left no-repeat;
+    background-size: auto 100%;
+}
+.photo_HM {
+    background: url(images/human_m.png) bottom left no-repeat;
+    background-size: auto 100%;
+}
 .focus {
-    position: relative;
-    height: 500px;
+    height: 100%;
     opacity: 0;
     transition-duration: 0.25s;
     cursor: pointer;
 }
 .focus:hover, .focus_active {
+    transition-duration: 0.4s;
     opacity: 1;
 }
 
@@ -126,56 +152,76 @@ header {
     padding-right: 9px;
     width: 115px;
 }
-.dwarf_row, .elf_row, .human_row {
-    text-align: justify;
-    height: min-content;
+@media (min-width: 1400px) {
+    .dwarf_row, .elf_row, .human_row {
+        text-align: justify;
+        display: flex;
+        flex-direction: row;
+    }
+    .flowers {
+        flex-basis: 3%;
+        padding: 0 3px 0 3px;
+    }
+    .flowers img {
+        max-height: 500px;
+    }
+}
+@media (max-width: 1399px) {
+    .dwarf_row, .elf_row, .human_row {
+        text-align: justify;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .flowers img{
+        transform: rotate(90deg);
+        max-height: 80vw;
+        margin: -170px 0 -170px 190px;
+    }
 }
 
 .dwarf_history {
-    width: 25%;
+    flex-basis: 26%;
 }
 .dwarf_stats {
-    width: 39%;
+    flex-basis: 38%;
 }
-.dwarf_photo_f {
-    width: 13.5%;
+.photo_DF {
+    flex-basis: 13%;
 }
-.dwarf_photo_m {
-    width: 20%;
+.photo_DM {
+    flex-basis: 18%;
 }
 
 .elf_history {
-    width: 23.5%;
+    flex-basis: 23.5%;
 }
 .elf_stats {
-    width: 38.5%;
+    flex-basis: 38.5%;
 }
-.elf_photo_f {
-    width: 20%;
+.photo_EF {
+    flex-basis: 20%;
 }
-.elf_photo_m {
-    width: 15%;
+.photo_EM {
+    flex-basis: 15%;
 }
 
 .human_history {
-    width: 41.5%;
+    flex-basis: 41.5%;
 }
 .human_stats {
-    width: 19.5%;
+    flex-basis: 19.5%;
 }
-.human_photo_f {
-    width: 17%;
+.photo_HF {
+    flex-basis: 15.5%;
 }
-.human_photo_m {
-    width: 19%;
+.photo_HM {
+    flex-basis: 19.5%;
 }
 
-.flowers {
-    width: 3%; 
-}
-.flowers img {
-    width: 113%;   
-}
+
+
+
 
 .dwarf_stats ul,.elf_stats ul,.human_stats ul {
     list-style-type: none;  
@@ -218,7 +264,7 @@ header {
     color: #8b816d;
     cursor: pointer;
     -webkit-text-stroke: 1px #eade93;
-    transition: 0.4s;
+    transition: 0.23s;
 }
 .name_class_active {
     color: #634c1496;
@@ -233,11 +279,11 @@ header {
 
 .container_class {
     display: none;
-    transition: 0.25s;
+    transition-duration: 0.25s;
 }
 .container_class-active {
     display: block;
-    transition: 0.5s;
+    transition-duration: 0.5s;
 }
 
 .container-out {
@@ -245,19 +291,18 @@ header {
     justify-content: center;
 }
 .container-special {
-    /* border: 1px solid lavender; */
     flex: 3;
     margin-right: 10px;
+    background: #5e616042; /*#5e616042*/
 }
 .container-armor {
-    /* border: 1px solid lavender; */
     flex: 1;
+    background: #5e616042; /*#5e616042*/
 }
 
 .warrior, .wizard, .rogue, .priest {
     padding: 20px;
 }
-
 
 .warrior {
     background: linear-gradient(330deg, #cf111131, #cf111131, #240606 85%), url(images/warrior.jpg)top no-repeat fixed;
@@ -265,7 +310,6 @@ header {
     background-size: 100%;
     /* box-shadow: #3f3c38, 0 50px 20px 0; */
 }
-
 .warrior h2 {
     font-family: 'ljk_Remains', sans-serif;
     font-size: 110px;
@@ -310,7 +354,7 @@ header {
     display: none;
 }
 
-footer {
+.footer {
     background:#686052;
     text-align: center;
 }
