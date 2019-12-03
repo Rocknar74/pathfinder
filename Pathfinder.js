@@ -169,11 +169,11 @@ var reroll;
 var stats = [];
 function random_stats() {
     stats = [];
-    let p = 0;
+    let highestStat = 0;
     for (let i = 0; i < 6; i++) {
         stats[i] = Math.round(Math.random() * 15 + 3);
-        if (stats[i] > p) {
-            p=stats[i]
+        if (stats[i] > highestStat) {
+            highestStat = stats[i]
         }
     }
     let sumStats = 0;
@@ -223,13 +223,13 @@ function random_stats() {
                 break;
         }
     }
-    if (sumStats > 3 && p > 13) {
+    if (sumStats > 3 && highestStat > 13) {
         reroll = false;
     } else {reroll = true;}
-    console.log("stats =     " + stats);
-    console.log("p =         " + p);
-    console.log("sumStats =  " + sumStats);
-    console.log("reroll =    " + reroll);
+    console.log("stats =        " + stats);
+    console.log("highest stat = " + highestStat);
+    console.log("sumStats =     " + sumStats);
+    console.log("reroll =       " + reroll);
 }
 random_stats()
 

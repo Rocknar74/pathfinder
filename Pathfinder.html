@@ -13,16 +13,18 @@
 </header>
 <main class="all_color">
 <div class="all_content">
-    <h1 class="block_header">Выбор расы и пола</h1>
+    <h1 class="block_headline">Выбор расы и пола</h1>
 <div class="race_block">
     <div class="race_table">
         <h2 class="name_race">Дварфы</h2>
         <div class="dwarf_row">
-            <div class="photo photo_DF">
-                <img class="focus" title="Дворф женщина" src="images/Dwarf_F_focus.png" alt="">
-            </div>
-            <div class="photo photo_DM">
-                <img class="focus" title="Дворф мужчина" src="images/Dwarf_M_focus.png" alt="">
+            <div class="photo_DF_DM">
+                <div class="photo photo_DF">
+                    <img class="focus" title="Дворф женщина" src="images/Dwarf_F_focus.png" alt="">
+                </div>
+                <div class="photo photo_DM">
+                    <img class="focus" title="Дворф мужчина" src="images/Dwarf_M_focus.png" alt="">
+                </div>
             </div>
             <div class="dwarf_history">
                 <img class="decoration" src="images/D_decoration.png" alt="">
@@ -63,22 +65,26 @@
                     <li><strong>Изменение характеристик</strong>: +2 к Ловкости и Интеллекту, -2 из Выносливости.</li>
                 </ul>
             </div>
-            <div class="photo photo_EF">
-                    <img class="focus" title="Эльф женщина" src="images/elf_f_focus.png" alt="">
-            </div>
-            <div class="photo photo_EM">
-                    <img class="focus" title="Эльф мужчина" src="images/elf_m_focus.png" alt="">
+            <div class="photo_EF_EM">
+                <div class="photo photo_EF">
+                        <img class="focus" title="Эльф женщина" src="images/elf_f_focus.png" alt="">
+                </div>
+                <div class="photo photo_EM">
+                        <img class="focus" title="Эльф мужчина" src="images/elf_m_focus.png" alt="">
+                </div>
             </div>
         </div>
     </div>
     <div class="race_table">  
         <h2 class="name_race">Люди</h2>
         <div class="human_row">
-            <div class="photo photo_HF">
-                <img  class="focus" title="Человек женщина" src="images/human_f_focus.png" alt="">
-            </div>
-            <div class="photo photo_HM">
-                <img  class="focus" title="Человек мужчина" src="images/human_m_focus.png" alt="">
+            <div class="photo_HF_HM">
+                <div class="photo photo_HF">
+                    <img  class="focus" title="Человек женщина" src="images/human_f_focus.png" alt="">
+                </div>
+                <div class="photo photo_HM">
+                    <img  class="focus" title="Человек мужчина" src="images/human_m_focus.png" alt="">
+                </div>
             </div>
             <div class="human_history">
                 <img class="decoration" src="images/N_decoration.png" alt="">
@@ -99,124 +105,171 @@
     </div>
 </div> <!-- конец .race_block -->
 <div class="class_block" display = "none">
-    <h1 class="block_header">Выбор класса</h1>
+    <h1 class="block_headline">Выбор класса</h1>
     <div class="class_table">
         <div class="warrior">
             <div class="name_class_background"><h2 class="name_class">Воин</h2></div>
             <div class="container_class">
-            <p>Вас закалило горнило войны. Вы властвуете на поле боя, постигаете искусство битвы с целью выковать из себя живое оружие!</p>
-            <div class="container-out">
-                <div class="container-special">
-                    <h3 class="h3_in_class">Особенности класса</h3>
-                    <table class="class_table_stats">
-                        <tr>
-                            <td>Стойкость:</td>
-                            <td>+2</td>
-                            <td>Здоровье:</td>
-                            <td>10</td>
-                        </tr>
-                        <tr>
-                            <td>Реакция:</td>
-                            <td>+0</td>
-                            <td>Мод. атаки:</td>
-                            <td>+1</td>
-                        </tr>
-                        <tr>
-                            <td>Воля:</td>
-                            <td>+0</td>
-                            <td>Пункты навыков:</td>
-                            <td>2</td>
-                        </tr>
-                    </table>
-                    <p>Лазание, Плавание, Верховая езда, Знание(подземелья)</p>
-                </div>
-                <div class="container-armor">
-                    <h3 class="h3_in_class">Оружие и броня</h3>
-                    <p>Может использовать любую броню и оружие.</p>
-                </div>
-            </div> <!-- конец .container-1 -->
-            <p>Выберите один из видов оружия, он получает +1 к попаданию.</p>
-            <!-- <table class="weapon_selector">
-                <tr>
-                    <td>Короткий лук</td>
-                    <td>Боевой молот</td>
-                    <td>Короткий меч</td>
-                    <td>Боевой топор</td>
-                    <td>Лёгкий молот</td>
-                    <td>Двуручный меч</td>
-                </tr>
-                <tr>
-                    <td>Метательный топор</td>
-                    <td>Двуручный топор</td>
-                    <td>Нож-звезда</td>
-                    <td>Длинный лук</td>
-                    <td>Рапира</td>
-                    <td>Длинный меч</td>
-                </tr>
-                <tr>
-                    <td>Скимитар</td>
-                    <td>Лёгкий араблет</td>
-                    <td>Дротик</td>
-                    <td>Пилум</td>
-                    <td>Дубина</td>
-                    <td>Посох</td>
-                </tr>
-                <tr>
-                    <td>Кинжал</td>
-                    <td>Праща</td>
-                    <td>Копьё</td>
-                    <td>Тяжёлая булава</td>
-                    <td>Короткое копьё</td>
-                    <td>Тяжёлый арбалет</td>
-                </tr>
-                <tr>
-                    <td>Лёгкая булава</td>
-                    <td>Удар без оружия</td>
-                </tr>
-            </table> -->
+                <p>Вас закалило горнило войны. Вы властвуете на поле боя, постигаете искусство битвы с целью выковать из себя живое оружие!</p>
+                <div class="container_class_1">
+                    <div class="container-special">
+                        <h3 class="h3_in_class">Особенности класса</h3>
+                        <table class="class_table_stats">
+                            <tr>
+                                <td>Стойкость:</td>
+                                <td>+2</td>
+                                <td>Здоровье:</td>
+                                <td>10</td>
+                            </tr>
+                            <tr>
+                                <td>Реакция:</td>
+                                <td>+0</td>
+                                <td>Мод. атаки:</td>
+                                <td>+1</td>
+                            </tr>
+                            <tr>
+                                <td>Воля:</td>
+                                <td>+0</td>
+                                <td>Пункты навыков:</td>
+                                <td>2</td>
+                            </tr>
+                        </table>
+                        <p>Лазание, Плавание, Верховая езда, Знание(подземелья)</p>
+                    </div>
+                    <div class="container-armor">
+                        <h3 class="h3_in_class">Оружие и броня</h3>
+                        <p>Может использовать любую броню и оружие.</p>
+                    </div>
+                </div> <!-- конец .container_class_1 -->
+                <div class="container_class_2">
+                    <h3 class="h3_in_class">Выберите один из видов оружия, он получает +1 к попаданию:</h3>
+                    <div class="weapon_selector_warrior">
+                        <div>Короткий лук</div>
+                        <div>Боевой молот</div>
+                        <div>Короткий меч</div>
+                        <div>Боевой топор</div>
+                        <div>Лёгкий молот</div>
+                        <div>Двуручный меч</div>
+                        <div>Метательный топор</div>
+                        <div>Двуручный топор</div>
+                        <div>Нож-звезда</div>
+                        <div>Длинный лук</div>
+                        <div>Рапира</div>
+                        <div>Длинный меч</div>
+                        <div>Скимитар</div>
+                        <div>Лёгкий араблет</div>
+                        <div>Дротик</div>
+                        <div>Пилум</div>
+                        <div>Дубина</div>
+                        <div>Посох</div>
+                        <div>Кинжал</div>
+                        <div>Праща</div>
+                        <div>Копьё</div>
+                        <div>Тяжёлая булава</div>
+                        <div>Короткое копьё</div>
+                        <div>Тяжёлый арбалет</div>
+                        <div>Лёгкая булава</div>
+                        <div>Удар без оружия</div>
+                    </div>
+                </div>  <!-- конец .container_class_2 -->
             </div> <!-- конец .container_class -->
         </div> <!-- конец .warrior -->
         <div class="wizard">
             <div class="name_class_background"><h2 class="name_class">Волшебник</h2></div>
             <div class="container_class">
-            <p>Вы повелеваете магией, сокрушая своих противников с помощью мистических сил! Книга заклинаний - ваше лучшее оружие, главная защита и первейший по­мощник во всех ваших приключениях!</p>
-            <div class="container-out">
-                <div class="container-special">
-                <h3 class="h3_in_class">Особенности класса</h3>
-                <table class="class_table_stats">
-                    <tr>
-                        <td>Стойкость:</td>
-                        <td>+0</td>
-                        <td>Здоровье:</td>
-                        <td>6</td>
-                    </tr>
-                    <tr>
-                        <td>Реакция:</td>
-                        <td>+0</td>
-                        <td>Мод. атаки:</td>
-                        <td>+0</td>
-                    </tr>
-                    <tr>
-                        <td>Воля:</td>
-                        <td>+2</td>
-                        <td>Пункты навыков:</td>
-                        <td>2</td>
-                    </tr>
-                </table>
-                <p>Знание (краеведение), Знание(подземелья), Знание(природа), Знание(география), Знание(история), Знание(магия), Знание(религия), Колдовство.</p>
+                <p>Вы повелеваете магией, сокрушая своих противников с помощью мистических сил! Книга заклинаний - ваше лучшее оружие, главная защита и первейший по­мощник во всех ваших приключениях!</p>
+                <div class="container_class_1">
+                    <div class="container-special">
+                    <h3 class="h3_in_class">Особенности класса</h3>
+                    <table class="class_table_stats">
+                        <tr>
+                            <td>Стойкость:</td>
+                            <td>+0</td>
+                            <td>Здоровье:</td>
+                            <td>6</td>
+                        </tr>
+                        <tr>
+                            <td>Реакция:</td>
+                            <td>+0</td>
+                            <td>Мод. атаки:</td>
+                            <td>+0</td>
+                        </tr>
+                        <tr>
+                            <td>Воля:</td>
+                            <td>+2</td>
+                            <td>Пункты навыков:</td>
+                            <td>2</td>
+                        </tr>
+                    </table>
+                    <p>Знание (краеведение), Знание(подземелья), Знание(природа), Знание(география), Знание(история), Знание(магия), Знание(религия), Колдовство.</p>
+                    </div>
+                    <div class="container-armor">
+                        <h3 class="h3_in_class">Оружие и броня</h3>
+                        <p>Не может носить броню. Дубина, кинжал, тяжёлый арбалет, лёгкий арбалет, посох.</p>
+                    </div>
                 </div>
-                <div class="container-armor">
-                    <h3 class="h3_in_class">Оружие и броня</h3>
-                    <p>Не может носить броню. Дубина, кинжал, тяжёлый арбалет, лёгкий арбалет, посох.</p>
+                <div class="container_class_2">
+                    <h3 class="h3_in_class">Выберите один мистически связанный с вами предмет:</h3>
+                    <div class="weapon_selector_wizard">
+                        <div>Искусно сделанный боевой посох</div>
+                        <div>Искусно сделанный кинжал</div>
+                        <div>Кольцо</div>
+                        <div>Жезл</div>
+                    </div>
+                    <p>Вы получаете его бесплатно. Раз в день вы можете использовать его, чтобы применить одно любое заклинание из вашей книги. Вам не нужно под­готавливать  это  заклинание  заранее. Предмет, мистически  связанный  с вами,  позволяет  вам прибегнуть к заклинанию, которое вам нужно больше всего. Замена потерянного или уничтожен­ного предмета стоит 200 золотых монет.</p>
                 </div>
-            </div>
+                <div class="container_class_3">
+                    <h3 class="h3_in_class">Выберите школу магии:</h3>
+                    <div class="school_magic_selector_wizard">
+                        <div class="school_magic">
+                            <div class="bg_universalism">
+                                <p class="name_school_magic">Школа</p>
+                            </div>
+                            <div class="bg_universalism">
+                                <p class="name_school_magic">универсализма</p>
+                            </div>
+                            <div class="bg_universalism">
+                                <p>Маги-универсалисты знают понемногу о каждой школе магии. Вы можете изучать и творить любые заклинания.</p>
+                            </div>
+                            <div class="container_school_magic">
+                                <h4 class="h4_in_school_magic">Рука-помощник</h4>
+                                <p>Вы можете поразить противников на расстоянии до 30 футов, бросив в них своё оружие с помощью магии. При проверке попадания вы используете d20 + модификатор атаки + Инт. Оружие наносит обычный урон + Сил, после чего мгновенно возвращается к вам. Вы можете использовать эту способность 3 + Инт раз в день.</p>
+                            </div>
+                        </div>
+                        <div class="school_magic">
+                            <div class="bg_illusion">
+                                <p class="name_school_magic">Школа</p>
+                            </div>
+                            <div class="bg_illusion">
+                                <p class="name_school_magic">иллюзии</p>
+                                </div>
+                            <div class="bg_illusion">
+                                <p>С помощью иллюзий можно сделать вещи невидимыми или изменить из внешний облик. Иллюзионисты хорошо обманывают и обводят вопальца, но им сложнее даются заклинания, нацеленные на перемещение или изменение свойств физических объектов.</p>
+                            </div>
+                            <div class="container_school_magic">
+                                <h4 class="h4_in_school_magic">Изменение облика</h4>
+                                <p>Раз в день вы можете сотворить заклинание изменения облика, не подготавливая его заранее.</p>
+                                <h4 class="h4_in_school_magic">Ослепляющий луч</h4>
+                                <p>Вы можете создать луч нестерпимо якого света. Совершите дистанционную атаку касанием. При попадании, цель автоматически ослеплена на 1 раунд. Вы можете использовать эту способность 3 + Инт. раз в день.</p>
+                                <h4 class="h4_in_school_magic">Запрещённые заклинанния</h4>
+                                <p>Вы не можете учить или применять заклинания устрашения, ложная жизнь, плавное падение, полёт, ускорение, стук, левитация и касание вампира.</p>
+                            </div>
+                        </div>
+                        <div>
+                            <div>Школа разрушения</div>
+                            <div>Магия разрушения связана с управлением стихиями. Многие маги разрушения предпочитают использовать атакующие заклинания вместо защиты или обманных трюков.</div>
+                            <div></div>
+                        </div>
+                    </div>
+                    <p>Все известные вам магические формулы находятся на страницах вашей книги заклинаний. На 1-м уровне вам известно лишь несколько заклятий, но позже, набравшись опыта, вы получите доступ и к другим тайнам магии. Кроме того, вы способны переписывать заклинания из свитков и книг других волшебников. Потеряв свою книгу, вы не сможете подготавливать заклинания до тех пор, пока не вернёте её или не найдёте замену!</p>
+                </div>
             </div>
         </div> <!-- конец .wizard -->
         <div class="rogue">
             <div class="name_class_background"><h2 class="name_class">Плут</h2></div>
             <div class="container_class">
             <p>Вы быстры ловки, умело прячетесь, знаете толк в ловушках и наносите мертельные удары исподтишка! Вы всегда на шаг впереди опасности.</p>
-            <div class="container-out">
+            <div class="container_class_1">
                 <div class="container-special">
                     <h3 class="h3_in_class">Особенности класса</h3>
                     <table class="class_table_stats">
@@ -253,7 +306,7 @@
             <div class="name_class_background"><h2 class="name_class">Жрец</h2></div>
             <div class="container_class">
             <p>Вы воинственный священник, силой своего бога поражающий врагов и исцеляющий союзниклв в разгаре битвы!</p>
-            <div class="container-out">
+            <div class="container_class_1">
                 <div class="container-special">
                 <h3 class="h3_in_class">Особенности класса</h3>
                 <div>
@@ -290,7 +343,7 @@
     </div> <!-- конец .class_table -->
 </div> <!-- конец .class_block -->
 <div class="select_stats_block">
-    <h1 class="block_header">Распределите характеристики</h1>
+    <h1 class="block_headline">Распределите характеристики</h1>
     <div class="coin"><img class="draggableCoin" src="images/stat18_ver2.png" alt="images/gold18.png" draggable="true" ondragstart='onDragStart(event);'> <div class="plant" ondragover='onDragOver(event);' ondrop='onDrop(event);'>dropzone</div></div>
 </div>
 
