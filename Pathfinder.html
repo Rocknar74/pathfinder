@@ -104,7 +104,7 @@
         </div>
     </div>
 </div> <!-- конец .race_block -->
-<div class="class_block" display = "none">
+<div class="class_block">
     <h1 class="block_headline">Выбор класса</h1>
     <div class="class_table">
         <div class="warrior">
@@ -223,30 +223,30 @@
                     <div class="school_magic_selector_wizard">
                         <div class="school_magic">
                             <div class="bg_universalism">
-                                <p class="name_school_magic">Школа</p>
+                                <img src="images/school.png" title="Школа универсализма" alt="">
                             </div>
                             <div class="bg_universalism">
-                                <p class="name_school_magic">универсализма</p>
+                                <img src="images/universal_magic.png" title="Школа универсализма" alt="">
                             </div>
                             <div class="bg_universalism">
                                 <p>Маги-универсалисты знают понемногу о каждой школе магии. Вы можете изучать и творить любые заклинания.</p>
                             </div>
-                            <div class="container_school_magic">
+                            <div class="container_school_magic color_in_universalism">
                                 <h4 class="h4_in_school_magic">Рука-помощник</h4>
                                 <p>Вы можете поразить противников на расстоянии до 30 футов, бросив в них своё оружие с помощью магии. При проверке попадания вы используете d20 + модификатор атаки + Инт. Оружие наносит обычный урон + Сил, после чего мгновенно возвращается к вам. Вы можете использовать эту способность 3 + Инт раз в день.</p>
                             </div>
                         </div>
                         <div class="school_magic">
                             <div class="bg_illusion">
-                                <p class="name_school_magic">Школа</p>
+                                <img src="images/school.png" title="Школа иллюзии" alt="">
                             </div>
                             <div class="bg_illusion">
-                                <p class="name_school_magic">иллюзии</p>
-                                </div>
+                                <img src="images/illusion_magic.png" title="Школа иллюзии" alt="">
+                            </div>
                             <div class="bg_illusion">
                                 <p>С помощью иллюзий можно сделать вещи невидимыми или изменить из внешний облик. Иллюзионисты хорошо обманывают и обводят вопальца, но им сложнее даются заклинания, нацеленные на перемещение или изменение свойств физических объектов.</p>
                             </div>
-                            <div class="container_school_magic">
+                            <div class="container_school_magic color_in_illusion">
                                 <h4 class="h4_in_school_magic">Изменение облика</h4>
                                 <p>Раз в день вы можете сотворить заклинание изменения облика, не подготавливая его заранее.</p>
                                 <h4 class="h4_in_school_magic">Ослепляющий луч</h4>
@@ -255,10 +255,24 @@
                                 <p>Вы не можете учить или применять заклинания устрашения, ложная жизнь, плавное падение, полёт, ускорение, стук, левитация и касание вампира.</p>
                             </div>
                         </div>
-                        <div>
-                            <div>Школа разрушения</div>
-                            <div>Магия разрушения связана с управлением стихиями. Многие маги разрушения предпочитают использовать атакующие заклинания вместо защиты или обманных трюков.</div>
-                            <div></div>
+                        <div class="school_magic">
+                            <div class="bg_distruction">
+                                <img src="images/school.png" alt="">
+                            </div>
+                            <div class="bg_distruction">
+                                <img src="images/destruction_magic.png" alt="">
+                            </div>
+                            <div class="bg_distruction">
+                                <p>Магия разрушения связана с управлением стихиями. Многие маги разрушения предпочитают использовать атакующие заклинания вместо защиты или обманных трюков.</p>
+                            </div>
+                            <div class="container_school_magic color_in_distruction">
+                                <h4 class="h4_in_school_magic">Пылающие руки</h4>
+                                <p>Раз в день вы можете сотворить заклинание пылающие руки, не подготавливае его заранее.</p>
+                                <h4 class="h4_in_school_magic">Сгусток энергии</h4>
+                                <p>Вы поражаете сгустком энергии одного противника в пределах 30 футов (6 клеток), автоматически нанося ему d4+1 урона. Использование этой способности является основным действием. Вы можете применять сгусток энергии 3 + Инт раз в день.</p>
+                                <h4 class="h4_in_school_magic">Запрещённые заклинанния</h4>
+                                <p>Вы не можете учить или применять заклинания кислотная стрела, изменение облика, марево, невидимость, магический доспех, смрадное облако и паутина.</p>
+                            </div>
                         </div>
                     </div>
                     <p>Все известные вам магические формулы находятся на страницах вашей книги заклинаний. На 1-м уровне вам известно лишь несколько заклятий, но позже, набравшись опыта, вы получите доступ и к другим тайнам магии. Кроме того, вы способны переписывать заклинания из свитков и книг других волшебников. Потеряв свою книгу, вы не сможете подготавливать заклинания до тех пор, пока не вернёте её или не найдёте замену!</p>
@@ -351,7 +365,7 @@
 </main>
 
 <footer class="footer">
-    <button disabled class="next_button" title="Перейти на следующий этап"><h1 class="block_footer">Продолжить</h1></button><button disabled class="previous_button" title="Вернуться к предыдущему"><h1 class="block_footer">Назад</h1></button>
+    <button disabled class="next_button" title="Перейти на следующий этап"><h1 class="h1_in_footer">Продолжить</h1></button><button disabled class="previous_button" title="Вернуться к предыдущему"><h1 class="h1_in_footer">Назад</h1></button>
 </footer>
 <script src="Pathfinder.js"></script>
 </body>
