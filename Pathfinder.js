@@ -1,81 +1,82 @@
-// var race = undefined;
-// var allData.sex = undefined;
 
 const FOCUS = document.querySelectorAll('.focus');
-const FOCUS_ACTIVE = 'focus_active';
+const FOCUS_ACTIVE = 'focus-active';
 
 const CLASS = document.querySelectorAll('.name_class');
-const CLASS_ACTIVE = 'name_class_active';
+const CLASS_ACTIVE = 'name_class-active';
 
-const CONTAINER_CLASS = document.querySelectorAll(".container_class")
+const CONTAINER_CLASS = document.querySelectorAll('.container_class')
 const CONTAINER_CLASS_ACTIVE = 'container_class-active';
+
+const LOVE_WEAPON_WARRIOR = document.querySelectorAll('.love_weapon_warrior');
+const LOVE_WEAPON_WARRIOR_ACTIVE = 'love_weapon_warrior-active';
 
 const NEXT_BUTTON = document.querySelector(".next_button");
 const CLASS_BLOCK = document.querySelector(".class_block");
 
+// console.log(FOCUS);
+// console.log(CLASS);
+// console.log(CLASS_ACTIVE);
+// console.log(FOCUS_ACTIVE);
+// console.log(CONTAINER_CLASS);
 
-
-console.log(FOCUS);
-console.log(CLASS);
-console.log(CLASS_ACTIVE);
-console.log(FOCUS_ACTIVE);
-console.log(CONTAINER_CLASS);
-
-function clean_items(a) {
-    if (a == "focus") {
-        for (let i = 0; i < FOCUS.length; i++) {
-            if (FOCUS[i].classList.contains(FOCUS_ACTIVE)) {
-                FOCUS[i].classList.remove(FOCUS_ACTIVE);
+function clean_items (a, b) {
+        a.forEach(item => {
+            if (item.classList.contains(b)) {
+                item.classList.remove(b);
             }
-        }
-    }
-    if (a == "class") {
-        for (let i = 0; i < CLASS.length; i++) {
-            if (CLASS[i].classList.contains(CLASS_ACTIVE)) {
-                CLASS[i].classList.remove(CLASS_ACTIVE);
-            }
-        }
-    }
-    if (a == "container_class") {
-        for (let i = 0; i < CONTAINER_CLASS.length; i++) {
-            if (CONTAINER_CLASS[i].classList.contains(CONTAINER_CLASS_ACTIVE)) {
-                CONTAINER_CLASS[i].classList.remove(CONTAINER_CLASS_ACTIVE);
-            }
-        }
-    }
+        });
+    // if (a == "container_class") {
+    //     for (let i = 0; i < CONTAINER_CLASS.length; i++) {
+    //         if (CONTAINER_CLASS[i].classList.contains(CONTAINER_CLASS_ACTIVE)) {
+    //             CONTAINER_CLASS[i].classList.remove(CONTAINER_CLASS_ACTIVE);
+    //         }
+    //     }
+    // }
 }
+LOVE_WEAPON_WARRIOR.forEach(love => {
+    love.addEventListener('click', () => {
+        if (!love.classList.contains(LOVE_WEAPON_WARRIOR_ACTIVE)) {
+            clean_items(LOVE_WEAPON_WARRIOR, LOVE_WEAPON_WARRIOR_ACTIVE);
+            love.classList.add(LOVE_WEAPON_WARRIOR_ACTIVE);
+        } else {
+            clean_items(LOVE_WEAPON_WARRIOR, LOVE_WEAPON_WARRIOR_ACTIVE)
+        }
+    });
+});
 
 FOCUS.forEach(focus => {
     focus.addEventListener('click', () => {
         if (!focus.classList.contains(FOCUS_ACTIVE)) {
-            clean_items("focus");
+            clean_items(FOCUS, FOCUS_ACTIVE);
+            // FOCUS.clean_items();
             focus.classList.add(FOCUS_ACTIVE);
             for (let i = 0; i < FOCUS.length; i++) {
                 if (FOCUS[i].classList.contains(FOCUS_ACTIVE)) {
                     switch(i) {
                         case (0):
-                            allData.sex = "f";
-                            allData.race = "dwarf";
+                            all_data.A.sex = "Ж";
+                            all_data.A.race = "Дварф";
                             break;
                         case (1):
-                            allData.sex = "m";
-                            allData.race = "dwarf";
+                            all_data.A.sex = "М";
+                            all_data.A.race = "Дварф";
                             break;
                         case (2):
-                            allData.sex = "f";
-                            allData.race = "elf";
+                            all_data.A.sex = "Ж";
+                            all_data.A.race = "Ельф";
                             break;
                         case (3):
-                            allData.sex = "m";
-                            allData.race = "elf";
+                            all_data.A.sex = "М";
+                            all_data.A.race = "Ельф";
                             break;
                         case (4):
-                            allData.sex = "f";
-                            allData.race = "human";
+                            all_data.A.sex = "Ж";
+                            all_data.A.race = "Человек";
                             break;
                         case (5):
-                            allData.sex = "m";
-                            allData.race = "human";
+                            all_data.A.sex = "М";
+                            all_data.A.race = "Человек";
                             break;
                     }
                 }
@@ -83,13 +84,13 @@ FOCUS.forEach(focus => {
             NEXT_BUTTON.disabled = false;
             CLASS_BLOCK.setAttribute("class", "class_block_visible");
             console.log(NEXT_BUTTON.disabled);
-            console.log(allData.sex);
-            console.log(allData.race);
-            console.log(allData);
+            console.log(all_data.A.sex);
+            console.log(all_data.A.race);
+            // console.log(all_data);
         } else {
-            clean_items("focus");
-            allData.race = undefined;
-            allData.sex = undefined;
+            clean_items(FOCUS, FOCUS_ACTIVE);
+            // all_data.A.race = undefined;
+            // all_data.A.sex = undefined;
             CLASS_BLOCK.setAttribute("class", "class_block");
             NEXT_BUTTON.disabled = true;
             console.log(NEXT_BUTTON.disabled);   
@@ -101,38 +102,38 @@ CLASS.forEach(classes => {
     classes.addEventListener('click', () => {
         const CONTAINER = classes.parentElement.nextElementSibling;
         if (!classes.classList.contains(CLASS_ACTIVE)) {
-            clean_items("class");
-            clean_items("container_class");
+            clean_items(CLASS, CLASS_ACTIVE);
+            clean_items(CONTAINER_CLASS, CONTAINER_CLASS_ACTIVE);
             CONTAINER.classList.toggle('container_class-active');
             classes.classList.add(CLASS_ACTIVE);
             for (let i = 0; i < CLASS.length; i++) {
                 if (CLASS[i].classList.contains(CLASS_ACTIVE)) {
                     switch(i) {
                         case (0):
-                            allData.class = "warrior"
+                            all_data.A.class = "Воин";
                             break;
                         case (1):
-                            allData.class = "wizard"
+                            all_data.A.class = "Волшебник";
                             break;
                         case (2):
-                            allData.class = "rogue"
+                            all_data.A.class = "Плуг";
                             break;
                         case (3):
-                            allData.class = "priest"
+                            all_data.A.class = "Жрец";
                             break;
                     }
                 }
             }
             NEXT_BUTTON.disabled = false;
             console.log(NEXT_BUTTON.disabled);
-            console.log(allData.class);
+            console.log(all_data.A.class);
         } else {
-            clean_items("class");
-            clean_items("container_class");
-            allData.class = undefined;
+            clean_items(CLASS, CLASS_ACTIVE);
+            clean_items(CONTAINER_CLASS, CONTAINER_CLASS_ACTIVE);
+            // all_data.A.class = undefined;
             NEXT_BUTTON.disabled = true;
             console.log(NEXT_BUTTON.disabled);   
-        }
+        };
     });
 });
 
@@ -173,7 +174,7 @@ function random_stats() {
     for (let i = 0; i < 6; i++) {
         stats[i] = Math.round(Math.random() * 15 + 3);
         if (stats[i] > highestStat) {
-            highestStat = stats[i]
+            highestStat = stats[i];
         }
     }
     let sumStats = 0;
@@ -231,7 +232,7 @@ function random_stats() {
     console.log("sumStats =     " + sumStats);
     console.log("reroll =       " + reroll);
 }
-random_stats()
+random_stats();
 
 
 function delete_stat() {
@@ -249,11 +250,13 @@ var dwarf = {
     charisma: -2,  
     speed: "20 фут.",
     speed_specificity: "Вас не замедляет вес вашей брони и снаряжения.",
-    strong: "+1 к попаданию по гоблинам и оркам",
-    night_vision: "60 футов. Вы видите в темноте.",
-    hatred: "+2 к испытаниям ядами, магией, а также уникальными способностями чудовищ.",
-    weapon_race: "Можете использовать боевой молот и топор"    
-}
+    racial_traits: {
+        strong: "+1 к попаданию по гоблинам и оркам",
+        night_vision: "60 футов. Вы видите в темноте.",
+        hatred: "+2 к испытаниям ядами, магией, а также уникальными способностями чудовищ.",
+        weapon_race: "Можете использовать боевой молот и топор",
+    },    
+};
 
 var elf = {
     dexterity: 2,
@@ -262,53 +265,156 @@ var elf = {
     attencion: 2,
     speed: "30 фут.",
     speed_specificity: "При ношении средней или тяжёлой брони ваша скорость падает до 20 футов в раунд.",
-    twilight_vision: "При низком уровне освещённости вы видите вдвое дальше.",
-    sleep_resist: "Вы невосприимчивы к усыпляющим магическим атакам.",
-    weapon_race: "Можете использовать: короткий и длинный луки, длинные мечи и рапиры"
-}
+    racial_traits: {
+        twilight_vision: "При низком уровне освещённости вы видите вдвое дальше.",
+        sleep_resist: "Вы невосприимчивы к усыпляющим магическим атакам.",
+        weapon_race: "Можете использовать: короткий и длинный луки, длинные мечи и рапиры",
+    }       
+};
 
 var human = {
-    traits: 1,
     skill: 1,
-    bonus_stats: 2,
+    bonus_ability_human: true,
     speed: "30 фут.",
     speed_specificity: "При ношении средней или тяжёлой брони ваша скорость падает до 20 футов в раунд.",
-    bonus_skill: "Каждый уровень, включая первый, вы получаете дополнительный пункт навыка." 
-}
-
-var allData = {
-    race: undefined,
-    sex: undefined,
-    class: undefined,
-    strenght: 0,
-    dexterity: 0,
-    constitution: 0,
-    intelligence: 0,
-    wisdom: 0,
-    charisma: 0,
-    acrobatics: 0,
-    bluff: 0,
-    climb: 0,
-    diplomacy: 0,
-    heal: 0,
-    attencion: 0,
-    insight: 0,
-    traits: 0,
-    skill: 0,
-    bonus_stats: 0,
-    speed: undefined,
-    speed_specificity: undefined,
-}
-
-
-for (let key in dwarf) {
-    if (allData[key] == undefined) {
-         allData[key] = dwarf[key];
-    } else {
-    allData[key] += dwarf[key];
+    racial_traits: {
+        bonus_skill: "Каждый уровень, включая первый, вы получаете дополнительный пункт навыка.", 
     }
-}
+};
 
-console.log(dwarf);
-console.log(allData);
+var warrior = {
+    A: {
+        // class: "warrior",
+    },
+
+    D: {
+        shields: true,
+        light_armor: true,
+        medium_armor: true,
+        heavy_armor: true,
+        simple_weapon: true,
+        martial_weapon: true,
+    },
+
+    E: {
+        hp: 10,
+        fortitude: 2,
+        reflex: 0,
+        will: 0,
+        attack_bonus: 1,
+        skill: 2,
+    },
+
+    I: {
+        feats: {
+            warrior_weapon: undefined,
+            love_weapon_war: "Ув. вл. ор.-",
+        },
+    }
+};
+
+var wizard = {
+
+};
+
+var all_data = {
+    bonus_ability_human: false,
+
+    A: {
+        name: undefined,
+        race: undefined,
+        sex: undefined,
+        class: undefined,
+    },
+    
+    B: {
+        strenght: 0,
+        dexterity: 0,
+        constitution: 0,
+        intelligence: 0,
+        wisdom: 0,
+        charisma: 0,
+    },
+
+    V: {
+        speed: undefined,
+        speed_specificity: undefined,
+        racial_traits: [], 
+    },
+
+    G: {
+        acrobatics: 0,
+        bluff: 0,
+        ride: 0,
+        attencion: 0,
+        diplomacy: 0,
+        knowleadge: {
+            geography: 0,  //география
+            history: 0, //история
+            local: 0, //краеведение
+            dungeoneering: 0,  //подземелья
+            nature: 0, //природа
+            religion: 0, //религия
+            arcana: 0, //магия
+        },
+        spellcraft: 0,
+        climb: 0,
+        heal: 0,
+        mechanics: 0,
+        swim: 0,
+        insight: 0,
+        stealth: 0,
+    },
+    
+    D: {
+        shields: false,
+        light_armor: false,
+        medium_armor: false,
+        heavy_armor: false,
+        simple_weapon: false,
+        martial_weapon: false,
+        special_weapon: [],
+    },
+
+    E: {
+        hp: 0,
+        fortitude: 0,
+        reflex: 0,
+        will: 0,
+        attack_bonus: 0,
+        skill: 0,
+    },
+
+    J: {
+        initiative: 0,
+        melee_attack: 0,
+        ranged_attack: 0,
+        weapon_1: undefined,
+        weapon_2: undefined,
+    },
+
+    Z: {
+        armor_class: 10,
+    },
+
+    I: {
+        feats: {},
+    },
+
+    L: {
+        spells: [],
+    },
+};
+
+
+// for (let key in dwarf) {
+//     if (all_data[key] == undefined) {
+//          all_data[key] = dwarf[key];
+//     } else {
+//     all_data[key] += dwarf[key];
+//     }
+// }
+
+// console.log(dwarf);
+// console.log(all_data);
 

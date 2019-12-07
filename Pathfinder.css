@@ -41,9 +41,9 @@ header {
     margin: 0 auto;
     height: 100%;
 }
-strong {
+.race_block strong {
     color: #3f3c38; 
-    text-shadow: 0px 0px 5px lavender;
+    text-shadow: 0px 0px 3px lavender;
 }
 .block_headline {
     color: #eade93;
@@ -57,10 +57,7 @@ strong {
     background:#686052;
     text-align: center;
 }
-.race_block, .class_block, .select_stats_block {
-    
 
-}
 .race_block {
     display: flex;
     flex-direction: column;
@@ -182,7 +179,7 @@ strong {
     transition-duration: 0.25s;
     cursor: pointer;
 }
-.focus:hover, .focus_active {
+.focus:hover, .focus-active {
     transition-duration: 0.4s;
     opacity: 1;
 }
@@ -222,40 +219,52 @@ strong {
 }
 .name_class {
     font-size: 0.87rem;
-    /* width: 100%; */
-    padding: 0 0 0 35px;
+    width: 100%;
+    height: auto;
+    padding: 0 0 0 0;
     /* overflow: hidden; */
-    background: unset;
+    /* background: unset; */
     text-align: left;
     color: #a09a8f;
-    text-shadow: #000000 0px 15px 10px;
-    transition: 0.4s;
+    /* text-shadow: #000000 0px 15px 10px; */
+    /* transition: 0.4s; */
+    text-decoration: none;
+    font-weight: normal;
+    float: left;
+    transition: 0.3s;
 }
 .name_class:hover {
-    color: #8b816d;
+    padding: 1% 0 1% 35px;
+    color: #b9a980;
     cursor: pointer;
-    -webkit-text-stroke: 0.1px #eade93;
-    transition: 0.23s;
+    text-shadow: #634c1496 0px 2px 1px, #634c1496 0px -2px 1px, #634c1496 2px 0px 1px, #634c1496 -2px 0px 1px, #000000 0px 13px 10px;
+    /* transition: 0.23s; */
+    /* text-shadow: #634c1496 0px 2px 1px, #634c1496 0px -2px 1px, #634c1496 2px 0px 1px, #634c1496 -2px 0px 1px, #000000 0px 13px 10px; */
 }
-.name_class_active {
+.name_class-active {
+    padding: 1% 0 1% 35px;
     color: #634c1496;
     text-shadow: #eade93a9 0 3px 5px, #eade93a9 0px -3px 5px, #eade93a9 33px -5px 10px, #eade93a9 -3px 0px 5px;
     cursor: pointer;
-    -webkit-text-stroke: 0.1px #eade93;
-    /* transition: 0.20s; */
+    /* -webkit-text-stroke: 0.1px #eade93; */
+    /* transition: 0.23s; */
 }
-.name_class_active:hover {
+.name_class-active:hover {
+    color: #634c1496;
     text-shadow: #eade93a9 0 3px 5px, #eade93a9 0px -3px 5px, #eade93a9 30px -3px 10px, #eade93a9 -3px 0px 5px;
+    /* transition: 0.23s; */
 }
 
 .container_class {
     display: none;
     font-size: 0.24rem;
-    text-shadow: #000000 3px 3px 3px;
-    transition-duration: 0.25s;
+    text-shadow: #000000 2px 2px 2px;
     margin: 0 auto;
     width: 80%;
     transition-duration: 0.3s;
+    /* animation-name: container_class_anim;
+    animation-iteration-count: infinite;
+    animation-delay: 1s; */
 }
 .container_class-active {
     display: block;
@@ -271,7 +280,7 @@ strong {
     margin:0 10px 0 0;
     background: #5e616042;
 }
-.h3_in_class {
+.h2_in_class {
     color: #eade93;
     background: #5e616042;
     text-shadow: #000000 3px 3px 3px;
@@ -299,6 +308,7 @@ strong {
 .container_class_3 {
     display: flex;
     justify-content: center;
+    align-items: center;
     flex-direction: column;
     background: #5e616042;
 }
@@ -307,17 +317,35 @@ strong {
     display: flex;
     justify-content: center;
     flex-flow: row wrap;
-    /* align-content: stretch; */
+    align-content: stretch;
     width: 100%;
 }
 .weapon_selector_warrior div {
     display: flex;
+    /* font-size: 0.27rem; */
     /* border: 1px solid #BBB175; */
     width: 33%;
     min-width: max-content;
-    height: 40px;
+    height: 60px;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
+    /* transition: 1s; */
+}
+.weapon_selector_warrior div:hover {
+   /* border-color: #BBB175;
+    border-style: solid; 
+    border-width: 1px 0px 5px 0px;
+    border-radius: 20px;
+    background: #bbb0752d;
+    transition: 0.1s;*/ 
+    /* background: url(images/sword-left.png) left no-repeat, url(images/sword-right2.png) right no-repeat, url(images/sword_center.png) center no-repeat; */
+    background: url(images/sword-center.png) center no-repeat;
+    background-size: 83%;
+}
+.love_weapon_warrior-active {
+    background: url(images/sword-center.png) center no-repeat;
+    background-size: 83%;
 }
 
 .weapon_selector_wizard {
@@ -336,6 +364,8 @@ strong {
     align-items: center;
     justify-content: center;
     margin: 5px;
+    cursor: pointer;
+    
 }
 .school_magic {
     display: grid;
@@ -343,10 +373,10 @@ strong {
     grid-template-rows: max-content min-content;
     grid-auto-rows: minmax(min-content, min-content);
     margin: 0 0 10px 0;
+    background: #5e616042;
+    cursor: pointer;
 }
-.school_magic div {
-    /* border: 1px solid black; */
-}
+
 .school_magic div:nth-child(1) {
     grid-area: 1/1/3/1;
     /* width: min-content; */
@@ -355,28 +385,26 @@ strong {
     align-items: center;
     justify-content: center;
     padding: 1vw;
-    border-radius: 5px 0 0 5px;
+    border-radius: 10px 0 0 0;
 }
 .school_magic div:nth-child(2) {
     grid-area: 1/2/3/2;
     width: min-content;
     height: 100%;
     padding: 1vw 1vw 1vw 0;
-    border-radius: 0 0 5px 0;
 }
 .school_magic div:nth-child(3) {
     grid-area: 1/3/1/3;
     display: flex;
     justify-content: center;
-    border-radius: 0 5px 5px 0;
 }
 .school_magic div:nth-child(4) {
     grid-area: 2/3/2/3;
     display: flex;
     flex-direction: column;
     text-align: left;
-    /* background: #5e616042; */
 }
+
 .container_school_magic p{
     text-align: justify;
 }
@@ -403,17 +431,87 @@ strong {
 .color_in_distruction h4 {
     color: #bb6d63;
 }
-.h4_in_school_magic {
+.h3_in_school_magic {
     background: #5e616042; /*#5e616042*/
     text-shadow: #000000 3px 3px 3px;
     font-size: 0.32rem;
-    font-family: 'XXII Arabian OneNightStand Cyr', sans-serif;
-    padding: 0 0 0 40px;
-    height: 5vw;
-    line-height: 5vw;
-    height: min-content;
-    line-height: min-content;
+    font-family: 'XXII Arabian OneNightStand Cyr', fantasy;
+    padding: 5px 0 5px 40px;
     color: #7c95a0;
+}
+
+.h3_in_rogue {
+    background: #5e616042; /*#5e616042*/
+    text-shadow: #000000 3px 3px 3px;
+    font-size: 0.32rem;
+    font-family: 'ArabiaCyrillic-Regular', fantasy;
+    padding: 5px 0 5px 0;
+    min-width: max-content;
+    color: #9973b3;
+}
+.rogue ul {
+    width: max-content;
+    margin: 0 auto;
+    text-align: left;
+    /* padding: 0 0 0 70px;
+    /*list-style-image: url('images/daggers.png'); */
+    /* list-style-type: symbols(); */
+}
+.container_rogue_skill {
+    display: flex;
+    flex-flow: row;
+    align-content: stretch;
+    justify-content: center;
+    width: 100%;
+}
+.container_rogue_skill div:nth-child(1){
+    margin: 0 10px 0 0;
+}
+.container_rogue_skill div:nth-child(2){
+    width: min-content;
+    min-width: 35%;
+}
+.container_rogue_skill div {
+}
+.container_rogue_skill p {
+    text-align: justify;
+}
+
+.h3_in_priest {
+    background: #5e616042; /*#5e616042*/
+    text-shadow: #000000 3px 3px 3px;
+    font-size: 0.32rem;
+    font-family: 'Kanonnik UCS', fantasy;
+    padding: 5px 0 5px 0;
+    min-width: max-content;
+    color: #aac3d4;
+}
+
+.h4_in_priest {
+    background: #5e616042; /*#5e616042*/
+    text-shadow: #000000 3px 3px 3px;
+    font-size: 0.27rem;
+    font-family: 'Kanonnik UCS', fantasy;
+    padding: 5px 0 5px 0;
+    min-width: max-content;
+    color: #aac3d4;
+}
+.container_priest_skill {
+    display: flex;
+    flex-flow: row;
+    align-content: stretch;
+    justify-content: center;
+    width: 100%;
+}
+.container_priest_skill div:nth-child(1){
+    margin: 0 10px 0 0;
+}
+.container_priest_skill div:nth-child(2){
+    /* width: min-content; */
+    min-width: 50%;
+}
+.container_priest_skill p {
+    text-align: justify;
 }
 
 .warrior, .wizard, .rogue, .priest {
@@ -421,19 +519,19 @@ strong {
 }
 
 .warrior {
-    background: radial-gradient(#24060670, #240606), url(images/warrior.jpg)top no-repeat fixed;
+    background: radial-gradient(#24060670, #240606), url(images/warrior_ver3.jpg)top no-repeat fixed;
     background-size: 100%;
 }
-.warrior h2 {
+.warrior a {
     font-family: 'ljk_Remains', cursive;
     font-size: 1rem;
 }
 
 .wizard {
-    background: radial-gradient(#05203670, #052036), url(images/wizard.jpg) top no-repeat fixed;
+    background: radial-gradient(#05203670, #052036), url(images/wizard_ver2.jpg) top no-repeat fixed;
     background-size: 100%;
 }
-.wizard h2 {
+.wizard a {
     font-family: 'XXII Arabian OneNightStand Cyr', fantasy;
 }
 
@@ -441,7 +539,7 @@ strong {
     background: radial-gradient(#28123570, #362541),  url(images/rogue.jpg) top no-repeat fixed;
     background-size: 100%;
 }
-.rogue h2 {
+.rogue a {
     font-family: 'ArabiaCyrillic-Regular', fantasy;
 }
 
@@ -449,7 +547,7 @@ strong {
     background: radial-gradient( #465a6870, #465a68), url(images/priest.jpg) top no-repeat fixed;
     background-size: 100%;
 }
-.priest h2{
+.priest a{
     font-family: 'Kanonnik UCS', fantasy;
 }
 
@@ -499,6 +597,21 @@ strong {
     animation: stop;
 }
 
+.name_class:link {                  
+	color: none;         
+}
+.name_class:visited {
+	color: none;
+}
+.name_class:active {                  
+	color: none;         
+}
+.name_class:focus {                  
+	color: none;         
+}
+.name_class:hover {
+    color: none;
+}
 /* @keyframes button {
     from {
         border-style: outset;
@@ -526,10 +639,17 @@ strong {
     }
 } */
 
-/* .dwarf_history, .dwarf_stats, .dwarf_photo_f, .dwarf_photo_m, .elf_history, .elf_stats, .elf_photo_f, .elf_photo_m, .human_history, .human_stats, .human_photo_f,  .human_photo_m, .flowers {
-    vertical-align: middle;
-} */
+@keyframes container_class_anim {
+    from {
+        display: none;
+        height: 0%;
+    }
+    to {
+        display: block;
+        height: 100px;
 
+    }
+}
 
 
 
@@ -680,7 +800,7 @@ color: #3f3c38;
         height: 330px;
     }
     .container_class {
-        width: 99%;
+        width: 100%;
     }
     .container_class_1 {
         justify-content: center;
@@ -707,16 +827,26 @@ color: #3f3c38;
     html {
         font-size: 58px;
     }
+    .bg_universalism img {
+        width: 3vw;
+    }
+    .bg_illusion img {
+        width: 3vw;
+    }
+    .bg_distruction img {
+        width: 3vw;
+    }
+    
     .warrior, .wizard, .rogue, .priest {
         padding: 5px;
     }
 }
-@media (max-width: 499px) {
+/* @media (max-width: 499px) {
     * {
         display: fixed;
         min-width: min-content;
     }
     html {
-        /* overflow-x: auto; */
+        overflow-x: auto;
     }
-}
+} */
