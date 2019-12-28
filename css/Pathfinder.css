@@ -1,0 +1,933 @@
+@font-face {
+    font-family: 'XXII Arabian OneNightStand Cyr';
+    src: url(../fonts/15364.ttf);
+}
+@font-face {
+    font-family: 'ArabiaCyrillic-Regular';
+    src: url(../fonts/15522.ttf);
+}
+@font-face {
+    font-family: 'Kanonnik UCS';
+    src: url(../fonts/10410.ttf);
+}
+@font-face {
+    font-family: 'ljk_Remains';
+    src: url(../fonts/16880.otf);
+}
+@font-face {
+    font-family: 'Mason Chronicles';       /*main font*/
+    src: url(../fonts/Mason_Chronicles.ttf);
+}
+
+* {
+    font-family: 'Mason Chronicles', serif;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+:root {
+    font-size: 100px;
+}
+html {
+    /* font-size: 100px; */
+    color: #e6e6fa;
+    scroll-behavior: smooth;
+    overflow-x:hidden; 
+    background: #8b816d;
+}
+
+
+
+/*Header*/
+header {
+    background:#686052;
+}
+.logo {
+    background:#686052;
+    text-align: center;
+}
+
+
+
+/*Main*/
+.all_content {
+    margin: 0 auto;
+    height: 100%;
+}
+.h1_block_headline {
+    color: #eade93;
+    font-size: .7rem;
+    text-shadow: #412d27 0 10px 10px;
+    text-align: center;
+    padding: 0 0 20px 0;
+}
+
+
+
+/*Race_block*/
+.race_block {
+    display: flex;
+    flex-direction: column;
+    font-size: 0.24rem;
+}
+.race_block strong {
+    color: #3f3c38;
+}
+.race_block ul {
+    list-style-type: none;
+}
+.race_block li:after{
+    content: "";
+    display: block;
+    height: 0.24rem;
+    width: 100%;
+
+}
+
+.race_table {
+    display: flex;
+    max-width: 1800px;
+    width: 90%;
+    margin: 0 auto;
+    margin-bottom: 50px;
+    height: 100%;
+    flex-direction: column;
+    align-items: center;   
+}
+.name_race {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    background:#978c76;
+    margin: 0 0 10px 0;
+    min-width: 100vw;
+}
+.h2_in_race{
+    background:#978c76;
+    font-size: 0.60rem;
+    color: #3f3c38;
+    width: max-content;
+    padding: 0 10px;
+    z-index: 2;
+}
+.dwarf_row,
+.elf_row,
+.human_row {
+    display: flex;
+    flex-direction: row;
+    text-align: justify;
+    align-items: center;
+}
+
+.dwarf_history {
+    flex-basis: 26%;
+}
+.dwarf_stats {
+    flex-basis: 37.5%;
+}
+.photo_DF_DM {
+    flex-basis: 31.5%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.elf_history {
+    flex-basis: 23.5%;
+    order: 1;
+}
+.elf_stats {
+    flex-basis: 38.5%;
+    order: 3;
+}
+.photo_EF_EM {
+    flex-basis: 35%;
+    display: flex;
+    justify-content: space-around;
+    order: 4;
+}
+
+.human_history {
+    flex-basis: 40%;
+}
+.human_stats {
+    flex-basis: 19.5%;
+}
+.photo_HF_HM {
+    flex-basis: 37.5%;
+    display: flex;
+    justify-content: space-around;
+}
+
+
+.flowers {
+    flex-basis: 3%;
+    padding: 0 3px 0 3px;
+}
+.elf_row .flowers {
+    order: 2;
+}
+.flowers img {
+    max-height: 460px;
+}
+
+.photo {
+    height: 500px;
+}
+.photo_DF {
+    background: url(../images/Dwarf_F.png) bottom left no-repeat;
+    background-size: auto 100%;
+}
+.photo_DM {
+    background: url(../images/Dwarf_M.png) bottom left no-repeat;
+    background-size: auto 100%;
+}
+.photo_EF {
+    background: url(../images/elf_f.png) bottom left no-repeat;
+    background-size: auto 100%;
+}
+.photo_EM {
+    background: url(../images/elf_m.png) bottom left no-repeat;
+    background-size: auto 100%;
+}
+.photo_HF {
+    background: url(../images/human_f.png) bottom left no-repeat;
+    background-size: auto 100%;
+}
+.photo_HM {
+    background: url(../images/human_m.png) bottom left no-repeat;
+    background-size: auto 100%;
+}
+.focus {
+    height: 100%;
+    opacity: 0;
+    transition-duration: 0.25s;
+    cursor: pointer;
+}
+.focus:hover,
+.focus-active {
+    transition-duration: 0.4s;
+    opacity: 1;
+}
+
+.decoration {
+    float: left;
+    padding-right: 9px;
+    width: 1.15rem;
+}
+
+
+
+/* Classs block */
+.class_block {
+    display: none;
+}
+.class_block_visible {
+    display: block;
+}
+.class_table {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    max-width: 1903px;
+    text-align: center;
+}
+.class_table p {
+    margin: 2%;
+}
+.name_class_background {
+    height: 140px;
+    line-height: 140px;
+    margin: 0 auto;
+    width: 80%;
+    max-width: 1903px;
+}
+.name_class {
+    font-size: 0.90rem;
+    color: #a09a8f;
+    text-align: left;
+    text-decoration: none;
+    font-weight: normal;
+
+    width: 100%;
+    height: auto;
+
+    float: left;
+    transition: 0.3s;
+}
+.name_class:hover {
+    padding: 0.5% 0 0.5% 35px;
+    color: #b9a980;
+    cursor: pointer;
+    text-shadow: #634c1496 0px 2px 1px, #634c1496 0px -2px 1px, #634c1496 2px 0px 1px, #634c1496 -2px 0px 1px, #000000 0px 13px 10px;
+}
+.name_class-active {
+    padding: 0.5% 0 0.5% 35px;
+    color: #634c1496;
+    text-shadow: #eade93a9 0 3px 5px, #eade93a9 0px -3px 5px, #eade93a9 33px -5px 10px, #eade93a9 -3px 0px 5px;
+    cursor: pointer;
+}
+.name_class-active:hover {
+    text-shadow: #eade93a9 0 3px 5px, #eade93a9 0px -3px 5px, #eade93a9 30px -3px 10px, #eade93a9 -3px 0px 5px;
+}
+
+.container_class {
+    display: none;
+    font-size: 0.24rem;
+    text-shadow: #000000 2px 2px 2px;
+    margin: 0 auto;
+    width: 80%;
+    transition-duration: 0.3s;
+}
+.container_class-active {
+    display: block;
+    transition-duration: 0.3s;
+}
+
+.container_class_1 {
+    display: flex;
+    justify-content: center;
+    margin: 0 0 10px 0;
+}
+.container-special {
+    flex: 3;
+    margin:0 10px 0 0;
+    background: #5e616042;
+}
+.class_table_stats {
+    border-spacing:  10px;
+    border: 1px solid #BBB175;
+    width: max-content;
+    margin: auto;
+    text-align: left;
+}
+.container-armor {
+    flex: 1;
+    background: #5e616042;
+}
+
+.container_class_2 {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background: #5e616042;
+    margin: 0 0 10px 0;
+}
+
+.container_class_3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: #5e616042;
+}
+
+.h2_in_class {
+    color: #eade93;
+    background: #5e616042;
+    text-shadow: #000000 0px 3px 3px;
+    font-size: 0.37rem;
+    margin: 0 0 10px 0;
+}
+
+
+
+/* Warrior */
+.weapon_selector_warrior {
+    display: flex;
+    justify-content: center;
+    flex-flow: row wrap;
+    align-content: stretch;
+    width: 100%;
+}
+.weapon_selector_warrior div {
+    display: flex;
+    width: 33%;
+    min-width: max-content;
+    height: 60px;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+.weapon_selector_warrior div:hover,
+.love_weapon_warrior-active {
+    background: url(../images/sword-center.png) center no-repeat;
+    background-size: 83%;
+}
+
+
+
+/* Wizard */
+.weapon_selector_wizard {
+    display: flex;
+    justify-content: center;
+    flex-flow: row wrap;
+    align-content: stretch;
+}
+.love_weapon_wizard {
+    display: flex;
+    border-width:  2px 0 5px 0;
+    border-color: #3d649e;
+    border-radius: 25px 25px 25px 25px;
+    border-style: solid;
+    width: 47%;
+    height: 80px;
+    align-items: center;
+    justify-content: center;
+    margin: 5px;
+    cursor: pointer;
+    padding: 0 5px 0 5px;
+    
+}
+.weapon_selector_wizard div:hover {
+    border-color:  #eade93;
+    background: #052036;
+    transition: 0.1s;
+}
+.love_weapon_wizard-active {
+    border-width: 4px 7px 10px 7px;
+    border-color:  #eade93;
+    /* border-style: groove ridge ridge groove; */
+    border-style: ridge groove groove ridge;
+    background: #052036;
+    transition: 0.2s;
+}
+.school_magic {
+    display: grid;
+    grid-template-columns: min-content min-content;
+    grid-template-rows: max-content min-content;
+    grid-auto-rows: minmax(min-content, min-content);
+    margin: 0 0 10px 0;
+    /* background: #5e616042; */
+    cursor: pointer;
+}
+
+.school_magic div:nth-child(1) {
+    grid-area: 1/1/3/1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1vw;
+    border-radius: 10px 0 0 0;
+
+}
+.school_magic div:nth-child(2) {
+    grid-area: 1/2/3/2;
+    width: min-content;
+    height: 100%;
+    padding: 1vw 1vw 1vw 0;
+}
+.school_magic div:nth-child(3) {
+    grid-area: 1/3/1/3;
+    display: flex;
+    justify-content: center;
+}
+.school_magic div:nth-child(4) {
+    grid-area: 2/3/2/3;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+.color_in_universalism {
+    background: linear-gradient(90deg, #475f6b 0%, #475f6b00 20%), linear-gradient(180deg, #475f6b 0%, #475f6b00 20%), linear-gradient(135deg, #475f6b 0%, #475f6b00 30%), url(../images/universalism.jpg) top right no-repeat;
+    background-size: 100%;
+}
+.color_in_illusion {
+    background: linear-gradient(90deg, #CF8F43 0%, #cf904300 20%), linear-gradient(180deg, #CF8F43 0%, #cf904300 20%), linear-gradient(135deg, #CF8F43, #cf904300 30%), url(../images/illusion.jpg) top right no-repeat;
+    background-size: 100%;
+}
+.color_in_distruction {
+    background: linear-gradient(90deg, #772f26 0%, #772f2600 20%), linear-gradient(180deg, #772f26 0%, #772f2600 20%), linear-gradient(135deg, #772f26 0%, #772f2600 30%), url(../images/distruction.jpg) center right no-repeat;
+    background-size: 100%;
+}
+.container_school_magic p{
+    text-align: justify;
+}
+
+.bg_universalism {
+    background: #475f6b;
+    font-size: 0.27rem;
+}
+.bg_illusion {
+    background: #CF8F43;
+    font-size: 0.27rem;
+}
+.bg_distruction {
+    background: #772f26;
+    font-size: 0.27rem;
+}
+
+.color_in_universalism > .h3_in_school_magic {
+    color: #bbbee7; /*#869962*/
+}
+.color_in_illusion > .h3_in_school_magic {
+    color: #d1ab7d;
+}
+.color_in_distruction > .h3_in_school_magic {
+    color: #bb6d63;
+}
+
+.h3_in_school_magic {
+    background: #5e616042; /*#5e616042*/
+    text-shadow: #000000 3px 3px 3px;
+    font-size: 0.35rem;
+    font-family: 'XXII Arabian OneNightStand Cyr', fantasy;
+    padding: 5px 0 5px 40px;
+    color: #7c95a0;
+}
+
+
+/*Rogue*/
+.container_rogue_skill {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+.container_rogue_skill div:nth-child(1){
+    flex: 3;
+    margin: 0 10px 0 0;
+}
+.container_rogue_skill div:nth-child(2){
+    flex: 1;
+}
+.container_rogue_skill p {
+    text-align: justify;
+}
+.h3_in_rogue {
+    background: #5e616042; /*#5e616042*/
+    text-shadow: #000000 3px 3px 3px;
+    font-size: 0.32rem;
+    font-family: 'ArabiaCyrillic-Regular', fantasy;
+    padding: 5px;
+    min-width: max-content;
+    color: #9973b3;
+}
+.rogue ul {
+    list-style-type: none;
+    width: max-content;
+    max-width: 100%;
+    margin: 0 auto;
+    text-align: left;
+    margin: 2%;
+}
+.rogue li:before {
+    content: "";
+    display: block;
+    float: left;
+    height: 0.24rem;
+    width: 0.24rem;
+    background: url(../images/daggers.png);
+    background-size: 100%;
+    background-color: #00000000;
+    margin: 0 5px 0 0;
+}
+
+
+/* Priest */
+.container_priest_skill {
+    display: flex;
+    flex-flow: row;
+    align-content: stretch;
+    justify-content: center;
+    width: 100%;
+}
+.content_priest_skill_1 .h4_in_priest {
+    color: #709c76;
+}
+.content_priest_skill_2 .h4_in_priest {
+    color: #854947;
+}
+.content_priest_skill_1{
+    flex: 1;
+    margin: 0 10px 0 0;
+}
+.content_priest_skill_2{
+    flex: 2;
+    max-width: 55%;
+}
+.container_priest_skill p {
+    text-align: justify;
+}
+.h3_in_priest {
+    background: #5e616042;
+    text-shadow: #000000 3px 3px 3px;
+    font-size: 0.32rem;
+    font-family: 'Kanonnik UCS', fantasy;
+    padding: 5px 0 5px 0;
+    min-width: max-content;
+    color: #aac3d4;
+    letter-spacing: 2px;
+}
+.h4_in_priest {
+    background: #5e616042; /*#5e616042*/
+    text-shadow: #000000 3px 3px 3px;
+    font-size: 0.27rem;
+    font-family: 'Kanonnik UCS', fantasy;
+    padding: 5px 0 5px 0;
+    min-width: max-content;
+    color: #aac3d4;
+    letter-spacing: 2px;
+}
+
+
+
+/*All class*/
+.warrior,
+.wizard,
+.rogue,
+.priest {
+    padding: 20px;
+}
+.warrior {
+    background: radial-gradient(#24060670, #240606), url(../images/warrior_ver3.jpg)top no-repeat fixed;
+    background-size: 100%;
+}
+.warrior a {
+    font-family: 'ljk_Remains', cursive;
+    font-size: 1rem;
+}
+
+.wizard {
+    background: radial-gradient(#05203670, #052036), url(../images/wizard_ver2.jpg) top no-repeat fixed;
+    background-size: 100%;
+}
+.wizard a {
+    font-family: 'XXII Arabian OneNightStand Cyr', fantasy;
+}
+
+.rogue {
+    background: radial-gradient(#28123570, #362541),  url(../images/rogue.jpg) top no-repeat fixed;
+    background-size: 100%;
+}
+.rogue a {
+    font-family: 'ArabiaCyrillic-Regular', fantasy;
+}
+
+.priest {
+    background: radial-gradient( #465a6870, #465a68), url(../images/priest.jpg) top no-repeat fixed;
+    background-size: 100%;
+}
+.priest a{
+    font-family: 'Kanonnik UCS', fantasy;
+    letter-spacing: 2px;
+}
+
+
+/* Select stats block */
+.select_stats_block {
+    /* display: none; */
+    display: flex;
+    flex-direction: column;
+    max-width: 1800px;
+    width: 80%;
+    margin: auto;
+    min-height: max-content;
+}
+.characteristic_discription {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.24rem;
+    color: #eade93;
+    padding-bottom: 1vw;
+}
+.characteristic_discription p {
+    text-align: center;
+    flex-basis: 49%;
+}
+
+
+
+
+
+.container-stoneANDreroll {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.container-stoneNumber {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-basis: 49%;
+    max-height: 100%;
+}
+.stoneNumber {
+    position: relative;
+    height: 4.7vw;
+    width: 5.434vw;
+    /* background-color: ivory; */
+}
+.stoneNumber img {
+    position: absolute;
+    max-height: 100%;
+}
+.rerollButton {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-basis: 49%;
+    height: 7vw;
+    max-width: 100%;
+}
+.rerollButton img {
+    max-height: 100%;
+}
+.rerollDice-focus {
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    left: 48px;
+    max-height: 100%;
+    z-index: -1;
+    transition: 0.2s;
+}
+.rerollDice {
+    cursor: pointer;
+}
+.rerollButton:hover .rerollDice-focus {
+    opacity: 1;
+    transition: 0.2s;
+}
+
+
+
+
+
+
+
+.container-characteristic {
+    background: url(../images/Back_stats_mono_long.png) left no-repeat;
+    background-size: 100%;
+    position: relative;
+    height: 7vw;
+    max-width: 100%;
+}
+.characteristic_name {
+    position: absolute;
+    max-height: 90%;
+    margin: 0.5% 0 0 2%;
+    z-index: 10;
+}
+.characteristic_back {
+    position: relative;
+    max-width: 100%;
+    min-height: min-content;
+}
+.characteristic_table {
+    display: flex;
+    flex-direction: column;
+}
+
+
+/*Footer*/
+footer {
+    display: flex;
+    background:#686052;
+    align-content: center;
+    justify-content: center;
+    padding: 0.1% 0;
+}
+.footer {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    max-width: 1800px;
+    width: 90%;
+}
+
+/*Buttons*/
+.next_button,
+.previous_button {
+    outline: none;
+    background: #8b816d;
+    border: none;
+    height: min-content;
+    color: #eade93;
+    font-size: 0.60rem;
+    font-weight: bold;
+    text-align: center;
+    text-shadow: #412d27 0 10px 10px;
+    margin: 5px;
+    padding: 5px;
+    transition-duration: 0.25s;
+}
+.next_button:enabled,
+.previous_button:enabled {
+    cursor: pointer;
+    opacity: 1;
+}
+.next_button:disabled,
+.previous_button:disabled {
+    cursor: not-allowed;
+    opacity: 0.2;
+}
+
+/* .plant {
+    height: 500px;
+}
+.coin {
+    height: 1000px;
+}
+.coin img{
+    width: 150px;
+} */
+
+/* @keyframes button {
+    from {
+        border-style: outset;
+        box-shadow: 6px 7px 4px 5px #220c0c;
+    }
+    49% {
+        border-style: outset;
+        box-shadow: 0px 0px 0px 0px #220c0c;
+    }
+    50% {
+        border-style: inset;
+        box-shadow: inset 0px 0px 0px 0px #220c0c;
+    }
+    to {
+        border-style: inset;
+        box-shadow: inset 7px 6px 4px 5px #220c0c;
+    }
+}
+@keyframes h1anim {
+    from {
+        padding-top: 0;
+    }
+    to {
+        padding-top: 8px;
+    }
+} */
+
+.paint {
+color: #4d362e;
+color: #eade93;
+color: #55504a; 
+color: #5c4034;
+color: #e6e6fa;
+color: lavender;
+color: #8b816d;
+color: #978c76;
+color: #686052;
+color: #de343c;
+color: #3f3c38;
+}
+
+ /*@keyframes pulse {
+    from {
+        -webkit-transform: scale3d(1, 1, 1);
+        transform: scale3d(1, 1, 1);
+        background: #8b816d;
+        box-shadow: inset 0px 0px 0px 0px #972424;
+    }
+    5% {
+        -webkit-transform: scale3d(1.04, 1.04, 1.04);
+        transform: scale3d(1.04, 1.04, 1.04);
+        box-shadow: inset 0px 0px 40px 1px #972424;
+    }
+    10% {
+        -webkit-transform: scale3d(1, 1, 1);
+        transform: scale3d(1, 1, 1);
+        background: #8b816d;
+        box-shadow: inset 0px 0px 0px 0px #972424;
+    }
+    15% {
+        -webkit-transform: scale3d(1.04, 1.04, 1.04);
+        transform: scale3d(1.04, 1.04, 1.04);
+        box-shadow: inset 0px 0px 40px 1px #972424;
+    }
+    20% {
+        -webkit-transform: scale3d(1, 1, 1);
+        transform: scale3d(1, 1, 1);
+        box-shadow: inset 0px 0px 0px 0px #972424;
+         
+    }
+    50% {
+        background: #8b816d;
+        
+    }
+    to {
+        -webkit-transform: scale3d(1, 1, 1);
+        transform: scale3d(1, 1, 1);
+        box-shadow: inset 0px 0px 0px 0px #972424;
+    }
+} */
+@media (max-width: 1919px) {
+    .dwarf_row, .elf_row, .human_row {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .flowers {
+        justify-content: space-around;
+    }
+    .flowers img{
+        transform: rotate(90deg);
+        margin: -170px 0px -175px 43%;
+        max-height: 420px;
+    }
+    .photo_EF_EM {
+        order: 0;
+    }
+}
+@media (max-width: 1000px) {
+    :root {
+        /* font-size: 70px; */
+    }
+    .photo {
+        height: 330px;
+    }
+    .container_class {
+        width: 100%;
+    }
+    .container_class_1 {
+        justify-content: center;
+        flex-direction: column;
+    }
+    .container_rogue_skill {
+        flex-direction: column;
+        align-items: stretch;
+
+    }
+    .container-special {
+        flex: 3;
+        margin:0 0px 10px 0;
+        background: #5e616042;
+    }
+    .class_table {
+        width: 100%;
+    }
+    .name_class_background {
+        height: 90px;
+        line-height: 90px;
+    }
+    .logo img {
+        width: 480px;
+    }
+    html {
+        font-size: 58px;
+    }
+    .bg_universalism img {
+        width: 3vw;
+    }
+    .bg_illusion img {
+        width: 3vw;
+    }
+    .bg_distruction img {
+        width: 3vw;
+    }
+    
+    .warrior, .wizard, .rogue, .priest {
+        padding: 5px;
+    }
+    .h2_in_race {
+        font-weight: bolder;
+    }
+}
+ /* @media (max-width: 499px) {
+    * {
+        display: fixed;
+        min-width: min-content;
+    }
+    html {
+        overflow-x: auto;
+    }
+} */

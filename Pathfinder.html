@@ -3,20 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="Pathfinder.css">
-    <title>Pathfinder создание героя</title>
+    <link rel="stylesheet" href="css/Pathfinder.css">
+    <title>Pathfinder. Создание героя</title>
 </head>
 <body>
-    <!-- <script src="Pathfinder.js"></script> -->
 <header>
     <div class="logo"><img src="images/Header.png" alt=""></div>
 </header>
-<main class="all_color">
-<div class="all_content">
-    <h1 class="block_headline">Выбор расы и пола</h1>
+<main class="all_content">
+<h1 class="h1_block_headline">Выбор расы и пола</h1>
 <div class="race_block">
     <div class="race_table">
-        <h2 class="name_race">Дварфы</h2>
+        <div class="name_race">
+            <h2 class="h2_in_race">Дварфы</h2>
+        </div>
         <div class="dwarf_row">
             <div class="photo_DF_DM">
                 <div class="photo photo_DF">
@@ -35,18 +35,20 @@
             </div>
             <div class="dwarf_stats">
                 <ul>
-                    <li><strong>Скорость</strong>: 20 футов в раунд. Вас не замедляет вес вашей брони и снаряжения.</li><br>
-                    <li><strong>Ночное зрение</strong>: 60 футов. Вы видите в темноте. Когда ночное зрение активно, всё предстаёт перед вами в серых тонах.</li><br>
-                    <li><strong>Ненависть</strong>: +1 к попаданию против гоблинов и орков.</li><br>
-                    <li><strong>Крепкий</strong>: +2 к испытаниям ядами, магией, а также уникальными способностями чудовищ.</li><br>
-                    <li><strong>Оружие народа</strong>: независимо от класса вы умеете пользоваться: боевыми топорами и молотами.</li><br>
+                    <li><strong>Скорость</strong>: 20 футов в раунд. Вас не замедляет вес вашей брони и снаряжения.</li>
+                    <li><strong>Ночное зрение</strong>: 60 футов. Вы видите в темноте. Когда ночное зрение активно, всё предстаёт перед вами в серых тонах.</li>
+                    <li><strong>Ненависть</strong>: +1 к попаданию против гоблинов и орков.</li>
+                    <li><strong>Крепкий</strong>: +2 к испытаниям ядами, магией, а также уникальными способностями чудовищ.</li>
+                    <li><strong>Оружие народа</strong>: независимо от класса вы умеете пользоваться: боевыми топорами и молотами.</li>
                     <li><strong>Изменение характеристик</strong>: +2 Выносливости и Мудрости, -2 Харизмы.</li>
                 </ul>
             </div>
         </div>
     </div>
     <div class="race_table">
-        <h2 class="name_race">Эльфы</h2>
+        <div class="name_race">
+            <h2 class="h2_in_race">Эльфы</h2>
+        </div>
         <div class="elf_row">
             <div class="elf_history">
                 <img class="decoration" src="images/E_decoration.png" alt="">
@@ -57,11 +59,11 @@
             </div>
             <div class="elf_stats">
                 <ul>
-                    <li><strong>Скорость</strong>: 30 футов в раунд. При ношении средней или тяжёлой брони ваша скорость падает до 20 футов в раунд.</li><br>
-                    <li><strong>Сумеречное зрение</strong>: при низком уровне освещённости вы видите вдвое дальше, нежели дварф или человек.</li><br>
-                    <li><strong>Невосприимчивость к усыплению</strong>: вы невосприимчивы к усыпляющим магическим атакам.</li><br>
-                    <li><strong>Острые чувства</strong>: ваше Внимание повышено на +2.</li><br>
-                    <li><strong>Оружие народа</strong>: независимо от класса вы умеете пользоваться: короткими луками, длинными луками, длинными мечами и рапирами.</li><br>
+                    <li><strong>Скорость</strong>: 30 футов в раунд. При ношении средней или тяжёлой брони ваша скорость падает до 20 футов в раунд.</li> 
+                    <li><strong>Сумеречное зрение</strong>: при низком уровне освещённости вы видите вдвое дальше, нежели дварф или человек.</li> 
+                    <li><strong>Невосприимчивость к усыплению</strong>: вы невосприимчивы к усыпляющим магическим атакам.</li> 
+                    <li><strong>Острые чувства</strong>: ваше Внимание повышено на +2.</li> 
+                    <li><strong>Оружие народа</strong>: независимо от класса вы умеете пользоваться: короткими луками, длинными луками, длинными мечами и рапирами.</li> 
                     <li><strong>Изменение характеристик</strong>: +2 к Ловкости и Интеллекту, -2 из Выносливости.</li>
                 </ul>
             </div>
@@ -75,8 +77,10 @@
             </div>
         </div>
     </div>
-    <div class="race_table">  
-        <h2 class="name_race">Люди</h2>
+    <div class="race_table"> 
+        <div class="name_race"> 
+            <h2 class="h2_in_race">Люди</h2>
+        </div>
         <div class="human_row">
             <div class="photo_HF_HM">
                 <div class="photo photo_HF">
@@ -95,17 +99,17 @@
             </div>
             <div class="human_stats">
                 <ul>
-                    <li><strong>Скорость</strong>: 30 футов в раунд. При ношении средней или тяжёлой брони ваша скорость падает до 20 футов в раунд.</li> <br>
-                    <li><strong>Дополнительная черта</strong>: вы начинаете игру с одной дополнительной чертой.</li><br>
-                    <li><strong>Дополнительные Пункты навыков:</strong>: каждый уровень, включая первый, вы получаете дополнительный пункт навыка.</li><br>
+                    <li><strong>Скорость</strong>: 30 футов в раунд. При ношении средней или тяжёлой брони ваша скорость падает до 20 футов в раунд.</li>  
+                    <li><strong>Дополнительная черта</strong>: вы начинаете игру с одной дополнительной чертой.</li> 
+                    <li><strong>Дополнительные Пункты навыков:</strong>: каждый уровень, включая первый, вы получаете дополнительный пункт навыка.</li> 
                     <li><strong>Изменение характеристик</strong>: +2 к любой характеристики.</li>
                 </ul>
             </div>
         </div>
     </div>
-</div> <!-- конец .race_block -->
+</div> <!-- end .race_block -->
 <div class="class_block">
-    <h1 class="block_headline">Выбор класса</h1>
+    <h1 class="h1_block_headline">Выбор класса</h1>
     <div class="class_table">
         <div id="war" class="warrior">
             <!-- <div class="name_class_background"><h2 class="name_class"><a class="a-class" href="#war">Воин</a></h2></div> -->
@@ -213,10 +217,10 @@
                 <div class="container_class_2">
                     <h2 class="h2_in_class">Выберите один мистически связанный с вами предмет:</h2>
                     <div class="weapon_selector_wizard">
-                        <div>Искусно сделанный боевой посох</div>
-                        <div>Искусно сделанный кинжал</div>
-                        <div>Кольцо</div>
-                        <div>Жезл</div>
+                        <div class="love_weapon_wizard">Искусно сделанный боевой посох</div>
+                        <div class="love_weapon_wizard">Искусно сделанный кинжал</div>
+                        <div class="love_weapon_wizard">Кольцо</div>
+                        <div class="love_weapon_wizard">Жезл</div>
                     </div>
                     <p>Вы получаете его бесплатно. Раз в день вы можете использовать его, чтобы применить одно любое заклинание из вашей книги. Вам не нужно под­готавливать  это  заклинание  заранее. Предмет, мистически  связанный  с вами,  позволяет  вам прибегнуть к заклинанию, которое вам нужно больше всего. Замена потерянного или уничтожен­ного предмета стоит 200 золотых монет.</p>
                 </div>
@@ -379,11 +383,11 @@
                     <h3 class="h3_in_priest">Божественная сила</h3>
                     <p>Используя эту способность, вы озаряете всех вокруг себя божественным светом, исходящим от символа вашей религии. Вы можете делать это 3 + Хар раз в день. Энергия исходит от вас во все стороны в радиусе 30 футов. Каждый раз, когда вы используете эту способность, вы можете выбрать один из её эффектов:</p>
                     <div class="container_priest_skill">
-                        <div>
+                        <div class="content_priest_skill_1">
                             <h4 class="h4_in_priest">Лечение живых</h4>
                             <p>Лечение живых: все живые существа в пределах дистанции 30 футов (включая вас) восстанавливают d6 пунктов здоровья. Используя способность таким образом, вы не наносите урон нежити, но и не лечите её.</p>
                         </div>
-                        <div>
+                        <div class="content_priest_skill_2">
                             <h4 class="h4_in_priest">Погибель нежити</h4>
                             <p>вся нежить в пределах дистанции 30 футов получает d6 урона. Если мертвецы успешно пройдут испытание воли, то получат лишь половину урона. Сложность этой проверки равна 10 + ½ уровня жреца (минимум 0) + его Хар. Используя способность таким образом, вы никак не влияете на живых существ .</p>
                         </div>
@@ -392,19 +396,64 @@
             </div>
         </div> <!-- конец .priest -->
     </div> <!-- конец .class_table -->
-</div> <!-- конец .class_block -->
+</div> <!-- end .class_block -->
 <div class="select_stats_block">
-    <h1 class="block_headline">Распределите характеристики</h1>
-    <div class="coin"><img class="draggableCoin" src="images/stat18_ver2.png" alt="images/gold18.png" draggable="true" ondragstart='onDragStart(event);'> <div class="plant" ondragover='onDragOver(event);' ondrop='onDrop(event);'>dropzone</div></div>
+    <!-- <h1 class="h1_block_headline">Распределите характеристики</h1>
+    <div class="coin"><img class="draggableCoin" src="images/stat18_ver2.png" alt="images/gold18.png" draggable="true" ondragstart='onDragStart(event);'> <div class="plant" ondragover='onDragOver(event);' ondrop='onDrop(event);'>dropzone</div></div> -->
+    <h1 class="h1_block_headline">Распределите характеристики</h1>
+    <div class="characteristic_discription">
+        <p>У вас есть шесть характеристик, которые определяют, насколько развиты вашы тиле и разум. Чем выше значения характеристик, тем лучше вам даются соответствующие задачи.</p>
+        <p>Если наивысшее значение характеристики равно 13 или ниже, либо же сумма модификаторов ваших характеристик равна +3 или ниже, вы можете получить шесть новых значений.</p>
+    </div>
+    <div class="container-stoneANDreroll">
+        <div class="container-stoneNumber">
+            <div class="stoneNumber"><img src="images/stoneNumber.png" alt=""></div>
+            <div class="stoneNumber"><img src="images/stoneNumber.png" alt=""></div>
+            <div class="stoneNumber"><img src="images/stoneNumber.png" alt=""></div>
+            <div class="stoneNumber"><img src="images/stoneNumber.png" alt=""></div>
+            <div class="stoneNumber"><img src="images/stoneNumber.png" alt=""></div>
+            <div class="stoneNumber"><img src="images/stoneNumber.png" alt=""></div>
+        </div>
+        <div class="rerollButton">
+            <img class="rerollDice" src="images/rerollDice2.png" alt="">
+            <img class="rerollDice-focus" src="images/rerollDice-focus.png" alt="">
+        </div>
+    </div>
+    <div class="characteristic_table">
+        <div class="strength container-characteristic">
+            <img class="characteristic_name" src="images/Strength.png" alt="">
+            <!-- <img class="characteristic_back" src="images/Back_stats_mono_long.png" alt=""> -->
+        </div>
+        <div class="dexterity container-characteristic">
+            <img class="characteristic_name" src="images/Dexterity.png" alt="">
+            <!-- <img class="characteristic_back" src="images/Back_stats_mono_long.png" alt=""> -->
+        </div>
+        <div class="endurance container-characteristic">
+            <img class="characteristic_name" src="images/Endurance.png" alt="">
+            <!-- <img class="characteristic_back" src="images/Back_stats_mono_long.png" alt=""> -->
+        </div>
+        <div class="intelligence container-characteristic">
+            <img class="characteristic_name" src="images/Intelligence.png" alt="">
+            <!-- <img class="characteristic_back" src="images/Back_stats_mono_long.png" alt=""> -->
+        </div>
+        <div class="wisdom container-characteristic">
+            <img class="characteristic_name" src="images/Wisdom.png" alt="">
+            <!-- <img class="characteristic_back "src="images/Back_stats_mono_long.png" alt=""> -->
+        </div>
+        <div class="charima container-characteristic">
+            <img class="characteristic_name" src="images/Charism.png" alt="">
+            <!-- <img class="characteristic_back" src="images/Back_stats_mono_long.png" alt=""> -->
+        </div>
+    </div>
 </div>
-
-</div> <!-- конец .class_block -->
-</main>
-
-<footer class="footer">
-    <button disabled class="next_button" title="Перейти на следующий этап"><h1 class="h1_in_footer">Продолжить</h1></button><button disabled class="previous_button" title="Вернуться к предыдущему"><h1 class="h1_in_footer">Назад</h1></button>
+</main> <!-- end .all_content -->
+<footer>
+    <div class="footer">
+        <button disabled class="next_button" title="Перейти на следующий этап">Продолжить</button>
+        <button disabled class="previous_button" title="Вернуться к предыдущему">Назад</button>
+    </div>
 </footer>
-<script src="Pathfinder.js"></script>
+<script src="js/Pathfinder.js"></script>
 </body>
 </html>
 
