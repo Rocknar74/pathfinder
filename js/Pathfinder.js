@@ -17,6 +17,21 @@ const LOVE_WEAPON_WIZARD_ACTIVE = 'love_weapon_wizard-active';
 const NEXT_BUTTON = document.querySelector(".next_button");
 const CLASS_BLOCK = document.querySelector(".class_block");
 
+const REROLL_BUTTON = document.querySelector(".rerollDice");
+const REROLL_BUTTON_FOCUS = document.querySelector(".rerollDice-focus");
+
+
+REROLL_BUTTON.addEventListener("click", () => {
+    if (reroll) {
+        random_stats();
+    }
+    if (!reroll) {
+        REROLL_BUTTON.classList.add("rerollDice-notactive");
+        REROLL_BUTTON_FOCUS.classList.add("rerollDice-focus-notactive");
+    }
+    // random_stats();
+})
+
 // console.log(FOCUS);
 // console.log(CLASS);
 // console.log(CLASS_ACTIVE);
@@ -155,46 +170,90 @@ CLASS.forEach(classes => {
 });
 
 
-// function onDragStart(event) {
-//     event
-//         .dataTransfer
-//         .setData('text/plain', event.target.id);
-//     event
-//         .currentTarget
-//         .style
-//         .backgroundColor = 'pink';
-// }
+const STONE_NUMBER = document.querySelectorAll(".stoneNumber");
+const CONTAINER_STONE_NUMBER = document.querySelectorAll(".containerDrag-number");
+let current;
 
-// function onDragOver(event) {
-//   event.preventDefault();
-// }
+STONE_NUMBER.forEach(item => {
+    item.addEventListener('dragstart', function(event) {
+        current = this;
+    });
+})
 
-// function onDrop(event) {
-//   const id = event
-//     .dataTransfer
-//     .getData('text');
- 
-//   const draggableElement = document.getElementById(id);
-//   const dropzone = event.target;
-  
-//   dropzone.appendChild(draggableElement);
- 
-//   event
-//     .dataTransfer
-//     .clearData();
-// }
+CONTAINER_STONE_NUMBER.forEach(item => {
+    item.addEventListener("drop", function() {
+        item.appendChild(current);
+    })
+})
 
-var reroll; //Возмоно ли переопределить случайные характеристики
+CONTAINER_STONE_NUMBER.forEach(item => {
+    item.addEventListener("dragover", function(event) {
+        event.preventDefault();
+    })
+})
+
+var reroll = true; //Возмоно ли переопределить случайные характеристики
 var stats = []; //Массив со случаынми характеристиками
+
 function random_stats() {  //Получение случайных характеристик
     stats = [];
     let highestStat = 0;
-    for (let i = 0; i < 6; i++) {
+    let sumStats2 = 0;
+    let i = 0;
+    let a;
+    
+    STONE_NUMBER.forEach(item => {
+        item.innerHTML = "";
+        
         stats[i] = Math.round(Math.random() * 15 + 3);
+        sumStats2 += stats[i];
+        a = stats[i];
+
+        if (a > 9) {
+            item.innerHTML = "<img src='images/characteristics/numbers/1.png' alt='' draggable='false'>"
+            a -= 10;
+        }
+        switch (a) {
+            case (0):
+                item.innerHTML += "<img src='images/characteristics/numbers/0.png' alt='' draggable='false'>"
+                break;
+            case (1):
+                item.innerHTML += "<img src='images/characteristics/numbers/1.png' alt='' draggable='false'>"
+                break;
+            case (2):
+                item.innerHTML += "<img src='images/characteristics/numbers/2.png' alt='' draggable='false'>"
+                break;
+            case (3):
+                item.innerHTML += "<img src='images/characteristics/numbers/3.png' alt='' draggable='false'>"
+                break;
+            case (4):
+                item.innerHTML += "<img src='images/characteristics/numbers/4.png' alt='' draggable='false'>"
+                break;
+            case (5):
+                item.innerHTML += "<img src='images/characteristics/numbers/5.png' alt='' draggable='false'>"
+                break;
+            case (6):
+                item.innerHTML += "<img src='images/characteristics/numbers/6.png' alt='' draggable='false'>"
+                break;
+            case (7):
+                item.innerHTML += "<img src='images/characteristics/numbers/7.png' alt='' draggable='false'>"
+                break;
+            case (8):
+                item.innerHTML += "<img src='images/characteristics/numbers/8.png' alt='' draggable='false'>"
+                break;
+            case (9):
+                item.innerHTML += "<img src='images/characteristics/numbers/9.png' alt='' draggable='false'>"
+                break;
+            default:
+                item.innerHTML += "<img src='images/characteristics/numbers/0.png' alt='' draggable='false'>"
+                break;
+        }
         if (stats[i] > highestStat) {
             highestStat = stats[i];
         };
-    };
+        i++ 
+    });
+    // };
     let sumStats = 0;
     for (let i = 0; i < stats.length; i++) {
         switch (stats[i]) {
@@ -256,9 +315,8 @@ function random_stats() {  //Получение случайных характ�
     console.log("highest stat = " + highestStat);
     console.log("sumStats =     " + sumStats);
     console.log("reroll =       " + reroll);
+    console.log("sumStats2 =    " + sumStats2);
 }
-random_stats();
-
 function delete_stat() { //Удаление одной характеристики из массива
     for (let i = 0; i < stats.length; i++) {
         stats[i] = stats[i++];  //смещение знаечений всех элементов после удаляемого влево на 1

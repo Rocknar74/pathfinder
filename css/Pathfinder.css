@@ -174,27 +174,27 @@ header {
     height: 500px;
 }
 .photo_DF {
-    background: url(../images/Dwarf_F.png) bottom left no-repeat;
+    background: url(../images/race/Dwarf_F.png) bottom left no-repeat;
     background-size: auto 100%;
 }
 .photo_DM {
-    background: url(../images/Dwarf_M.png) bottom left no-repeat;
+    background: url(../images/race/Dwarf_M.png) bottom left no-repeat;
     background-size: auto 100%;
 }
 .photo_EF {
-    background: url(../images/elf_f.png) bottom left no-repeat;
+    background: url(../images/race/elf_f.png) bottom left no-repeat;
     background-size: auto 100%;
 }
 .photo_EM {
-    background: url(../images/elf_m.png) bottom left no-repeat;
+    background: url(../images/race/elf_m.png) bottom left no-repeat;
     background-size: auto 100%;
 }
 .photo_HF {
-    background: url(../images/human_f.png) bottom left no-repeat;
+    background: url(../images/race/human_f.png) bottom left no-repeat;
     background-size: auto 100%;
 }
 .photo_HM {
-    background: url(../images/human_m.png) bottom left no-repeat;
+    background: url(../images/race/human_m.png) bottom left no-repeat;
     background-size: auto 100%;
 }
 .focus {
@@ -350,7 +350,7 @@ header {
 }
 .weapon_selector_warrior div:hover,
 .love_weapon_warrior-active {
-    background: url(../images/sword-center.png) center no-repeat;
+    background: url(../images/class_block/sword-center.png) center no-repeat;
     background-size: 83%;
 }
 
@@ -428,15 +428,15 @@ header {
     text-align: left;
 }
 .color_in_universalism {
-    background: linear-gradient(90deg, #475f6b 0%, #475f6b00 20%), linear-gradient(180deg, #475f6b 0%, #475f6b00 20%), linear-gradient(135deg, #475f6b 0%, #475f6b00 30%), url(../images/universalism.jpg) top right no-repeat;
+    background: linear-gradient(90deg, #475f6b 0%, #475f6b00 20%), linear-gradient(180deg, #475f6b 0%, #475f6b00 20%), linear-gradient(135deg, #475f6b 0%, #475f6b00 30%), url(../images/school_magic/universalism.jpg) top right no-repeat;
     background-size: 100%;
 }
 .color_in_illusion {
-    background: linear-gradient(90deg, #CF8F43 0%, #cf904300 20%), linear-gradient(180deg, #CF8F43 0%, #cf904300 20%), linear-gradient(135deg, #CF8F43, #cf904300 30%), url(../images/illusion.jpg) top right no-repeat;
+    background: linear-gradient(90deg, #CF8F43 0%, #cf904300 20%), linear-gradient(180deg, #CF8F43 0%, #cf904300 20%), linear-gradient(135deg, #CF8F43, #cf904300 30%), url(../images/school_magic/illusion.jpg) top right no-repeat;
     background-size: 100%;
 }
 .color_in_distruction {
-    background: linear-gradient(90deg, #772f26 0%, #772f2600 20%), linear-gradient(180deg, #772f26 0%, #772f2600 20%), linear-gradient(135deg, #772f26 0%, #772f2600 30%), url(../images/distruction.jpg) center right no-repeat;
+    background: linear-gradient(90deg, #772f26 0%, #772f2600 20%), linear-gradient(180deg, #772f26 0%, #772f2600 20%), linear-gradient(135deg, #772f26 0%, #772f2600 30%), url(../images/school_magic/distruction.jpg) center right no-repeat;
     background-size: 100%;
 }
 .container_school_magic p{
@@ -515,7 +515,7 @@ header {
     float: left;
     height: 0.24rem;
     width: 0.24rem;
-    background: url(../images/daggers.png);
+    background: url(../images/class_block/daggers.png);
     background-size: 100%;
     background-color: #00000000;
     margin: 0 5px 0 0;
@@ -578,7 +578,7 @@ header {
     padding: 20px;
 }
 .warrior {
-    background: radial-gradient(#24060670, #240606), url(../images/warrior_ver3.jpg)top no-repeat fixed;
+    background: radial-gradient(#24060670, #240606), url(../images/class_block/warrior_ver3.jpg)top no-repeat fixed;
     background-size: 100%;
 }
 .warrior a {
@@ -587,7 +587,7 @@ header {
 }
 
 .wizard {
-    background: radial-gradient(#05203670, #052036), url(../images/wizard_ver2.jpg) top no-repeat fixed;
+    background: radial-gradient(#05203670, #052036), url(../images/class_block/wizard_ver2.jpg) top no-repeat fixed;
     background-size: 100%;
 }
 .wizard a {
@@ -595,7 +595,7 @@ header {
 }
 
 .rogue {
-    background: radial-gradient(#28123570, #362541),  url(../images/rogue.jpg) top no-repeat fixed;
+    background: radial-gradient(#28123570, #362541),  url(../images/class_block/rogue.jpg) top no-repeat fixed;
     background-size: 100%;
 }
 .rogue a {
@@ -603,7 +603,7 @@ header {
 }
 
 .priest {
-    background: radial-gradient( #465a6870, #465a68), url(../images/priest.jpg) top no-repeat fixed;
+    background: radial-gradient( #465a6870, #465a68), url(../images/class_block/priest.jpg) top no-repeat fixed;
     background-size: 100%;
 }
 .priest a{
@@ -612,7 +612,7 @@ header {
 }
 
 
-/* Select stats block */
+/* SELCT STATS BLOCK --------------------------*/
 .select_stats_block {
     /* display: none; */
     display: flex;
@@ -634,79 +634,128 @@ header {
     flex-basis: 49%;
 }
 
-
-
-
-
 .container-stoneANDreroll {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 }
 .container-stoneNumber {
+    position: relative;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     flex-basis: 49%;
     max-height: 100%;
 }
-.stoneNumber {
+.personalContainer-stoneNumber {
     position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     height: 4.7vw;
     width: 5.434vw;
+}
+.stoneNumber {
+    /* position: absolute; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 0;
+    left: 0;
+    height: 4.7vw;
+    width: 5.434vw;
+    background: url(../images/characteristics/stoneNumber.png) top no-repeat;
+    background-size: 100%;
+    cursor: pointer;
+    z-index: 11;
     /* background-color: ivory; */
 }
 .stoneNumber img {
-    position: absolute;
-    max-height: 100%;
+    max-width: 29%;
+    /* z-index: -1; */
 }
-.rerollButton {
-    position: relative;
+.containerDrag-number {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    padding-bottom: 6px;
+    width: 13.2%;
+    z-index: 11;
+}
+
+.container-rerollButton {
+    /* position: relative; */
     display: flex;
     justify-content: center;
     flex-basis: 49%;
     height: 7vw;
-    max-width: 100%;
+    /* max-width: 100%; */
 }
-.rerollButton img {
-    max-height: 100%;
+.rerollButton {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    max-width: min-content;
+    height: 7vw;
 }
 .rerollDice-focus {
     position: absolute;
-    opacity: 0;
+    left: 0;
     top: 0;
-    left: 48px;
     max-height: 100%;
+    opacity: 0;
     z-index: -1;
     transition: 0.2s;
 }
+.rerollDice-focus-notactive {
+    display: none;
+}
 .rerollDice {
     cursor: pointer;
+    z-index: 5;
+    max-height: 100%;
+}
+.rerollDice-notactive {
+    cursor: not-allowed;
+    filter: contrast(0.5) brightness(0.6);
+    transition: 0.2s;
 }
 .rerollButton:hover .rerollDice-focus {
     opacity: 1;
     transition: 0.2s;
 }
 
-
-
-
-
-
-
 .container-characteristic {
-    background: url(../images/Back_stats_mono_long.png) left no-repeat;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background: url(../images/characteristics/Back_stats_mono_long.png) left no-repeat;
     background-size: 100%;
     position: relative;
     height: 7vw;
     max-width: 100%;
 }
 .characteristic_name {
-    position: absolute;
+    /* position: absolute; */
     max-height: 90%;
-    margin: 0.5% 0 0 2%;
+    margin: 0 0 0 2%;
     z-index: 10;
 }
+.chracteristic-discription {
+    padding: 0 3% 0 0;
+    flex-basis: 45%;
+    font-size: 0.24rem;
+    font-weight: lighter;
+    color: #eade93;
+    text-shadow: black 0 3px 10px,
+                    black 0 -3px 10px,
+                    black 3px 0px 10px,
+                    black -3px 0px 10px;
+}
+
 .characteristic_back {
     position: relative;
     max-width: 100%;
@@ -718,7 +767,7 @@ header {
 }
 
 
-/*Footer*/
+/* FOOTER -------------------------------------------*/
 footer {
     display: flex;
     background:#686052;
@@ -734,12 +783,13 @@ footer {
     width: 90%;
 }
 
-/*Buttons*/
+/* BUTTONS -----------------------------------------*/
 .next_button,
 .previous_button {
     outline: none;
     background: #8b816d;
     border: none;
+    border-radius: 10px;
     height: min-content;
     color: #eade93;
     font-size: 0.60rem;
@@ -747,7 +797,7 @@ footer {
     text-align: center;
     text-shadow: #412d27 0 10px 10px;
     margin: 5px;
-    padding: 5px;
+    padding: 10px;
     transition-duration: 0.25s;
 }
 .next_button:enabled,
@@ -788,15 +838,7 @@ footer {
         border-style: inset;
         box-shadow: inset 7px 6px 4px 5px #220c0c;
     }
-}
-@keyframes h1anim {
-    from {
-        padding-top: 0;
-    }
-    to {
-        padding-top: 8px;
-    }
-} */
+}*/
 
 .paint {
 color: #4d362e;
@@ -867,10 +909,18 @@ color: #3f3c38;
     .photo_EF_EM {
         order: 0;
     }
+    .container-characteristic p {
+        font-size: 0.18rem;
+    }
 }
 @media (max-width: 1000px) {
     :root {
-        /* font-size: 70px; */
+        font-size: 70px;
+    }
+    .container-characteristic p {
+        font-size: 0.09rem;
+        text-shadow: none;
+        font-style: normal;
     }
     .photo {
         height: 330px;
