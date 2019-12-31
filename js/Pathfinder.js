@@ -16,6 +16,7 @@ const LOVE_WEAPON_WIZARD_ACTIVE = 'love_weapon_wizard-active';
 
 const NEXT_BUTTON = document.querySelector(".next_button");
 const CLASS_BLOCK = document.querySelector(".class_block");
+const SELECT_STATS_BLOCK = document.querySelector(".select_stats_block");
 
 const REROLL_BUTTON = document.querySelector(".rerollDice");
 const REROLL_BUTTON_FOCUS = document.querySelector(".rerollDice-focus");
@@ -78,7 +79,11 @@ function tolerance_check(c) {
 };
 
 NEXT_BUTTON.addEventListener('click', () => {
-    CLASS_BLOCK.setAttribute("class", "class_block_visible");
+    CLASS_BLOCK.classList.add("class_block-visible");
+    SELECT_STATS_BLOCK.classList.add("select_stats_block-visible");
+    if (SELECT_STATS_BLOCK.classList.contains("select_stats_block-visible")) {
+        random_stats();
+    }
     NEXT_BUTTON.disabled = true;
 });
 
@@ -118,6 +123,7 @@ FOCUS.forEach(focus => {
             console.log(character.A.race);
         } else {
             CLASS_BLOCK.setAttribute("class", "class_block");
+            SELECT_STATS_BLOCK.classList.remove("select_stats_block-visible");
         }
     });
 });
@@ -172,150 +178,174 @@ CLASS.forEach(classes => {
 
 const STONE_NUMBER = document.querySelectorAll(".stoneNumber");
 const CONTAINER_STONE_NUMBER = document.querySelectorAll(".containerDrag-number");
+const STONE_TABLE = document.querySelector(".container-stoneNumber");
 let current;
 
+// STONE_NUMBER.forEach(item => {
+//     item.addEventListener("mouseover", function() {
+//         item.innerHTML += '<img class="stoneNumber-focus" src="images/characteristics/stoneNumber-focus.png" alt="">';
+//     })
+// })
+
 STONE_NUMBER.forEach(item => {
-    item.addEventListener('dragstart', function(event) {
-        current = this;
+    item.addEventListener('dragstart', function() {
+        current = item;
     });
 })
 
 CONTAINER_STONE_NUMBER.forEach(item => {
     item.addEventListener("drop", function() {
+        if (item.innerHTML) {
+            current.parentElement.appendChild(item.firstChild);
+        } 
         item.appendChild(current);
+        if (STONE_TABLE.firstElementChild === null) {
+            button_toggle(true)
+        }
+        // console.log(STONE_TABLE.firstElementChild);
+        
     })
 })
-
 CONTAINER_STONE_NUMBER.forEach(item => {
     item.addEventListener("dragover", function(event) {
         event.preventDefault();
     })
 })
 
+STONE_TABLE.addEventListener("drop", function() {
+    this.appendChild(current);
+    button_toggle(false)
+})
+
+STONE_TABLE.addEventListener("dragover", function(event) {
+    event.preventDefault();
+})
+
 var reroll = true; //Возмоно ли переопределить случайные характеристики
 var stats = []; //Массив со случаынми характеристиками
 
-function random_stats() {  //Получение случайных характеристик
-    stats = [];
-    let highestStat = 0;
-    let sumStats2 = 0;
-    let i = 0;
-    let a;
-    
-    STONE_NUMBER.forEach(item => {
-        item.innerHTML = "";
-        
-        stats[i] = Math.round(Math.random() * 15 + 3);
-        sumStats2 += stats[i];
-        a = stats[i];
+function random_stats() { //Получение случайных характеристик
+    if (reroll) {  
+        stats = [];
+        let highestStat = 0;
+        let sumStats2 = 0;
+        let i = 0;
+        let a;
+        STONE_NUMBER.forEach(item => {
+            item.innerHTML = '<img class="stoneNumber-focus" src="images/characteristics/stoneNumber-focus.png" alt="" draggable="false">';
+            
+            stats[i] = Math.round(Math.random() * 15 + 3);
+            sumStats2 += stats[i];
+            a = stats[i];
 
-        if (a > 9) {
-            item.innerHTML = "<img src='images/characteristics/numbers/1.png' alt='' draggable='false'>"
-            a -= 10;
-        }
-        switch (a) {
-            case (0):
-                item.innerHTML += "<img src='images/characteristics/numbers/0.png' alt='' draggable='false'>"
-                break;
-            case (1):
+            if (a > 9) {
                 item.innerHTML += "<img src='images/characteristics/numbers/1.png' alt='' draggable='false'>"
-                break;
-            case (2):
-                item.innerHTML += "<img src='images/characteristics/numbers/2.png' alt='' draggable='false'>"
-                break;
-            case (3):
-                item.innerHTML += "<img src='images/characteristics/numbers/3.png' alt='' draggable='false'>"
-                break;
-            case (4):
-                item.innerHTML += "<img src='images/characteristics/numbers/4.png' alt='' draggable='false'>"
-                break;
-            case (5):
-                item.innerHTML += "<img src='images/characteristics/numbers/5.png' alt='' draggable='false'>"
-                break;
-            case (6):
-                item.innerHTML += "<img src='images/characteristics/numbers/6.png' alt='' draggable='false'>"
-                break;
-            case (7):
-                item.innerHTML += "<img src='images/characteristics/numbers/7.png' alt='' draggable='false'>"
-                break;
-            case (8):
-                item.innerHTML += "<img src='images/characteristics/numbers/8.png' alt='' draggable='false'>"
-                break;
-            case (9):
-                item.innerHTML += "<img src='images/characteristics/numbers/9.png' alt='' draggable='false'>"
-                break;
-            default:
-                item.innerHTML += "<img src='images/characteristics/numbers/0.png' alt='' draggable='false'>"
-                break;
-        }
-        if (stats[i] > highestStat) {
-            highestStat = stats[i];
+                a -= 10;
+            }
+            switch (a) {
+                case (0):
+                    item.innerHTML += "<img src='images/characteristics/numbers/0.png' alt='' draggable='false'>"
+                    break;
+                case (1):
+                    item.innerHTML += "<img src='images/characteristics/numbers/1.png' alt='' draggable='false'>"
+                    break;
+                case (2):
+                    item.innerHTML += "<img src='images/characteristics/numbers/2.png' alt='' draggable='false'>"
+                    break;
+                case (3):
+                    item.innerHTML += "<img src='images/characteristics/numbers/3.png' alt='' draggable='false'>"
+                    break;
+                case (4):
+                    item.innerHTML += "<img src='images/characteristics/numbers/4.png' alt='' draggable='false'>"
+                    break;
+                case (5):
+                    item.innerHTML += "<img src='images/characteristics/numbers/5.png' alt='' draggable='false'>"
+                    break;
+                case (6):
+                    item.innerHTML += "<img src='images/characteristics/numbers/6.png' alt='' draggable='false'>"
+                    break;
+                case (7):
+                    item.innerHTML += "<img src='images/characteristics/numbers/7.png' alt='' draggable='false'>"
+                    break;
+                case (8):
+                    item.innerHTML += "<img src='images/characteristics/numbers/8.png' alt='' draggable='false'>"
+                    break;
+                case (9):
+                    item.innerHTML += "<img src='images/characteristics/numbers/9.png' alt='' draggable='false'>"
+                    break;
+                default:
+                    item.innerHTML += "<img src='images/characteristics/numbers/0.png' alt='' draggable='false'>"
+                    break;
+            }
+            if (stats[i] > highestStat) {
+                highestStat = stats[i];
+            };
+            i++ 
+        });
+        // };
+        let sumStats = 0;
+        for (let i = 0; i < stats.length; i++) {
+            switch (stats[i]) {
+                case (10):
+                case (11):
+                    sumStats += 0;
+                    break;
+                case (12):
+                case (13):
+                    sumStats += 1;
+                    break;
+                case (14):   
+                case (15):
+                    sumStats += 2;
+                    break;
+                case (16):
+                case (17):
+                    sumStats += 3;
+                    break;
+                case (18):
+                case (19):
+                    sumStats += 4;
+                    break;
+                case (20):
+                    sumStats += 5;
+                    break;
+                case (8):
+                case (9):
+                    sumStats -= 1;
+                    break;
+                case (6):
+                case (7):
+                    sumStats -= 2;
+                    break;
+                case (4):
+                case (5):
+                    sumStats -= 3;
+                    break;
+                case (2):
+                case (3):
+                    sumStats -= 4;
+                    break;
+                case (0):
+                case (1):
+                    sumStats -= 5;
+                    break;
+                default:
+                    sumStats = NaN;
+                    console.log("Что-то пошло не так, sumStats = NaN");
+                    break;
+            }
         };
-        i++ 
-    });
-    // };
-    let sumStats = 0;
-    for (let i = 0; i < stats.length; i++) {
-        switch (stats[i]) {
-            case (10):
-            case (11):
-                sumStats += 0;
-                break;
-            case (12):
-            case (13):
-                sumStats += 1;
-                break;
-            case (14):   
-            case (15):
-                sumStats += 2;
-                break;
-            case (16):
-            case (17):
-                sumStats += 3;
-                break;
-            case (18):
-            case (19):
-                sumStats += 4;
-                break;
-            case (20):
-                sumStats += 5;
-                break;
-            case (8):
-            case (9):
-                sumStats -= 1;
-                break;
-            case (6):
-            case (7):
-                sumStats -= 2;
-                break;
-            case (4):
-            case (5):
-                sumStats -= 3;
-                break;
-            case (2):
-            case (3):
-                sumStats -= 4;
-                break;
-            case (0):
-            case (1):
-                sumStats -= 5;
-                break;
-            default:
-                sumStats = NaN;
-                console.log("Что-то пошло не так, sumStats = NaN");
-                break;
-        }
-    };
-    if (sumStats > 3 && highestStat > 13) {
-        reroll = false;
-    } else {
-        reroll = true;
-    };
-    console.log("stats =        " + stats);
-    console.log("highest stat = " + highestStat);
-    console.log("sumStats =     " + sumStats);
-    console.log("reroll =       " + reroll);
-    console.log("sumStats2 =    " + sumStats2);
+        if (sumStats > 3 && highestStat > 13) {
+            reroll = false;
+        } else {
+            reroll = true;
+        };
+        console.log("stats =        " + stats);
+        console.log("highest stat = " + highestStat);
+        console.log("sumStats =     " + sumStats);
+        console.log("reroll =       " + reroll);
+        console.log("sumStats2 =    " + sumStats2);
+    }
 }
 function delete_stat() { //Удаление одной характеристики из массива
     for (let i = 0; i < stats.length; i++) {

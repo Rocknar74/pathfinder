@@ -37,7 +37,6 @@ html {
 }
 
 
-
 /*Header*/
 header {
     background:#686052;
@@ -220,8 +219,9 @@ header {
 /* Classs block */
 .class_block {
     display: none;
+    margin-bottom: 50px;
 }
-.class_block_visible {
+.class_block-visible {
     display: block;
 }
 .class_table {
@@ -603,7 +603,7 @@ header {
 }
 
 .priest {
-    background: radial-gradient( #465a6870, #465a68), url(../images/class_block/priest.jpg) top no-repeat fixed;
+    background: radial-gradient( #465a6870, #465a68), url(../images/class_block/priest_ver2.jpg) top no-repeat fixed;
     background-size: 100%;
 }
 .priest a{
@@ -614,13 +614,15 @@ header {
 
 /* SELCT STATS BLOCK --------------------------*/
 .select_stats_block {
-    /* display: none; */
-    display: flex;
+    display: none;
     flex-direction: column;
     max-width: 1800px;
     width: 80%;
     margin: auto;
     min-height: max-content;
+}
+.select_stats_block-visible {
+    display: flex;
 }
 .characteristic_discription {
     display: flex;
@@ -642,26 +644,30 @@ header {
 .container-stoneNumber {
     position: relative;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     flex-basis: 49%;
     max-height: 100%;
+    background: url(../images/characteristics/back_container_stoneNumber.png) top no-repeat;
+    background-size: 100%;
+
 }
-.personalContainer-stoneNumber {
+/* .personalContainer-stoneNumber {
     position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
     height: 4.7vw;
     width: 5.434vw;
-}
+} */
 .stoneNumber {
-    /* position: absolute; */
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
-    top: 0;
-    left: 0;
+    /* top: 0;
+    left: 0; */
+    margin: 0 0.35vw;
     height: 4.7vw;
     width: 5.434vw;
     background: url(../images/characteristics/stoneNumber.png) top no-repeat;
@@ -670,7 +676,17 @@ header {
     z-index: 11;
     /* background-color: ivory; */
 }
-.stoneNumber img {
+.stoneNumber:hover .stoneNumber-focus {
+    opacity: 1;
+}
+.stoneNumber-focus {
+    position: absolute;
+    width: 104%;
+    opacity: 0;
+    transition: 0.2s;
+    z-index: -1;
+}
+.stoneNumber img:not(.stoneNumber-focus) {
     max-width: 29%;
     /* z-index: -1; */
 }
