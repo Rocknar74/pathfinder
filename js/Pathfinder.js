@@ -21,23 +21,6 @@ const SELECT_STATS_BLOCK = document.querySelector(".select_stats_block");
 const REROLL_BUTTON = document.querySelector(".rerollDice");
 const REROLL_BUTTON_FOCUS = document.querySelector(".rerollDice-focus");
 
-
-REROLL_BUTTON.addEventListener("click", () => {
-    if (reroll) {
-        random_stats();
-    }
-    if (!reroll) {
-        REROLL_BUTTON.classList.add("rerollDice-notactive");
-        REROLL_BUTTON_FOCUS.classList.add("rerollDice-focus-notactive");
-    }
-    // random_stats();
-})
-
-// console.log(FOCUS);
-// console.log(CLASS);
-// console.log(CLASS_ACTIVE);
-// console.log(FOCUS_ACTIVE);
-// console.log(CONTAINER_CLASS);
 function button_toggle(button) {
     switch(button) { 
         case (false): //кнопка выключается
@@ -51,23 +34,25 @@ function button_toggle(button) {
     };
 };
 
-function clean_OR_add_items (a, b, c) {
-    if (c.classList.contains(b)){
-        c.classList.remove(b);
+function clean_items (obj, newClassObj, thisObj) {
+    if (thisObj.classList.contains(newClassObj)){
+        thisObj.classList.remove(newClassObj);
         button_toggle(false);
         return false;
     } else {
-        a.forEach(item => {
-            item.classList.remove(b);
-        });
-        c.classList.add(b);
-        tolerance_check(c);
+        add_items (obj, newClassObj, thisObj);
         return true;
     };
 };
-
-function tolerance_check(c) {
-    switch (c.innerHTML) {
+function add_items (obj, newClassObj, thisObj) {
+    obj.forEach(item => {
+        item.classList.remove(newClassObj);
+    });
+    thisObj.classList.add(newClassObj);
+    tolerance_check(thisObj);
+}
+function tolerance_check(thisObj) {
+    switch (thisObj.innerHTML) {
         case("Воин"):
         case("Волшебник"):
             button_toggle(false);
@@ -87,9 +72,9 @@ NEXT_BUTTON.addEventListener('click', () => {
     NEXT_BUTTON.disabled = true;
 });
 
-FOCUS.forEach(focus => {
-    focus.addEventListener('click', () => {
-        if (clean_OR_add_items(FOCUS, FOCUS_ACTIVE, focus)) {
+FOCUS.forEach(item => {
+    item.addEventListener('click', () => {
+        if (clean_items(FOCUS, FOCUS_ACTIVE, item)) {
             for (let i = 0; i < FOCUS.length; i++) {
                 if (FOCUS[i].classList.contains(FOCUS_ACTIVE)) {
                     switch(i) {
@@ -121,6 +106,7 @@ FOCUS.forEach(focus => {
                 }
             }
             console.log(character.A.race);
+            console.log(character.A.sex);
         } else {
             CLASS_BLOCK.setAttribute("class", "class_block");
             SELECT_STATS_BLOCK.classList.remove("select_stats_block-visible");
@@ -128,16 +114,16 @@ FOCUS.forEach(focus => {
     });
 });
 
-LOVE_WEAPON_WIZARD.forEach(love => {
-    love.addEventListener('click', () => {
-        clean_OR_add_items(LOVE_WEAPON_WIZARD, LOVE_WEAPON_WIZARD_ACTIVE, love);
+LOVE_WEAPON_WIZARD.forEach(item => {
+    item.addEventListener('click', () => {
+        clean_items(LOVE_WEAPON_WIZARD, LOVE_WEAPON_WIZARD_ACTIVE, item);
     });
 });
 
-LOVE_WEAPON_WARRIOR.forEach(love => {
-    love.addEventListener('click', () => {
-        if (clean_OR_add_items(LOVE_WEAPON_WARRIOR, LOVE_WEAPON_WARRIOR_ACTIVE, love)) {
-            warrior.I.feats.warrior_weapon = "Увер. вл. ор. - " + love.innerHTML;
+LOVE_WEAPON_WARRIOR.forEach(item => {
+    item.addEventListener('click', () => {
+        if (clean_items(LOVE_WEAPON_WARRIOR, LOVE_WEAPON_WARRIOR_ACTIVE, item)) {
+            warrior.I.feats.warrior_weapon = "Увер. вл. ор. - " + item.innerHTML;
             console.log(warrior.I.feats.warrior_weapon);
         };
     });
@@ -146,64 +132,44 @@ LOVE_WEAPON_WARRIOR.forEach(love => {
 CLASS.forEach(classes => {
     classes.addEventListener('click', () => {
         const SELECTED_CONTAINER = classes.parentElement.nextElementSibling;
-        if (clean_OR_add_items(CLASS, CLASS_ACTIVE, classes)) {
+        if (clean_items(CLASS, CLASS_ACTIVE, classes)) {
             CONTAINER_CLASS.forEach(item => {
                 item.classList.remove(CONTAINER_CLASS_ACTIVE);
             });
             SELECTED_CONTAINER.classList.toggle('container_class-active');
             for (let i = 0; i < CLASS.length; i++) {
                 if (CLASS[i].classList.contains(CLASS_ACTIVE)) {
-                    switch(i) {
-                        case (0):
-                            character.A.class = "Warrior";
-                            break;
-                        case (1):
-                            character.A.class = "Wizard";
-                            break;
-                        case (2):
-                            character.A.class = "Rogue";
-                            break;
-                        case (3):
-                            character.A.class = "Priest";
-                            break;
-                    }
+                    character.A.class = `${CLASS[i].innerHTML}`;
                 }
             };
+            console.log(character.A.class);
         } else {
             SELECTED_CONTAINER.classList.remove(CONTAINER_CLASS_ACTIVE);
         }
     });
 });
 
-
 const STONE_NUMBER = document.querySelectorAll(".stoneNumber");
 const CONTAINER_STONE_NUMBER = document.querySelectorAll(".containerDrag-number");
 const STONE_TABLE = document.querySelector(".container-stoneNumber");
-let current;
-
-// STONE_NUMBER.forEach(item => {
-//     item.addEventListener("mouseover", function() {
-//         item.innerHTML += '<img class="stoneNumber-focus" src="images/characteristics/stoneNumber-focus.png" alt="">';
-//     })
-// })
+var currentItem;
+var switchCase;
 
 STONE_NUMBER.forEach(item => {
     item.addEventListener('dragstart', function() {
-        current = item;
+        currentItem = item;
     });
 })
 
 CONTAINER_STONE_NUMBER.forEach(item => {
     item.addEventListener("drop", function() {
         if (item.innerHTML) {
-            current.parentElement.appendChild(item.firstChild);
+            currentItem.parentElement.appendChild(item.firstChild);
         } 
-        item.appendChild(current);
+        item.appendChild(currentItem);
         if (STONE_TABLE.firstElementChild === null) {
             button_toggle(true)
         }
-        // console.log(STONE_TABLE.firstElementChild);
-        
     })
 })
 CONTAINER_STONE_NUMBER.forEach(item => {
@@ -213,7 +179,7 @@ CONTAINER_STONE_NUMBER.forEach(item => {
 })
 
 STONE_TABLE.addEventListener("drop", function() {
-    this.appendChild(current);
+    this.appendChild(currentItem); 
     button_toggle(false)
 })
 
@@ -225,137 +191,104 @@ var reroll = true; //Возмоно ли переопределить случа
 var stats = []; //Массив со случаынми характеристиками
 
 function random_stats() { //Получение случайных характеристик
-    if (reroll) {  
-        stats = [];
-        let highestStat = 0;
-        let sumStats2 = 0;
-        let i = 0;
-        let a;
-        STONE_NUMBER.forEach(item => {
-            item.innerHTML = '<img class="stoneNumber-focus" src="images/characteristics/stoneNumber-focus.png" alt="" draggable="false">';
-            
-            stats[i] = Math.round(Math.random() * 15 + 3);
-            sumStats2 += stats[i];
-            a = stats[i];
+    stats = [];
+    let highestStat = 0;
+    let i = 0;
+    let currentStat;
 
-            if (a > 9) {
-                item.innerHTML += "<img src='images/characteristics/numbers/1.png' alt='' draggable='false'>"
-                a -= 10;
-            }
-            switch (a) {
-                case (0):
-                    item.innerHTML += "<img src='images/characteristics/numbers/0.png' alt='' draggable='false'>"
-                    break;
-                case (1):
-                    item.innerHTML += "<img src='images/characteristics/numbers/1.png' alt='' draggable='false'>"
-                    break;
-                case (2):
-                    item.innerHTML += "<img src='images/characteristics/numbers/2.png' alt='' draggable='false'>"
-                    break;
-                case (3):
-                    item.innerHTML += "<img src='images/characteristics/numbers/3.png' alt='' draggable='false'>"
-                    break;
-                case (4):
-                    item.innerHTML += "<img src='images/characteristics/numbers/4.png' alt='' draggable='false'>"
-                    break;
-                case (5):
-                    item.innerHTML += "<img src='images/characteristics/numbers/5.png' alt='' draggable='false'>"
-                    break;
-                case (6):
-                    item.innerHTML += "<img src='images/characteristics/numbers/6.png' alt='' draggable='false'>"
-                    break;
-                case (7):
-                    item.innerHTML += "<img src='images/characteristics/numbers/7.png' alt='' draggable='false'>"
-                    break;
-                case (8):
-                    item.innerHTML += "<img src='images/characteristics/numbers/8.png' alt='' draggable='false'>"
-                    break;
-                case (9):
-                    item.innerHTML += "<img src='images/characteristics/numbers/9.png' alt='' draggable='false'>"
-                    break;
-                default:
-                    item.innerHTML += "<img src='images/characteristics/numbers/0.png' alt='' draggable='false'>"
-                    break;
-            }
-            if (stats[i] > highestStat) {
-                highestStat = stats[i];
-            };
-            i++ 
-        });
-        // };
-        let sumStats = 0;
-        for (let i = 0; i < stats.length; i++) {
-            switch (stats[i]) {
-                case (10):
-                case (11):
-                    sumStats += 0;
-                    break;
-                case (12):
-                case (13):
-                    sumStats += 1;
-                    break;
-                case (14):   
-                case (15):
-                    sumStats += 2;
-                    break;
-                case (16):
-                case (17):
-                    sumStats += 3;
-                    break;
-                case (18):
-                case (19):
-                    sumStats += 4;
-                    break;
-                case (20):
-                    sumStats += 5;
-                    break;
-                case (8):
-                case (9):
-                    sumStats -= 1;
-                    break;
-                case (6):
-                case (7):
-                    sumStats -= 2;
-                    break;
-                case (4):
-                case (5):
-                    sumStats -= 3;
-                    break;
-                case (2):
-                case (3):
-                    sumStats -= 4;
-                    break;
-                case (0):
-                case (1):
-                    sumStats -= 5;
-                    break;
-                default:
-                    sumStats = NaN;
-                    console.log("Что-то пошло не так, sumStats = NaN");
-                    break;
-            }
+    STONE_NUMBER.forEach(item => {
+        stats[i] = Math.round(Math.random() * 15 + 3);
+        currentStat = stats[i];
+
+        item.innerHTML = `<span class="currentStat">${currentStat}</span><img class="stoneNumber-focus" src="images/characteristics/stoneNumber-focus.png" alt="" draggable="false">`;
+
+        if (currentStat > 9) {
+            item.innerHTML += `<img src="images/characteristics/numbers/1.png" alt="" draggable="false">`
+            currentStat -= 10;
+        }
+
+        item.innerHTML += `<img src="images/characteristics/numbers/${currentStat}.png" alt="" draggable="false">`;
+
+        if (stats[i] > highestStat) {
+            highestStat = stats[i];
         };
-        if (sumStats > 3 && highestStat > 13) {
-            reroll = false;
-        } else {
-            reroll = true;
-        };
-        console.log("stats =        " + stats);
-        console.log("highest stat = " + highestStat);
-        console.log("sumStats =     " + sumStats);
-        console.log("reroll =       " + reroll);
-        console.log("sumStats2 =    " + sumStats2);
+        i++;
+    });
+    
+    let sumStats = 0;
+    for (let i = 0; i < stats.length; i++) {
+        switch (stats[i]) {
+            case (10):
+            case (11):
+                sumStats += 0;
+                break;
+            case (12):
+            case (13):
+                sumStats += 1;
+                break;
+            case (14):   
+            case (15):
+                sumStats += 2;
+                break;
+            case (16):
+            case (17):
+                sumStats += 3;
+                break;
+            case (18):
+            case (19):
+                sumStats += 4;
+                break;
+            case (20):
+                sumStats += 5;
+                break;
+            case (8):
+            case (9):
+                sumStats -= 1;
+                break;
+            case (6):
+            case (7):
+                sumStats -= 2;
+                break;
+            case (4):
+            case (5):
+                sumStats -= 3;
+                break;
+            case (2):
+            case (3):
+                sumStats -= 4;
+                break;
+            case (0):
+            case (1):
+                sumStats -= 5;
+                break;
+            default:
+                sumStats = NaN;
+                console.log("Что-то пошло не так, sumStats = NaN");
+                break;
+        }
+    };
+    if (sumStats > 3 && highestStat > 13) {
+        reroll = false;
+    } else {
+        reroll = true;
+    };
+
+    console.log("stats =        " + stats);
+    console.log("highest stat = " + highestStat);
+    console.log("sumStats =     " + sumStats);
+    console.log("reroll =       " + reroll);
+
+    if (!reroll) {
+        REROLL_BUTTON.classList.add("rerollDice-notactive");
+        REROLL_BUTTON_FOCUS.classList.add("rerollDice-focus-notactive");
     }
 }
-function delete_stat() { //Удаление одной характеристики из массива
-    for (let i = 0; i < stats.length; i++) {
-        stats[i] = stats[i++];  //смещение знаечений всех элементов после удаляемого влево на 1
-    };
-    arr.pop(); // удаление последнего элемента
-    return stats;
-}
 
-// console.log(stats);
+REROLL_BUTTON.addEventListener("click", () => {
+    if (reroll) {
+        random_stats();     
+    }
+})
 
 //Объекты рас
 var dwarf = {
@@ -465,10 +398,11 @@ var priest = {
 
 };
 
+
+
 //Итоговый объект персонажа
 var character = {
     bonus_ability_human: false,
-
     A: {
         name: "", //имя
         race: "", //раса
@@ -485,6 +419,12 @@ var character = {
         intelligence: 0, //интеллект
         wisdom: 0, //мудрость
         charisma: 0, //харизма
+        strength_mod: 0,
+        dexterity_mod: 0,
+        endurance_mod: 0,
+        intelligence_mod: 0,
+        wisdom_mod: 0,
+        charisma_mod: 0,
     },
 
     V: {
@@ -567,51 +507,3 @@ var character = {
 
 // console.log(dwarf);
 // console.log(character);
-
-//////////////////НА БУДУЮЩЕЕ//////////////////////////
-
-// modGen: function(stat) {
-//     switch (stat) {
-//         case (10):
-//         case (11):
-//             return 0;
-//         case (12):
-//         case (13):
-//             return 1;
-//         case (14):   
-//         case (15):
-//             return 2;
-//         case (16):
-//         case (17):
-//             return 3;
-//         case (18):
-//         case (19):
-//             return 4;
-//         case (20):
-//             return 5;
-//         case (8):
-//         case (9):
-//             return -1;
-//         case (6):
-//         case (7):
-//             return -2;
-//         case (4):
-//         case (5):
-//             return -3;
-//         case (2):
-//         case (3):
-//             return -4;
-//         case (0):
-//         case (1):
-//             return -5;
-//         default:
-//             console.log("Что-то пошло не так, modGen выдал NaN");
-//             return NaN;
-//     }   
-// },
-// strength_mod: this.modGen(this.strength),
-// dexterity_mod: this.modGen,
-// endurance_mod: this.modGen,
-// intelligence_mod: this.modGen,
-// wisdom_mod: this.modGen,
-// charisma_mod: this.modGen,

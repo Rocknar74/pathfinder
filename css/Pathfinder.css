@@ -21,7 +21,6 @@
 
 * {
     font-family: 'Mason Chronicles', serif;
-    box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
@@ -31,7 +30,6 @@
 html {
     /* font-size: 100px; */
     color: #e6e6fa;
-    scroll-behavior: smooth;
     overflow-x:hidden; 
     background: #8b816d;
 }
@@ -429,15 +427,14 @@ header {
 }
 .color_in_universalism {
     background: linear-gradient(90deg, #475f6b 0%, #475f6b00 20%), linear-gradient(180deg, #475f6b 0%, #475f6b00 20%), linear-gradient(135deg, #475f6b 0%, #475f6b00 30%), url(../images/school_magic/universalism.jpg) top right no-repeat;
-    background-size: 100%;
+    background-size: cover;
 }
 .color_in_illusion {
     background: linear-gradient(90deg, #CF8F43 0%, #cf904300 20%), linear-gradient(180deg, #CF8F43 0%, #cf904300 20%), linear-gradient(135deg, #CF8F43, #cf904300 30%), url(../images/school_magic/illusion.jpg) top right no-repeat;
-    background-size: 100%;
+    background-size: cover;
 }
 .color_in_distruction {
     background: linear-gradient(90deg, #772f26 0%, #772f2600 20%), linear-gradient(180deg, #772f26 0%, #772f2600 20%), linear-gradient(135deg, #772f26 0%, #772f2600 30%), url(../images/school_magic/distruction.jpg) center right no-repeat;
-    background-size: 100%;
 }
 .container_school_magic p{
     text-align: justify;
@@ -678,6 +675,9 @@ header {
 }
 .stoneNumber:hover .stoneNumber-focus {
     opacity: 1;
+}
+.currentStat {
+    display: none;
 }
 .stoneNumber-focus {
     position: absolute;
@@ -997,3 +997,4 @@ color: #3f3c38;
         overflow-x: auto;
     }
 } */
+    
