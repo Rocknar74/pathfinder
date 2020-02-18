@@ -1,55 +1,66 @@
+
 @font-face {
-    font-family: 'XXII Arabian OneNightStand Cyr';
-    src: url(../fonts/15364.ttf);
+    font-family: 'XXII_Arabian_OneNightStand_Cyr'; /*wizard font*/
+    src: url(../fonts/XXII_Arabian_OneNightStand_Cyr.ttf);
 }
 @font-face {
-    font-family: 'ArabiaCyrillic-Regular';
-    src: url(../fonts/15522.ttf);
+    font-family: 'ArabiaCyrillic-Regular'; /*rogue font*/
+    src: url(../fonts/ArabiaCyrillic-Regular.ttf);
 }
 @font-face {
-    font-family: 'Kanonnik UCS';
-    src: url(../fonts/10410.ttf);
+    font-family: 'Kanonnik_UCS'; /*priest font*/
+    src: url(../fonts/Kanonnik_UCS.ttf);
 }
 @font-face {
-    font-family: 'ljk_Remains';
-    src: url(../fonts/16880.otf);
+    font-family: 'ljk_Remains'; /*warrior font*/ 
+    src: url(../fonts/ljk_Remains.otf);
 }
 @font-face {
-    font-family: 'Mason Chronicles';       /*main font*/
+    font-family: 'Mason Chronicles'; /*main font*/
     src: url(../fonts/Mason_Chronicles.ttf);
 }
 
 * {
+    box-sizing: border-box;
     font-family: 'Mason Chronicles', serif;
     margin: 0;
     padding: 0;
 }
-:root {
-    font-size: 100px;
-}
 html {
-    /* font-size: 100px; */
+    font-size: 100px;
     color: #e6e6fa;
-    overflow-x:hidden; 
-    background: #8b816d;
+    overflow-x:hidden;
+}
+body {
+    background-color: #8b816d;
+    background: url(../images/BG_MAIN.jpg) repeat-y top;
+    background-size: 100%;
+    background-attachment: fixed;
+    backdrop-filter:  saturate(80%) blur(.022rem) sepia(10%) brightness(30%) contrast(110%);
 }
 
 
 /*Header*/
 header {
-    background:#686052;
+    /* background:#686052; */
+    background-color: #8b816d31;
 }
 .logo {
-    background:#686052;
+    /* background:#686052; */
     text-align: center;
+}
+.logo img {
+    max-width: 800px;
 }
 
 
 
-/*Main*/
+/* MAIN =============================================================================================*/
 .all_content {
     margin: 0 auto;
     height: 100%;
+    background-color: #8b816d31;
+    filter: blur(.2px);
 }
 .h1_block_headline {
     color: #eade93;
@@ -61,26 +72,26 @@ header {
 
 
 
-/*Race_block*/
+/* RACE BLOCK =========================================================================================*/
 .race_block {
     display: flex;
     flex-direction: column;
-    font-size: 0.24rem;
+    font-size: 0.2rem;
 }
 .race_block strong {
-    color: #3f3c38;
+    color: #978c76;
 }
 .race_block ul {
     list-style-type: none;
+    /* margin-bottom: -.04rem; */
 }
-.race_block li:after{
+/* .race_block li:after{
     content: "";
     display: block;
-    height: 0.24rem;
+    background-color: #978c76;
+    height: 1px;
     width: 100%;
-
-}
-
+} */
 .race_table {
     display: flex;
     max-width: 1800px;
@@ -95,17 +106,36 @@ header {
     display: flex;
     justify-content: center;
     position: relative;
-    background:#978c76;
+    /* background:#978c76; */
     margin: 0 0 10px 0;
     min-width: 100vw;
 }
-.h2_in_race{
-    background:#978c76;
-    font-size: 0.60rem;
-    color: #3f3c38;
+.h2_in_race {
+    display: flex;
+    align-items: center;
+    position: relative;
+    /* background:#978c76; */
+    font-size: .6rem;
+    color: #978c76;
     width: max-content;
     padding: 0 10px;
     z-index: 2;
+}
+.h2_in_race::after, .h2_in_race::before {
+    position: absolute;
+    content: '';
+    display: block;
+    background:#978c76;
+    height: .13rem;
+    width: .13rem;
+
+    transform: rotate(45deg);
+}
+.h2_in_race::after {
+    right: -20px;
+}
+.h2_in_race::before {
+    left: -20px;
 }
 .dwarf_row,
 .elf_row,
@@ -114,51 +144,56 @@ header {
     flex-direction: row;
     text-align: justify;
     align-items: center;
+    justify-content: space-between;
 }
 
 .dwarf_history {
     flex-basis: 26%;
 }
 .dwarf_stats {
-    flex-basis: 37.5%;
+    flex-basis: 40%;
 }
 .photo_DF_DM {
-    flex-basis: 31.5%;
+    /* flex-basis: 31.5%; */
     display: flex;
     justify-content: space-around;
+    flex-grow: 1;
 }
 
 .elf_history {
-    flex-basis: 23.5%;
+    flex-basis: 40%;
     order: 1;
 }
 .elf_stats {
-    flex-basis: 38.5%;
+    flex-basis: 35%;
     order: 3;
 }
 .photo_EF_EM {
-    flex-basis: 35%;
+    /* flex-basis: 35%; */
     display: flex;
     justify-content: space-around;
+    flex-grow: 1;
     order: 4;
 }
 
 .human_history {
-    flex-basis: 40%;
+    flex-basis: 34%;
 }
 .human_stats {
-    flex-basis: 19.5%;
+    flex-basis: 15%;
 }
 .photo_HF_HM {
-    flex-basis: 37.5%;
+    /* flex-basis: 40%; */
     display: flex;
     justify-content: space-around;
+    flex-grow: 1;
 }
 
 
 .flowers {
-    flex-basis: 3%;
+    /* flex-basis: 3%; */
     padding: 0 3px 0 3px;
+    filter: sepia(20%) brightness(150%) contrast(150%);
 }
 .elf_row .flowers {
     order: 2;
@@ -208,8 +243,8 @@ header {
 
 .decoration {
     float: left;
-    padding-right: 9px;
-    width: 1.15rem;
+    padding-right: .05rem;
+    width: 1.01rem;
 }
 
 
@@ -397,6 +432,15 @@ header {
     margin: 0 0 10px 0;
     /* background: #5e616042; */
     cursor: pointer;
+    /* border: 5px solid #ffffff00;
+    border-radius: 10px 0 0 0; */
+}
+.school_magic:hover {
+    outline-width: 3px;
+    outline-color: #eade93;
+    outline-style: outset;
+    outline-offset: -10px;
+    transition: 0.2s;
 }
 
 .school_magic div:nth-child(1) {
@@ -405,13 +449,12 @@ header {
     align-items: center;
     justify-content: center;
     padding: 1vw;
-    border-radius: 10px 0 0 0;
+    border-radius: 0.1rem 0 0 0;
 
 }
 .school_magic div:nth-child(2) {
     grid-area: 1/2/3/2;
     width: min-content;
-    height: 100%;
     padding: 1vw 1vw 1vw 0;
 }
 .school_magic div:nth-child(3) {
@@ -439,7 +482,6 @@ header {
 .container_school_magic p{
     text-align: justify;
 }
-
 .bg_universalism {
     background: #475f6b;
     font-size: 0.27rem;
@@ -467,7 +509,7 @@ header {
     background: #5e616042; /*#5e616042*/
     text-shadow: #000000 3px 3px 3px;
     font-size: 0.35rem;
-    font-family: 'XXII Arabian OneNightStand Cyr', fantasy;
+    font-family: 'XXII_Arabian_OneNightStand_Cyr', fantasy;
     padding: 5px 0 5px 40px;
     color: #7c95a0;
 }
@@ -548,7 +590,7 @@ header {
     background: #5e616042;
     text-shadow: #000000 3px 3px 3px;
     font-size: 0.32rem;
-    font-family: 'Kanonnik UCS', fantasy;
+    font-family: 'Kanonnik_UCS', fantasy;
     padding: 5px 0 5px 0;
     min-width: max-content;
     color: #aac3d4;
@@ -558,7 +600,7 @@ header {
     background: #5e616042; /*#5e616042*/
     text-shadow: #000000 3px 3px 3px;
     font-size: 0.27rem;
-    font-family: 'Kanonnik UCS', fantasy;
+    font-family: 'Kanonnik_UCS', fantasy;
     padding: 5px 0 5px 0;
     min-width: max-content;
     color: #aac3d4;
@@ -588,7 +630,7 @@ header {
     background-size: 100%;
 }
 .wizard a {
-    font-family: 'XXII Arabian OneNightStand Cyr', fantasy;
+    font-family: 'XXII_Arabian_OneNightStand_Cyr', fantasy;
 }
 
 .rogue {
@@ -604,7 +646,7 @@ header {
     background-size: 100%;
 }
 .priest a{
-    font-family: 'Kanonnik UCS', fantasy;
+    font-family: 'Kanonnik_UCS', fantasy;
     letter-spacing: 2px;
 }
 
@@ -624,21 +666,34 @@ header {
 .characteristic_discription {
     display: flex;
     justify-content: space-between;
-    font-size: 0.24rem;
-    color: #eade93;
     padding-bottom: 1vw;
 }
 .characteristic_discription p {
     text-align: center;
+    font-size: 0.24rem;
+    color: #eade93;
     flex-basis: 49%;
 }
+.human_annotation {
+    position: relative;
+    font-size: 0.18rem;
+    width: 100%;
+}
+/* .human_annotation span {
+    display: block;
+    height: 5px;
+    border-radius: 10px;
+    background-color: #27343f9a;
+    margin: 0.1rem 20%;
+    background: linear-gradient(#b8b986, #27343f9a);
+} */
 
 .container-stoneANDreroll {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 }
-.container-stoneNumber {
+.flag_table {
     position: relative;
     display: flex;
     justify-content: center;
@@ -649,7 +704,7 @@ header {
     background-size: 100%;
 
 }
-/* .personalContainer-stoneNumber {
+/* .personalflag_table {
     position: relative;
     display: flex;
     align-items: center;
@@ -657,38 +712,50 @@ header {
     height: 4.7vw;
     width: 5.434vw;
 } */
-.stoneNumber {
+.stone_number {
     position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
-    /* top: 0;
-    left: 0; */
-    margin: 0 0.35vw;
-    height: 4.7vw;
-    width: 5.434vw;
+    margin: 0 .1vw;
+    height: 5vw;
+    width: 5.71vw;
     background: url(../images/characteristics/stoneNumber.png) top no-repeat;
     background-size: 100%;
-    cursor: pointer;
     z-index: 11;
-    /* background-color: ivory; */
 }
-.stoneNumber:hover .stoneNumber-focus {
-    opacity: 1;
-}
-.currentStat {
-    display: none;
-}
-.stoneNumber-focus {
+.radio_characteristics {
+    -webkit-appearance: none;
+    appearance: none;
     position: absolute;
-    width: 104%;
+}
+.stone_number-focus {
+    position: absolute;
+    width: 100%;
     opacity: 0;
     transition: 0.2s;
     z-index: -1;
 }
-.stoneNumber img:not(.stoneNumber-focus) {
-    max-width: 29%;
-    /* z-index: -1; */
+.number {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+.number img {
+    max-height: 45%;
+}
+.characteristic_modif {
+    background: radial-gradient(#eade93 20%, #eade9300 75%);
+}
+
+.stone_number:hover .stone_number-focus {
+    opacity: 1;
+}
+.currentStat {
+    display: none;
 }
 .containerDrag-number {
     position: absolute;
@@ -790,6 +857,8 @@ footer {
     align-content: center;
     justify-content: center;
     padding: 0.1% 0;
+    background-color: #8b816d31;
+    filter: blur(.3px);
 }
 .footer {
     display: flex;
@@ -867,7 +936,7 @@ color: #8b816d;
 color: #978c76;
 color: #686052;
 color: #de343c;
-color: #3f3c38;
+color: #978c76;
 }
 
  /*@keyframes pulse {
@@ -916,6 +985,7 @@ color: #3f3c38;
     }
     .flowers {
         justify-content: space-around;
+        max-width: 100vw;
     }
     .flowers img{
         transform: rotate(90deg);
@@ -930,7 +1000,7 @@ color: #3f3c38;
     }
 }
 @media (max-width: 1000px) {
-    :root {
+    html {
         font-size: 70px;
     }
     .container-characteristic p {
@@ -966,10 +1036,8 @@ color: #3f3c38;
         line-height: 90px;
     }
     .logo img {
-        width: 480px;
-    }
-    html {
-        font-size: 58px;
+        /* width: 480px; */
+        max-width: 100vw;
     }
     .bg_universalism img {
         width: 3vw;
