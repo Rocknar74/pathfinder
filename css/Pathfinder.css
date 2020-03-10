@@ -1,55 +1,70 @@
+
 @font-face {
-    font-family: 'XXII Arabian OneNightStand Cyr';
-    src: url(../fonts/15364.ttf);
+    font-family: 'XXII_Arabian_OneNightStand_Cyr'; /*wizard font*/
+    src: url(../fonts/XXII_Arabian_OneNightStand_Cyr.ttf);
 }
 @font-face {
-    font-family: 'ArabiaCyrillic-Regular';
-    src: url(../fonts/15522.ttf);
+    font-family: 'ArabiaCyrillic-Regular'; /*rogue font*/
+    src: url(../fonts/ArabiaCyrillic-Regular.ttf);
 }
 @font-face {
-    font-family: 'Kanonnik UCS';
-    src: url(../fonts/10410.ttf);
+    font-family: 'Kanonnik_UCS'; /*priest font*/
+    src: url(../fonts/Kanonnik_UCS.ttf);
 }
 @font-face {
-    font-family: 'ljk_Remains';
-    src: url(../fonts/16880.otf);
+    font-family: 'ljk_Remains'; /*warrior font*/ 
+    src: url(../fonts/ljk_Remains.otf);
 }
 @font-face {
-    font-family: 'Mason Chronicles';       /*main font*/
+    font-family: 'Mason Chronicles'; /*main font*/
     src: url(../fonts/Mason_Chronicles.ttf);
 }
 
 * {
+    box-sizing: border-box;
     font-family: 'Mason Chronicles', serif;
     margin: 0;
     padding: 0;
 }
-:root {
-    font-size: 100px;
-}
 html {
-    /* font-size: 100px; */
+    font-size: 100px;
     color: #e6e6fa;
-    overflow-x:hidden; 
-    background: #8b816d;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+    background-color: #8b816d;
+}
+body {
+    position: relative;
+}
+body::before {
+    content: '';
+    display: block;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    background-color: #8b816d;
+    background: url(../images/BG_MAIN.jpg) repeat-y;
+    filter:  saturate(80%) blur(1.5px) sepia(10%) brightness(25%) contrast(110%);
+    background-size: contain;
 }
 
-
-/*Header*/
+/* HEADER ==========================================================================================*/
 header {
-    background:#686052;
+    background-color: #8b816d31;
 }
 .logo {
-    background:#686052;
     text-align: center;
 }
+.logo img {
+    max-width: 800px;
+}
 
-
-
-/*Main*/
-.all_content {
+/* MAIN =============================================================================================*/
+.main_content {
     margin: 0 auto;
-    height: 100%;
+    /* height: 100%; */
+    background-color: #8b816d31;
 }
 .h1_block_headline {
     color: #eade93;
@@ -59,28 +74,18 @@ header {
     padding: 0 0 20px 0;
 }
 
-
-
-/*Race_block*/
+/* RACE BLOCK =========================================================================================*/
 .race_block {
     display: flex;
     flex-direction: column;
-    font-size: 0.24rem;
+    font-size: .2rem;
 }
 .race_block strong {
-    color: #3f3c38;
+    color: #978c76;
 }
 .race_block ul {
     list-style-type: none;
 }
-.race_block li:after{
-    content: "";
-    display: block;
-    height: 0.24rem;
-    width: 100%;
-
-}
-
 .race_table {
     display: flex;
     max-width: 1800px;
@@ -91,21 +96,63 @@ header {
     flex-direction: column;
     align-items: center;   
 }
-.name_race {
+.container-name_race {
     display: flex;
     justify-content: center;
     position: relative;
-    background:#978c76;
+    /* background:#978c76; */
     margin: 0 0 10px 0;
-    min-width: 100vw;
+    max-width: 1800px;
+    width: 100%;
+    margin-bottom: .25rem;
 }
-.h2_in_race{
-    background:#978c76;
-    font-size: 0.60rem;
-    color: #3f3c38;
+.container-name_race::after, .container-name_race::before {
+    position: absolute;
+    content: '';
+    display: block;
+    border-radius: 100%;
+    height: .02rem;
+    background: linear-gradient(90deg, #978c7600, #978c76, #978c7600);
+}
+.container-name_race::after {
+    top: 0;
+    width: 100%;
+}
+.container-name_race::before {
+    bottom: 0;
+    width: 70%;
+}
+.h2_in_race {
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    /* background:#978c76; */
+    font-size: .6rem;
+    color: #978c76;
     width: max-content;
     padding: 0 10px;
     z-index: 2;
+    text-shadow: 0px 2px 5px #000000,
+                 0px 2px 30px #e7e7e7;
+}
+.h2_in_race::after, .h2_in_race::before {
+    position: absolute;
+    content: '';
+    display: block;
+    background:#978c76;
+    width: .2rem;
+    height: .2rem;
+    border-radius: 15%;
+    transform: rotate(45deg);
+}
+.h2_in_race::after {
+    left: -18%;
+    background: linear-gradient(45deg, #8b6d2f, #8b6d2f , #8b6c2f00 50%);
+}
+.h2_in_race::before {
+    right: -18%;
+    background: linear-gradient(-135deg, #8b6d2f, #8b6d2f , #8b6c2f00 50%);
 }
 .dwarf_row,
 .elf_row,
@@ -114,51 +161,56 @@ header {
     flex-direction: row;
     text-align: justify;
     align-items: center;
+    justify-content: space-between;
 }
 
 .dwarf_history {
     flex-basis: 26%;
 }
 .dwarf_stats {
-    flex-basis: 37.5%;
+    flex-basis: 40%;
 }
 .photo_DF_DM {
-    flex-basis: 31.5%;
+    /* flex-basis: 31.5%; */
     display: flex;
     justify-content: space-around;
+    flex-grow: 1;
 }
 
 .elf_history {
-    flex-basis: 23.5%;
+    flex-basis: 40%;
     order: 1;
 }
 .elf_stats {
-    flex-basis: 38.5%;
+    flex-basis: 35%;
     order: 3;
 }
 .photo_EF_EM {
-    flex-basis: 35%;
+    /* flex-basis: 35%; */
     display: flex;
     justify-content: space-around;
+    flex-grow: 1;
     order: 4;
 }
 
 .human_history {
-    flex-basis: 40%;
+    flex-basis: 34%;
 }
 .human_stats {
-    flex-basis: 19.5%;
+    flex-basis: 15%;
 }
 .photo_HF_HM {
-    flex-basis: 37.5%;
+    /* flex-basis: 40%; */
     display: flex;
     justify-content: space-around;
+    flex-grow: 1;
 }
 
 
 .flowers {
-    flex-basis: 3%;
+    /* flex-basis: 3%; */
     padding: 0 3px 0 3px;
+    filter: sepia(20%) brightness(150%) contrast(150%);
 }
 .elf_row .flowers {
     order: 2;
@@ -197,24 +249,25 @@ header {
 .focus {
     height: 100%;
     opacity: 0;
-    transition-duration: 0.25s;
+    transition: .25s;
     cursor: pointer;
 }
 .focus:hover,
 .focus-active {
-    transition-duration: 0.4s;
+    transition: .4s;
     opacity: 1;
 }
 
 .decoration {
     float: left;
-    padding-right: 9px;
-    width: 1.15rem;
+    margin-right: .07rem;
+    width: .96rem;
+    border-radius: 5px;
 }
 
 
 
-/* Classs block */
+/* CLASS BLOCK  ==========================================================================================*/
 .class_block {
     display: none;
     margin-bottom: 50px;
@@ -226,7 +279,7 @@ header {
     display: flex;
     flex-direction: column;
     margin: auto;
-    max-width: 1903px;
+    max-width: 1920px;
     text-align: center;
 }
 .class_table p {
@@ -237,10 +290,10 @@ header {
     line-height: 140px;
     margin: 0 auto;
     width: 80%;
-    max-width: 1903px;
+    max-width: inherit;
 }
 .name_class {
-    font-size: 0.90rem;
+    font-size: .90rem;
     color: #a09a8f;
     text-align: left;
     text-decoration: none;
@@ -250,16 +303,16 @@ header {
     height: auto;
 
     float: left;
-    transition: 0.3s;
+    transition: .3s;
 }
 .name_class:hover {
-    padding: 0.5% 0 0.5% 35px;
+    padding: .5% 0 .5% 35px;
     color: #b9a980;
     cursor: pointer;
     text-shadow: #634c1496 0px 2px 1px, #634c1496 0px -2px 1px, #634c1496 2px 0px 1px, #634c1496 -2px 0px 1px, #000000 0px 13px 10px;
 }
 .name_class-active {
-    padding: 0.5% 0 0.5% 35px;
+    padding: .5% 0 .5% 35px;
     color: #634c1496;
     text-shadow: #eade93a9 0 3px 5px, #eade93a9 0px -3px 5px, #eade93a9 33px -5px 10px, #eade93a9 -3px 0px 5px;
     cursor: pointer;
@@ -270,15 +323,15 @@ header {
 
 .container_class {
     display: none;
-    font-size: 0.24rem;
+    font-size: .24rem;
     text-shadow: #000000 2px 2px 2px;
     margin: 0 auto;
     width: 80%;
-    transition-duration: 0.3s;
+    transition: .3s;
 }
 .container_class-active {
     display: block;
-    transition-duration: 0.3s;
+    transition: .3s;
 }
 
 .container_class_1 {
@@ -323,13 +376,13 @@ header {
     color: #eade93;
     background: #5e616042;
     text-shadow: #000000 0px 3px 3px;
-    font-size: 0.37rem;
+    font-size: .37rem;
     margin: 0 0 10px 0;
 }
 
 
 
-/* Warrior */
+/* WARRIOR  ==========================================================================================*/
 .weapon_selector_warrior {
     display: flex;
     justify-content: center;
@@ -354,7 +407,7 @@ header {
 
 
 
-/* Wizard */
+/* WIZARD ==========================================================================================*/
 .weapon_selector_wizard {
     display: flex;
     justify-content: center;
@@ -379,15 +432,14 @@ header {
 .weapon_selector_wizard div:hover {
     border-color:  #eade93;
     background: #052036;
-    transition: 0.1s;
+    transition: .1s;
 }
 .love_weapon_wizard-active {
     border-width: 4px 7px 10px 7px;
     border-color:  #eade93;
-    /* border-style: groove ridge ridge groove; */
     border-style: ridge groove groove ridge;
     background: #052036;
-    transition: 0.2s;
+    transition: .2s;
 }
 .school_magic {
     display: grid;
@@ -395,8 +447,14 @@ header {
     grid-template-rows: max-content min-content;
     grid-auto-rows: minmax(min-content, min-content);
     margin: 0 0 10px 0;
-    /* background: #5e616042; */
     cursor: pointer;
+}
+.school_magic:hover {
+    outline-width: 3px;
+    outline-color: #eade93;
+    outline-style: outset;
+    outline-offset: -10px;
+    transition: .2s;
 }
 
 .school_magic div:nth-child(1) {
@@ -405,13 +463,12 @@ header {
     align-items: center;
     justify-content: center;
     padding: 1vw;
-    border-radius: 10px 0 0 0;
+    border-radius: .1rem 0 0 0;
 
 }
 .school_magic div:nth-child(2) {
     grid-area: 1/2/3/2;
     width: min-content;
-    height: 100%;
     padding: 1vw 1vw 1vw 0;
 }
 .school_magic div:nth-child(3) {
@@ -439,18 +496,17 @@ header {
 .container_school_magic p{
     text-align: justify;
 }
-
 .bg_universalism {
     background: #475f6b;
-    font-size: 0.27rem;
+    font-size: .27rem;
 }
 .bg_illusion {
     background: #CF8F43;
-    font-size: 0.27rem;
+    font-size: .27rem;
 }
 .bg_distruction {
     background: #772f26;
-    font-size: 0.27rem;
+    font-size: .27rem;
 }
 
 .color_in_universalism > .h3_in_school_magic {
@@ -466,14 +522,14 @@ header {
 .h3_in_school_magic {
     background: #5e616042; /*#5e616042*/
     text-shadow: #000000 3px 3px 3px;
-    font-size: 0.35rem;
-    font-family: 'XXII Arabian OneNightStand Cyr', fantasy;
+    font-size: .35rem;
+    font-family: 'XXII_Arabian_OneNightStand_Cyr', fantasy;
     padding: 5px 0 5px 40px;
     color: #7c95a0;
 }
 
 
-/*Rogue*/
+/* ROGUE ==========================================================================================*/
 .container_rogue_skill {
     display: flex;
     justify-content: center;
@@ -492,7 +548,7 @@ header {
 .h3_in_rogue {
     background: #5e616042; /*#5e616042*/
     text-shadow: #000000 3px 3px 3px;
-    font-size: 0.32rem;
+    font-size: .32rem;
     font-family: 'ArabiaCyrillic-Regular', fantasy;
     padding: 5px;
     min-width: max-content;
@@ -510,8 +566,8 @@ header {
     content: "";
     display: block;
     float: left;
-    height: 0.24rem;
-    width: 0.24rem;
+    height: .24rem;
+    width: .24rem;
     background: url(../images/class_block/daggers.png);
     background-size: 100%;
     background-color: #00000000;
@@ -519,7 +575,8 @@ header {
 }
 
 
-/* Priest */
+/* PRIEST 
+===========================================================================================*/
 .container_priest_skill {
     display: flex;
     flex-flow: row;
@@ -547,8 +604,8 @@ header {
 .h3_in_priest {
     background: #5e616042;
     text-shadow: #000000 3px 3px 3px;
-    font-size: 0.32rem;
-    font-family: 'Kanonnik UCS', fantasy;
+    font-size: .32rem;
+    font-family: 'Kanonnik_UCS', fantasy;
     padding: 5px 0 5px 0;
     min-width: max-content;
     color: #aac3d4;
@@ -557,8 +614,8 @@ header {
 .h4_in_priest {
     background: #5e616042; /*#5e616042*/
     text-shadow: #000000 3px 3px 3px;
-    font-size: 0.27rem;
-    font-family: 'Kanonnik UCS', fantasy;
+    font-size: .27rem;
+    font-family: 'Kanonnik_UCS', fantasy;
     padding: 5px 0 5px 0;
     min-width: max-content;
     color: #aac3d4;
@@ -567,7 +624,8 @@ header {
 
 
 
-/*All class*/
+/* ALL CLASS
+==========================================================================================*/
 .warrior,
 .wizard,
 .rogue,
@@ -588,7 +646,7 @@ header {
     background-size: 100%;
 }
 .wizard a {
-    font-family: 'XXII Arabian OneNightStand Cyr', fantasy;
+    font-family: 'XXII_Arabian_OneNightStand_Cyr', fantasy;
 }
 
 .rogue {
@@ -604,12 +662,13 @@ header {
     background-size: 100%;
 }
 .priest a{
-    font-family: 'Kanonnik UCS', fantasy;
+    font-family: 'Kanonnik_UCS', fantasy;
     letter-spacing: 2px;
 }
 
 
-/* SELCT STATS BLOCK --------------------------*/
+/* SELCT STATS BLOCK 
+==========================================================================================*/
 .select_stats_block {
     display: none;
     flex-direction: column;
@@ -624,13 +683,18 @@ header {
 .characteristic_discription {
     display: flex;
     justify-content: space-between;
-    font-size: 0.24rem;
-    color: #eade93;
     padding-bottom: 1vw;
 }
 .characteristic_discription p {
     text-align: center;
+    font-size: .24rem;
+    color: #eade93;
     flex-basis: 49%;
+}
+.human_annotation {
+    position: relative;
+    font-size: .18rem;
+    width: 100%;
 }
 
 .container-stoneANDreroll {
@@ -638,7 +702,7 @@ header {
     flex-direction: row;
     justify-content: space-between;
 }
-.container-stoneNumber {
+.flag_table {
     position: relative;
     display: flex;
     justify-content: center;
@@ -647,48 +711,57 @@ header {
     max-height: 100%;
     background: url(../images/characteristics/back_container_stoneNumber.png) top no-repeat;
     background-size: 100%;
-
 }
-/* .personalContainer-stoneNumber {
+.stone_number {
     position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 4.7vw;
-    width: 5.434vw;
-} */
-.stoneNumber {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    /* top: 0;
-    left: 0; */
-    margin: 0 0.35vw;
-    height: 4.7vw;
-    width: 5.434vw;
+    margin: 0 .1vw;
+    height: 5vw;
+    width: 5.71vw;
     background: url(../images/characteristics/stoneNumber.png) top no-repeat;
     background-size: 100%;
-    cursor: pointer;
     z-index: 11;
-    /* background-color: ivory; */
 }
-.stoneNumber:hover .stoneNumber-focus {
+.number::after {
+    content: '';
+    display: block;
+    position: absolute;
+    background: url(../images/characteristics/stoneNumber-focus.png) top no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity .1s;
+}
+.number:hover::after {
     opacity: 1;
+    transition: opacity .2s;
 }
+.radio_characteristics {
+    -webkit-appearance: none;
+    appearance: none;
+    position: absolute;
+}
+.number {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+.number img {
+    max-height: 45%;
+}
+.radio_characteristics:checked + label {
+    background: radial-gradient(#eade93 20%, #eade9300 75%);
+    transition: 1s;
+}
+
 .currentStat {
     display: none;
-}
-.stoneNumber-focus {
-    position: absolute;
-    width: 104%;
-    opacity: 0;
-    transition: 0.2s;
-    z-index: -1;
-}
-.stoneNumber img:not(.stoneNumber-focus) {
-    max-width: 29%;
-    /* z-index: -1; */
 }
 .containerDrag-number {
     position: absolute;
@@ -702,12 +775,10 @@ header {
 }
 
 .container-rerollButton {
-    /* position: relative; */
     display: flex;
     justify-content: center;
     flex-basis: 49%;
     height: 7vw;
-    /* max-width: 100%; */
 }
 .rerollButton {
     display: flex;
@@ -723,7 +794,7 @@ header {
     max-height: 100%;
     opacity: 0;
     z-index: -1;
-    transition: 0.2s;
+    transition: .2s;
 }
 .rerollDice-focus-notactive {
     display: none;
@@ -735,12 +806,12 @@ header {
 }
 .rerollDice-notactive {
     cursor: not-allowed;
-    filter: contrast(0.5) brightness(0.6);
-    transition: 0.2s;
+    filter: contrast(.5) brightness(.6);
+    transition: .2s;
 }
 .rerollButton:hover .rerollDice-focus {
     opacity: 1;
-    transition: 0.2s;
+    transition: .2s;
 }
 
 .container-characteristic {
@@ -755,7 +826,6 @@ header {
     max-width: 100%;
 }
 .characteristic_name {
-    /* position: absolute; */
     max-height: 90%;
     margin: 0 0 0 2%;
     z-index: 10;
@@ -763,7 +833,7 @@ header {
 .chracteristic-discription {
     padding: 0 3% 0 0;
     flex-basis: 45%;
-    font-size: 0.24rem;
+    font-size: .24rem;
     font-weight: lighter;
     color: #eade93;
     text-shadow: black 0 3px 10px,
@@ -783,13 +853,15 @@ header {
 }
 
 
-/* FOOTER -------------------------------------------*/
+/* FOOTER
+==========================================================================================*/
 footer {
     display: flex;
     background:#686052;
     align-content: center;
     justify-content: center;
-    padding: 0.1% 0;
+    padding: .1% 0;
+    background-color: #8b816d31;
 }
 .footer {
     display: flex;
@@ -799,7 +871,8 @@ footer {
     width: 90%;
 }
 
-/* BUTTONS -----------------------------------------*/
+/* BUTTONS
+==========================================================================================*/
 .next_button,
 .previous_button {
     outline: none;
@@ -808,13 +881,13 @@ footer {
     border-radius: 10px;
     height: min-content;
     color: #eade93;
-    font-size: 0.60rem;
+    font-size: .60rem;
     font-weight: bold;
     text-align: center;
     text-shadow: #412d27 0 10px 10px;
     margin: 5px;
     padding: 10px;
-    transition-duration: 0.25s;
+    transition: .25s;
 }
 .next_button:enabled,
 .previous_button:enabled {
@@ -824,7 +897,7 @@ footer {
 .next_button:disabled,
 .previous_button:disabled {
     cursor: not-allowed;
-    opacity: 0.2;
+    opacity: .2;
 }
 
 /* .plant {
@@ -867,7 +940,7 @@ color: #8b816d;
 color: #978c76;
 color: #686052;
 color: #de343c;
-color: #3f3c38;
+color: #978c76;
 }
 
  /*@keyframes pulse {
@@ -916,6 +989,7 @@ color: #3f3c38;
     }
     .flowers {
         justify-content: space-around;
+        max-width: 100vw;
     }
     .flowers img{
         transform: rotate(90deg);
@@ -926,15 +1000,15 @@ color: #3f3c38;
         order: 0;
     }
     .container-characteristic p {
-        font-size: 0.18rem;
+        font-size: .18rem;
     }
 }
 @media (max-width: 1000px) {
-    :root {
+    html {
         font-size: 70px;
     }
     .container-characteristic p {
-        font-size: 0.09rem;
+        font-size: .09rem;
         text-shadow: none;
         font-style: normal;
     }
@@ -966,10 +1040,8 @@ color: #3f3c38;
         line-height: 90px;
     }
     .logo img {
-        width: 480px;
-    }
-    html {
-        font-size: 58px;
+        /* width: 480px; */
+        max-width: 100vw;
     }
     .bg_universalism img {
         width: 3vw;
